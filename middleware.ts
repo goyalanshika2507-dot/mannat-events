@@ -4,19 +4,9 @@ import { NextResponse, type NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
-  // 1. Keys ko safely access karein (bina ! ke)
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
-
-  // Agar keys nahi hain, toh log karein aur aage badhein
-  if (!supabaseUrl || !supabaseKey) {
-    console.error("Missing Supabase environment variables!")
-    return supabaseResponse
-  }
-
   const supabase = createServerClient(
-    supabaseUrl,
-    supabaseKey,
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() {
@@ -35,14 +25,14 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  // Session check
+  // Refresh session — must call getUser() to keep session alive
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
   const { pathname } = request.nextUrl
 
-  // Protected paths logic
+  // ---- Unauthenticated redirect ----
   const protectedPaths = ['/dashboard', '/booking', '/admin']
   const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
 
@@ -52,7 +42,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  // Admin route guard
+  // ---- Admin-only route guard ----
   if (user && pathname.startsWith('/admin')) {
     const { data: profile } = await supabase
       .from('profiles')
@@ -67,10 +57,17 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Auth pages redirect
+  // ---- Redirect authenticated users away from auth pages ----
   if (user && (pathname === '/login' || pathname === '/signup' || pathname === '/')) {
     const url = request.nextUrl.clone()
     url.pathname = '/dashboard'
+    return NextResponse.redirect(url)
+  }
+
+  // ---- Redirect root for unauthenticated users ----
+  if (!user && pathname === '/') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/login'
     return NextResponse.redirect(url)
   }
 
