@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { BookingWithProfile, BookingStatus, BOOKING_STATUS_LABELS } from '@/lib/types'
+import { Booking, BookingStatus, BOOKING_STATUS_LABELS } from '@/lib/types'
 import { formatDate, getMealLabel } from '@/lib/utils/booking'
 import { StatusBadge } from '@/components/admin/StatusBadge'
 import { MealSummary } from '@/components/admin/MealSummary'
@@ -12,7 +12,7 @@ import { Select } from '@/components/ui/Select'
 import { createClient } from '@/lib/supabase/client'
 
 interface BookingDetailCardProps {
-  booking: BookingWithProfile
+  booking: Booking
 }
 
 const STATUS_OPTIONS = (Object.keys(BOOKING_STATUS_LABELS) as BookingStatus[]).map((key) => ({
@@ -87,8 +87,8 @@ export function BookingDetailCard({ booking }: BookingDetailCardProps) {
           Guest
         </h3>
         <div className="border border-gray-200 rounded-lg px-4 divide-y divide-gray-100">
-          <DetailRow label="Name"   value={booking.profiles?.full_name ?? '—'} />
-          <DetailRow label="Email"  value={booking.profiles?.email ?? '—'} />
+          <DetailRow label="Name"   value="Unknown User" />
+          <DetailRow label="UUID"   value={booking.user_id} />
         </div>
       </section>
 

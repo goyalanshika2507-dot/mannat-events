@@ -28,11 +28,13 @@ export function SignupForm() {
     setServerError(null)
     const supabase = createClient()
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email: values.email,
       password: values.password,
       options: {
-        data: { full_name: values.full_name },
+        data: {
+          full_name: values.full_name,
+        },
       },
     })
 
@@ -45,7 +47,7 @@ export function SignupForm() {
       return
     }
 
-    // Auto sign in after signup (no email confirmation configured)
+    // Auto sign in after signup
     const { error: signInError } = await supabase.auth.signInWithPassword({
       email: values.email,
       password: values.password,
@@ -63,9 +65,16 @@ export function SignupForm() {
   if (success) {
     return (
       <div className="text-center space-y-2">
-        <p className="text-sm text-gray-700 font-medium">Account created successfully.</p>
-        <p className="text-sm text-gray-500">Please check your email to confirm your account.</p>
-        <Link href="/login" className="text-sm font-medium text-gray-900 underline underline-offset-2">
+        <p className="text-sm text-gray-700 font-medium">
+          Account created successfully.
+        </p>
+        <p className="text-sm text-gray-500">
+          Please check your email to confirm your account.
+        </p>
+        <Link
+          href="/login"
+          className="text-sm font-medium text-gray-900 underline underline-offset-2"
+        >
           Back to login
         </Link>
       </div>
@@ -73,7 +82,11 @@ export function SignupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      noValidate
+      className="space-y-4"
+    >
       <div>
         <Label htmlFor="full_name" required>
           Full name
@@ -147,7 +160,10 @@ export function SignupForm() {
 
       <p className="text-center text-sm text-gray-600">
         Already have an account?{' '}
-        <Link href="/login" className="font-medium text-gray-900 underline underline-offset-2">
+        <Link
+          href="/login"
+          className="font-medium text-gray-900 underline underline-offset-2"
+        >
           Sign in
         </Link>
       </p>

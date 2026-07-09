@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import { BookingWithProfile } from '@/lib/types'
+import { Booking } from '@/lib/types'
 import { BookingDetailCard } from '@/components/admin/BookingDetailCard'
 import { Button } from '@/components/ui/Button'
 
@@ -23,13 +23,7 @@ export default async function AdminBookingDetailPage({
 
   const { data: booking, error } = await supabase
     .from('bookings')
-    .select(`
-      *,
-      profiles (
-        email,
-        full_name
-      )
-    `)
+    .select('*')
     .eq('id', id)
     .single()
 
@@ -50,7 +44,7 @@ export default async function AdminBookingDetailPage({
         <p className="mt-1 text-sm text-gray-500 font-mono">{booking.booking_id}</p>
       </div>
 
-      <BookingDetailCard booking={booking as BookingWithProfile} />
+      <BookingDetailCard booking={booking as Booking} />
     </div>
   )
 }

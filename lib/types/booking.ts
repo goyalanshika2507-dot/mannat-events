@@ -2,19 +2,6 @@
 // Core Application Types — Mannat Events Phase 1
 // -------------------------------------------------------
 
-// ---- Auth & User ----
-
-export type UserRole = 'user' | 'admin'
-
-export interface Profile {
-  id: string
-  email: string
-  full_name: string | null
-  role: UserRole
-  created_at: string
-  updated_at: string
-}
-
 // ---- Meal Types ----
 
 export type MealOption = 'skip' | 'veg' | 'non-veg'
@@ -52,11 +39,6 @@ export interface Booking {
   notes: string | null
   created_at: string
   updated_at: string
-}
-
-// Booking joined with profile data (for admin views)
-export interface BookingWithProfile extends Booking {
-  profiles: Pick<Profile, 'email' | 'full_name'>
 }
 
 // ---- Wizard Form State ----

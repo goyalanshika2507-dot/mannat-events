@@ -13,12 +13,6 @@ export default async function DashboardLayout({
 
   if (!user) redirect('/login')
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('full_name, email, role')
-    .eq('id', user.id)
-    .single()
-
   async function handleLogout() {
     'use server'
     const supabase = await createClient()
@@ -35,19 +29,18 @@ export default async function DashboardLayout({
             <Link href="/dashboard" className="text-sm font-semibold text-gray-900">
               Mannat Events
             </Link>
-            {profile?.role === 'admin' && (
-              <Link
-                href="/admin"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-              >
-                Admin Panel
-              </Link>
-            )}
+            {/* Display Admin Panel for everyone temporarily */}
+            <Link
+              href="/admin"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Admin Panel
+            </Link>
           </div>
 
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600 hidden sm:block">
-              {profile?.full_name ?? profile?.email}
+              {user.email}
             </span>
             <form action={handleLogout}>
               <Button type="submit" variant="ghost" size="sm">

@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { BookingWithProfile } from '@/lib/types'
+import { Booking } from '@/lib/types'
 import { formatDate } from '@/lib/utils/booking'
 import { StatusBadge } from '@/components/admin/StatusBadge'
 
 interface BookingTableProps {
-  bookings: BookingWithProfile[]
+  bookings: Booking[]
 }
 
 export function BookingTable({ bookings }: BookingTableProps) {
@@ -23,7 +23,7 @@ export function BookingTable({ bookings }: BookingTableProps) {
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
               <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Booking ID</th>
-              <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Guest</th>
+              <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Guest UUID</th>
               <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Check-in</th>
               <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Check-out</th>
               <th className="text-left px-4 py-3 font-semibold text-gray-600 whitespace-nowrap">Nights</th>
@@ -38,9 +38,8 @@ export function BookingTable({ bookings }: BookingTableProps) {
                 <td className="px-4 py-3 font-mono text-xs text-gray-700 whitespace-nowrap">
                   {booking.booking_id}
                 </td>
-                <td className="px-4 py-3 text-gray-900 whitespace-nowrap">
-                  <div>{booking.profiles?.full_name ?? '—'}</div>
-                  <div className="text-xs text-gray-500">{booking.profiles?.email}</div>
+                <td className="px-4 py-3 font-mono text-xs text-gray-500 whitespace-nowrap" title="Unknown User">
+                  {booking.user_id}
                 </td>
                 <td className="px-4 py-3 text-gray-700 whitespace-nowrap">
                   {formatDate(booking.check_in)}

@@ -25,35 +25,21 @@ export async function middleware(request: NextRequest) {
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
+  // Refresh session — must call getUser() to keep session alive
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
   const { pathname } = request.nextUrl
 
-  // --- FIX: Confirmation page ko block hone se bachane ke liye exception ---
-  const isConfirmation = pathname.startsWith('/booking/confirmation')
-  
   // ---- Unauthenticated redirect ----
   const protectedPaths = ['/dashboard', '/booking', '/admin']
-  const isProtected = protectedPaths.some((p) => pathname.startsWith(p)) && !isConfirmation
+  const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
 
   if (!user && isProtected) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     return NextResponse.redirect(url)
-  }
-
-  // ---- Admin-only route guard ----
-  if (user && pathname.startsWith('/admin')) {
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', user.id)
-      .single()
-
-    if (!profile || profile.role !== 'admin') {
-      const url = request.nextUrl.clone()
-      url.pathname = '/dashboard'
-      return NextResponse.redirect(url)
-    }
   }
 
   // ---- Redirect authenticated users away from auth pages ----
