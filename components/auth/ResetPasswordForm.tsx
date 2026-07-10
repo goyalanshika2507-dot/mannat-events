@@ -1,23 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Eye, EyeOff, User, Mail, ShieldAlert, Sparkles, Check, CheckCircle2, AlertCircle } from 'lucide-react'
+import { Eye, EyeOff, Check, AlertCircle } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { SignupSchema, SignupFormValues } from '@/lib/validators/auth'
-import { getAuthCallbackUrl, parseAuthError } from '@/lib/utils/auth'
+import {
+  ResetPasswordSchema,
+  ResetPasswordFormValues,
+} from '@/lib/validators/auth'
+import { parseAuthError } from '@/lib/utils/auth'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
 import { cn } from '@/lib/utils/cn'
 
-export function SignupForm() {
+export function ResetPasswordForm() {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
+  const [sessionReady, setSessionReady] = useState(false)
+  const [checkingSession, setCheckingSession] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
   
   const [showPassword, setShowPassword] = useState(false)
@@ -28,11 +33,9 @@ export function SignupForm() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<SignupFormValues>({
-    resolver: zodResolver(SignupSchema),
+  } = useForm<ResetPasswordFormValues>({
+    resolver: zodResolver(ResetPasswordSchema),
     defaultValues: {
-      full_name: '',
-      email: '',
       password: '',
       confirm_password: '',
     }
@@ -64,22 +67,29 @@ export function SignupForm() {
     'bg-[#C5A85C]'
   ]
 
-  async function onSubmit(values: SignupFormValues) {
+  useEffect(() => {
+    async function checkSession() {
+      const supabase = createClient()
+      const {
+        data: { user },
+      } = await supabase.auth.getUser()
+
+      setSessionReady(!!user)
+      setCheckingSession(false)
+    }
+
+    checkSession()
+  }, [])
+
+  async function onSubmit(values: ResetPasswordFormValues) {
     setServerError(null)
     setIsLoading(true)
 
     try {
       const supabase = createClient()
 
-      const { error } = await supabase.auth.signUp({
-        email: values.email,
+      const { error } = await supabase.auth.updateUser({
         password: values.password,
-        options: {
-          data: {
-            full_name: values.full_name,
-          },
-          emailRedirectTo: getAuthCallbackUrl('/login?verified=1'),
-        },
       })
 
       if (error) {
@@ -87,14 +97,52 @@ export function SignupForm() {
         return
       }
 
-      router.push(
-        `/verify-email?email=${encodeURIComponent(values.email)}`
-      )
+      await supabase.auth.signOut()
+      router.push('/login?reset=1')
+      router.refresh()
     } catch {
-      setServerError('Unable to create your account. Please try again.')
+      setServerError('Unable to update your password. Please try again.')
     } finally {
       setIsLoading(false)
     }
+  }
+
+  if (checkingSession) {
+    return (
+      <div className="flex justify-center py-8">
+        <span
+          className="h-6 w-6 animate-spin rounded-full border-2 border-[#C5A85C] border-t-transparent"
+          aria-label="Checking session validity..."
+        />
+      </div>
+    )
+  }
+
+  if (!sessionReady) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="space-y-5 text-center"
+      >
+        <div
+          className="rounded-[10px] border border-red-200 bg-red-50/50 p-4 space-y-2 flex flex-col items-center text-sm text-red-700"
+          role="alert"
+        >
+          <AlertCircle size={24} className="text-red-600 shrink-0" />
+          <p className="font-semibold">Reset Link Invalid</p>
+          <p className="text-xs text-red-600/80 leading-relaxed">
+            This password reset link is invalid or has expired. Please request a new one.
+          </p>
+        </div>
+        <Link
+          href="/forgot-password"
+          className="inline-block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:text-[#C5A85C] transition-colors underline underline-offset-2"
+        >
+          Request new reset link
+        </Link>
+      </motion.div>
+    )
   }
 
   return (
@@ -103,48 +151,10 @@ export function SignupForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
     >
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-        className="space-y-4"
-      >
-        <div>
-          <Label htmlFor="full_name" required>
-            Full name
-          </Label>
-          <Input
-            id="full_name"
-            type="text"
-            autoComplete="name"
-            placeholder="Your full name"
-            error={errors.full_name?.message}
-            disabled={isLoading}
-            className="pl-10"
-            rightElement={<User className="h-4 w-4 text-[#A8A8A8]" />}
-            {...register('full_name')}
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="email" required>
-            Email address
-          </Label>
-          <Input
-            id="email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            error={errors.email?.message}
-            disabled={isLoading}
-            className="pl-10"
-            rightElement={<Mail className="h-4 w-4 text-[#A8A8A8]" />}
-            {...register('email')}
-          />
-        </div>
-
+      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-4">
         <div>
           <Label htmlFor="password" required>
-            Password
+            New password
           </Label>
           <Input
             id="password"
@@ -166,7 +176,7 @@ export function SignupForm() {
             {...register('password')}
           />
 
-          {/* Luxury password strength feedback */}
+          {/* Password strength indicator */}
           {passwordValue.length > 0 && (
             <motion.div 
               initial={{ opacity: 0, y: -5 }} 
@@ -188,7 +198,6 @@ export function SignupForm() {
                 <div className={cn('h-full transition-all duration-300 rounded-full', strengthColors[strengthScore])} style={{ width: `${(strengthScore / 3) * 100}%` }} />
               </div>
 
-              {/* Requirement Checkpoints */}
               <div className="grid grid-cols-3 gap-2 pt-0.5 text-[9px] font-semibold uppercase tracking-wider text-[#A8A8A8]">
                 <span className={cn('flex items-center gap-1 transition-colors', hasMinLength ? 'text-[#C5A85C]' : '')}>
                   {hasMinLength ? <Check size={8} className="stroke-[3]" /> : '•'} 8+ Chars
@@ -229,35 +238,6 @@ export function SignupForm() {
           />
         </div>
 
-        {/* Terms & Conditions Checkbox */}
-        <div className="pt-1">
-          <label className="flex items-start gap-2.5 cursor-pointer group">
-            <input
-              type="checkbox"
-              className={cn(
-                "rounded-md border-[#E8E5E0] text-[#C9A84C] focus:ring-[#C9A84C] h-4 w-4 mt-0.5 accent-[#C9A84C]",
-                errors.accept_terms && "border-red-400"
-              )}
-              {...register('accept_terms')}
-            />
-            <span className="text-xs font-semibold text-[#737373] group-hover:text-[#1A1A1A] transition-colors select-none leading-normal">
-              I accept the{' '}
-              <Link href="#" className="font-bold text-[#1A1A1A] hover:underline underline-offset-2">
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="#" className="font-bold text-[#1A1A1A] hover:underline underline-offset-2">
-                Privacy Policy
-              </Link>
-            </span>
-          </label>
-          {errors.accept_terms && (
-            <p className="mt-1 text-xs text-red-600" role="alert">
-              {errors.accept_terms.message}
-            </p>
-          )}
-        </div>
-
         <AnimatePresence>
           {serverError && (
             <motion.p
@@ -278,18 +258,8 @@ export function SignupForm() {
           className="w-full shadow-sm hover:shadow"
           size="lg"
         >
-          Create Account
+          Update Password
         </Button>
-
-        <p className="text-center text-xs text-[#737373] font-medium pt-2">
-          Already have an account?{' '}
-          <Link
-            href="/login"
-            className="font-bold text-[#1A1A1A] hover:text-[#C9A84C] transition-colors underline underline-offset-2"
-          >
-            Sign in
-          </Link>
-        </p>
       </form>
     </motion.div>
   )

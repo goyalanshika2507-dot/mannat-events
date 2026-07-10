@@ -12,17 +12,22 @@ export default function AuthLayout({
 }) {
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4 py-16"
-      style={{ background: '#FAF8F5' }}
+      className="min-h-screen flex items-center justify-center px-4 py-16 bg-brand-cream relative overflow-hidden"
     >
-      <div className="w-full max-w-[420px] animate-fade-up">
+      {/* Textured noise overlay */}
+      <div className="absolute inset-0 luxury-noise pointer-events-none z-0 select-none" />
+      
+      {/* Ambient background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-gold/5 blur-[120px] pointer-events-none select-none z-0" />
+
+      <div className="w-full max-w-[440px] animate-fade-up relative z-10">
         {/* Brand mark */}
-        <div className="mb-10 text-center">
-          <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-[#1A1A1A] mb-4">
-            <span className="text-white text-sm font-bold tracking-tight">M</span>
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-brand-obsidian mb-4 shadow-sm border border-brand-border">
+            <span className="text-white text-xs font-bold tracking-tight">M</span>
           </div>
-          <h1 className="text-xl font-semibold text-[#1A1A1A] tracking-tight">Mannat Events</h1>
-          <p className="mt-1.5 text-sm text-[#A8A8A8]">Hospitality Management Platform</p>
+          <h1 className="text-xl font-bold tracking-[0.2em] text-[#1A1A1A] uppercase font-sans">Mannat Events</h1>
+          <p className="mt-2 text-xs uppercase tracking-widest text-[#737373] font-semibold">Hospitality Portal</p>
         </div>
 
         {/* Content */}

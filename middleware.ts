@@ -32,6 +32,11 @@ export async function middleware(request: NextRequest) {
 
   const { pathname } = request.nextUrl
 
+  // ---- Public landing page ----
+  if (pathname === '/') {
+    return supabaseResponse
+  }
+
   // ---- Unauthenticated redirect ----
   const protectedPaths = ['/dashboard', '/booking', '/admin']
   const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
