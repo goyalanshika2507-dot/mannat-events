@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/Card'
+import { cn } from '@/lib/utils/cn'
 
 interface SummaryProps {
   total: number
@@ -8,29 +8,41 @@ interface SummaryProps {
   cancelled: number
 }
 
-export function AdminSummaryCards({ total, pending, confirmed, completed, cancelled }: SummaryProps) {
+interface StatItemProps {
+  label: string
+  value: number
+  dotColor: string
+  bg: string
+  className?: string
+}
+
+function StatItem({ label, value, dotColor, bg, className }: StatItemProps) {
+  return (
+    <div className={cn(
+      'rounded-[14px] border border-[#E8E5E0] p-6 flex flex-col gap-4',
+      'shadow-[0_2px_12px_rgba(0,0,0,0.04)]',
+      bg,
+      className
+    )}>
+      <div className="flex items-center gap-2">
+        <span className={cn('w-2 h-2 rounded-full', dotColor)} />
+        <p className="text-caption text-[#737373]">{label}</p>
+      </div>
+      <p className="text-4xl font-light text-[#1A1A1A] tracking-tight">{value}</p>
+    </div>
+  )
+}
+
+export function AdminSummaryCards({
+  total, pending, confirmed, completed, cancelled,
+}: SummaryProps) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-      <Card className="p-4 text-center">
-        <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide">Total</p>
-        <p className="mt-1 text-2xl font-semibold text-gray-900">{total}</p>
-      </Card>
-      <Card className="p-4 text-center bg-yellow-50/50">
-        <p className="text-xs text-yellow-700 font-semibold uppercase tracking-wide">Pending</p>
-        <p className="mt-1 text-2xl font-semibold text-yellow-900">{pending}</p>
-      </Card>
-      <Card className="p-4 text-center bg-blue-50/50">
-        <p className="text-xs text-blue-700 font-semibold uppercase tracking-wide">Confirmed</p>
-        <p className="mt-1 text-2xl font-semibold text-blue-900">{confirmed}</p>
-      </Card>
-      <Card className="p-4 text-center bg-green-50/50">
-        <p className="text-xs text-green-700 font-semibold uppercase tracking-wide">Completed</p>
-        <p className="mt-1 text-2xl font-semibold text-green-900">{completed}</p>
-      </Card>
-      <Card className="p-4 text-center bg-red-50/50">
-        <p className="text-xs text-red-700 font-semibold uppercase tracking-wide">Cancelled</p>
-        <p className="mt-1 text-2xl font-semibold text-red-900">{cancelled}</p>
-      </Card>
+      <StatItem label="Total"     value={total}     dotColor="bg-[#1A1A1A]" bg="bg-white" />
+      <StatItem label="Pending"   value={pending}   dotColor="bg-amber-400"  bg="bg-white" />
+      <StatItem label="Confirmed" value={confirmed} dotColor="bg-blue-400"   bg="bg-white" />
+      <StatItem label="Completed" value={completed} dotColor="bg-emerald-400" bg="bg-white" />
+      <StatItem label="Cancelled" value={cancelled} dotColor="bg-red-400"    bg="bg-white" />
     </div>
   )
 }

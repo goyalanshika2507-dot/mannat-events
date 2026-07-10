@@ -1,18 +1,23 @@
 import React from 'react'
+import { cn } from '@/lib/utils/cn'
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   required?: boolean
+  children: React.ReactNode
 }
 
-export function Label({ required, children, className = '', ...props }: LabelProps) {
+export function Label({ required, className, children, ...props }: LabelProps) {
   return (
     <label
-      className={['block text-sm font-medium text-gray-700 mb-1', className].join(' ')}
+      className={cn(
+        'block mb-2 text-xs font-semibold tracking-wide uppercase text-[#737373]',
+        className
+      )}
       {...props}
     >
       {children}
       {required && (
-        <span className="ml-1 text-red-500" aria-hidden="true">
+        <span className="ml-0.5 text-[#C9A84C]" aria-hidden="true">
           *
         </span>
       )}

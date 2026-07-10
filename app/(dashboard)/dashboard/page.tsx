@@ -3,9 +3,11 @@ import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Card, CardHeader } from '@/components/ui/Card'
+import { EmptyState } from '@/components/ui/Shared'
 import { StatusBadge } from '@/components/admin/StatusBadge'
 import { formatDate } from '@/lib/utils/booking'
 import { Booking } from '@/lib/types'
+import { CalendarDays } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -16,7 +18,6 @@ export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Fetch user's recent bookings
   const { data: bookings } = await supabase
     .from('bookings')
     .select('*')
@@ -24,14 +25,19 @@ export default async function DashboardPage() {
     .order('created_at', { ascending: false })
     .limit(5)
 
+  const totalBookings = bookings?.length ?? 0
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       {/* Page header */}
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-lg font-semibold text-gray-900">Dashboard</h1>
-          <p className="mt-1 text-sm text-gray-500">
-            Manage your event bookings.
+          <p className="text-caption text-[#C9A84C] mb-2">Your workspace</p>
+          <h1 className="text-headline">Dashboard</h1>
+          <p className="mt-2 text-sm text-[#737373]">
+            {totalBookings === 0
+              ? 'You have no bookings yet.'
+              : `You have ${totalBookings} booking${totalBookings > 1 ? 's' : ''} on record.`}
           </p>
         </div>
         <Link href="/booking">
@@ -39,54 +45,58 @@ export default async function DashboardPage() {
         </Link>
       </div>
 
-      {/* Recent bookings */}
-      <Card>
-        <CardHeader
-          title="Recent Bookings"
-          description="Your last 5 submitted bookings."
-        />
+      {/* Bookings card */}
+      <Card className="p-0 overflow-hidden">
+        <div className="px-8 py-5 border-b border-[#F0EDE9]">
+          <CardHeader
+            title="Recent Bookings"
+            description="Your last 5 submitted bookings."
+          />
+        </div>
 
         {!bookings || bookings.length === 0 ? (
-          <div className="text-center py-10 border border-dashed border-gray-200 rounded-lg">
-            <p className="text-sm text-gray-500">No bookings yet.</p>
-            <p className="mt-1 text-sm text-gray-400">
-              Click &ldquo;Plan My Stay&rdquo; to create your first booking.
-            </p>
+          <div className="p-8">
+            <EmptyState
+              icon={<CalendarDays size={40} />}
+              title="No bookings yet"
+              description="Click &ldquo;Plan My Stay&rdquo; to create your first event booking."
+              action={
+                <Link href="/booking">
+                  <Button variant="secondary">Plan My Stay</Button>
+                </Link>
+              }
+            />
           </div>
         ) : (
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="text-left px-4 py-3 font-semibold text-gray-600">Booking ID</th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-600">Check-in</th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-600">Check-out</th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-600">Guests</th>
-                    <th className="text-left px-4 py-3 font-semibold text-gray-600">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {(bookings as Booking[]).map((booking) => (
-                    <tr key={booking.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-3 font-mono text-xs text-gray-700">
+          <div className="overflow-x-auto">
+            <table className="luxury-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Check-in</th>
+                  <th>Check-out</th>
+                  <th>Guests</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {(bookings as Booking[]).map((booking) => (
+                  <tr key={booking.id}>
+                    <td>
+                      <span className="font-mono text-[11px] text-[#737373] bg-[#F5F3F0] px-2 py-0.5 rounded">
                         {booking.booking_id}
-                      </td>
-                      <td className="px-4 py-3 text-gray-700">
-                        {formatDate(booking.check_in)}
-                      </td>
-                      <td className="px-4 py-3 text-gray-700">
-                        {formatDate(booking.check_out)}
-                      </td>
-                      <td className="px-4 py-3 text-gray-700">{booking.guests}</td>
-                      <td className="px-4 py-3">
-                        <StatusBadge status={booking.status} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                      </span>
+                    </td>
+                    <td className="font-medium">{formatDate(booking.check_in)}</td>
+                    <td className="font-medium">{formatDate(booking.check_out)}</td>
+                    <td className="text-[#737373]">{booking.guests}</td>
+                    <td>
+                      <StatusBadge status={booking.status} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </Card>

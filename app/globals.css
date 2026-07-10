@@ -1,23 +1,285 @@
 @import "tailwindcss";
 
+/* ============================================================
+   MANNAT EVENTS — WORLD-CLASS LUXURY DESIGN SYSTEM
+   ============================================================ */
+
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  /* ---- Fonts ---- */
+  --font-sans:  var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), ui-serif, Georgia, serif;
+
+  /* ---- Color Palette ---- */
+  --color-brand-cream:       #FBF9F6;  /* Sophisticated Ivory */
+  --color-brand-cream-dark:  #FAF6F0;  /* Warm Champagne Ivory */
+  --color-brand-white:       #FFFFFF;
+  --color-brand-obsidian:    #1A1A1A;  /* Deep Obsidian */
+  --color-brand-stone:       #737373;  /* Refined Stone */
+  --color-brand-mist:        #A8A8A8;  /* Muted Warm Gray */
+  --color-brand-border:      rgba(197, 168, 92, 0.12); /* Subtle Gold Border */
+  --color-brand-border-hover:rgba(197, 168, 92, 0.25);
+  --color-brand-gold:        #C5A85C;  /* Antique Warm Gold */
+  --color-brand-gold-light:  #F5EDD6;  /* Soft Champagne tint */
+  --color-brand-gold-hover:  #A5893E;
+
+  /* Status colors — muted and refined */
+  --color-status-pending-bg:    #FEF9EC;
+  --color-status-pending-text:  #92400E;
+  --color-status-pending-border:rgba(245, 158, 11, 0.2);
+
+  --color-status-confirmed-bg:    #EFF6FF;
+  --color-status-confirmed-text:  #1E40AF;
+  --color-status-confirmed-border:rgba(59, 130, 246, 0.2);
+
+  --color-status-completed-bg:    #F0FDF4;
+  --color-status-completed-text:  #065F46;
+  --color-status-completed-border:rgba(16, 185, 129, 0.2);
+
+  --color-status-cancelled-bg:    #FEF2F2;
+  --color-status-cancelled-text:  #991B1B;
+  --color-status-cancelled-border:rgba(239, 68, 68, 0.2);
+
+  /* ---- Shadows ---- */
+  --shadow-card:   0 4px 20px rgba(26, 26, 26, 0.03), 0 1px 3px rgba(197, 168, 92, 0.05);
+  --shadow-hover:  0 12px 38px rgba(26, 26, 26, 0.06), 0 2px 8px rgba(197, 168, 92, 0.08);
+  --shadow-modal:  0 32px 80px rgba(26, 26, 26, 0.12), 0 4px 24px rgba(197, 168, 92, 0.06);
+  --shadow-nav:    0 1px 0 rgba(197, 168, 92, 0.06), 0 4px 12px rgba(26, 26, 26, 0.01);
+
+  /* ---- Border Radius ---- */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+
+  /* ---- Transitions ---- */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1); /* Elegant decelerate */
+  --duration-fast:   200ms;
+  --duration-base:   350ms;
+  --duration-slow:   600ms;
 }
 
-/* Minimal base styles */
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: var(--font-sans);
+  background-color: #FBF9F6;
+  color: #1A1A1A;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
-/* Focus styles for accessibility */
+/* ============================================================
+   FOCUS STYLES — Accessible and elegant
+   ============================================================ */
+
 :focus-visible {
-  outline: 2px solid #111827;
-  outline-offset: 2px;
+  outline: 2px solid #C5A85C;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+  background-color: #F5EDD6;
+  color: #1A1A1A;
+}
+
+/* ============================================================
+   SCROLLBAR — Refined
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4CFC9;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A85C;
+}
+
+/* ============================================================
+   TYPOGRAPHY HIERARCHY
+   ============================================================ */
+
+.text-display {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #1A1A1A;
+}
+
+.text-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+}
+
+.text-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #1A1A1A;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #737373;
+  letter-spacing: 0.01em;
+}
+
+.text-body {
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #1a1a1a;
+}
+
+.text-caption {
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C5A85C;
+}
+
+/* ============================================================
+   LUXURY AMBIENCE & DEPTHEFFECTS
+   ============================================================ */
+
+/* Glow panels */
+.bg-ambient-radial-1 {
+  background-image: radial-gradient(circle at 10% 20%, rgba(245, 237, 214, 0.4) 0%, rgba(251, 249, 246, 0) 60%);
+}
+
+.bg-ambient-radial-2 {
+  background-image: radial-gradient(circle at 90% 80%, rgba(240, 230, 200, 0.3) 0%, rgba(251, 249, 246, 0) 60%);
+}
+
+.bg-ambient-hero {
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(245, 237, 214, 0.55) 0%, rgba(251, 249, 246, 0) 55%),
+    radial-gradient(circle at 15% 70%, rgba(240, 230, 200, 0.3) 0%, rgba(251, 249, 246, 0) 45%);
+}
+
+/* Textured Background overlay using SVG noise */
+.luxury-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+}
+
+/* ============================================================
+   LUXURY CARD OVERHAUL
+   ============================================================ */
+
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(197, 168, 92, 0.08);
+  box-shadow: 0 4px 30px rgba(26, 26, 26, 0.02), 0 1px 3px rgba(197, 168, 92, 0.04);
+  backdrop-filter: blur(10px);
+}
+
+.luxury-card-glow {
+  position: relative;
+}
+.luxury-card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(197, 168, 92, 0.15), rgba(197, 168, 92, 0.02) 40%, rgba(197, 168, 92, 0.15));
+  border-radius: inherit;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================================
+   LUXURY TABLE
+   ============================================================ */
+
+.luxury-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.luxury-table thead tr {
+  border-bottom: 1px solid rgba(197, 168, 92, 0.08);
+}
+
+.luxury-table th {
+  text-align: left;
+  padding: 16px 24px;
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #737373;
+  background-color: #FAF8F5;
+}
+
+.luxury-table td {
+  padding: 18px 24px;
+  font-size: 0.9rem;
+  color: #1A1A1A;
+  border-bottom: 1px solid rgba(197, 168, 92, 0.04);
+}
+
+.luxury-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.luxury-table tbody tr:hover td {
+  background-color: #FDFCFA;
+}
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(197, 168, 92, 0.08);
+}
+
+.divider-gold {
+  width: 32px;
+  height: 1.5px;
+  background-color: #C5A85C;
+  border-radius: 1px;
 }

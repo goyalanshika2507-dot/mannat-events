@@ -43,16 +43,9 @@ export async function middleware(request: NextRequest) {
   }
 
   // ---- Redirect authenticated users away from auth pages ----
-  if (user && (pathname === '/login' || pathname === '/signup' || pathname === '/')) {
+  if (user && (pathname === '/login' || pathname === '/signup')) {
     const url = request.nextUrl.clone()
     url.pathname = '/dashboard'
-    return NextResponse.redirect(url)
-  }
-
-  // ---- Redirect root for unauthenticated users ----
-  if (!user && pathname === '/') {
-    const url = request.nextUrl.clone()
-    url.pathname = '/login'
     return NextResponse.redirect(url)
   }
 

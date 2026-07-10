@@ -1,30 +1,41 @@
 import React from 'react'
+import { cn } from '@/lib/utils/cn'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string
+  hint?: string
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ error, className = '', ...props }, ref) => {
+  ({ error, hint, className, ...props }, ref) => {
     return (
       <div className="w-full">
         <input
           ref={ref}
-          className={[
-            'w-full rounded border px-3 py-2 text-sm text-gray-900',
-            'placeholder:text-gray-400 bg-white',
-            'focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent',
-            'transition-colors',
+          className={cn(
+            // Base
+            'w-full rounded-[10px] px-4 py-3 text-sm text-[#1A1A1A]',
+            'bg-white border',
+            'placeholder:text-[#A8A8A8]',
+            // Transitions
+            'transition-all duration-200',
+            // Focus
+            'focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-0 focus:border-transparent',
+            // Error / Normal
             error
-              ? 'border-red-500 focus:ring-red-500'
-              : 'border-gray-300',
-            'disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed',
-            className,
-          ].join(' ')}
+              ? 'border-red-400 focus:ring-red-400 bg-red-50/30'
+              : 'border-[#E8E5E0] hover:border-[#D4CFC9]',
+            // Disabled
+            'disabled:bg-[#F5F3F0] disabled:text-[#A8A8A8] disabled:cursor-not-allowed',
+            className
+          )}
           {...props}
         />
+        {hint && !error && (
+          <p className="mt-1.5 text-xs text-[#A8A8A8]">{hint}</p>
+        )}
         {error && (
-          <p className="mt-1 text-xs text-red-600" role="alert">
+          <p className="mt-1.5 text-xs text-red-600" role="alert">
             {error}
           </p>
         )}

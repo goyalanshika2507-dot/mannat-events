@@ -27,8 +27,8 @@ export function StepGuests({ data, onNext, onPrev }: StepGuestsProps) {
   })
 
   return (
-    <form onSubmit={handleSubmit(onNext)} noValidate className="space-y-6">
-      <div className="max-w-xs">
+    <form onSubmit={handleSubmit(onNext)} noValidate className="space-y-8">
+      <div className="max-w-md">
         <Label htmlFor="guests" required>
           Number of guests
         </Label>
@@ -39,17 +39,17 @@ export function StepGuests({ data, onNext, onPrev }: StepGuestsProps) {
           max={500}
           placeholder="e.g. 100"
           error={errors.guests?.message}
+          hint="Specify total attendance to ensure seamless room and meal arrangements."
           {...register('guests', { valueAsNumber: true })}
         />
-        <p className="mt-1.5 text-xs text-gray-500">Enter the total headcount for the event.</p>
       </div>
 
-      <div className="flex justify-between">
-        <Button type="button" variant="secondary" size="lg" onClick={onPrev}>
+      <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 pt-2">
+        <Button type="button" variant="secondary" size="lg" onClick={onPrev} className="w-full sm:w-auto">
           Previous
         </Button>
-        <Button type="submit" size="lg">
-          Next
+        <Button type="submit" size="lg" className="w-full sm:w-auto">
+          Next Step
         </Button>
       </div>
     </form>

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { LoginForm } from '@/components/auth/LoginForm'
-import { Card } from '@/components/ui/Card'
 
 export const metadata: Metadata = {
   title: 'Sign In',
@@ -9,9 +8,13 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <Card>
-      <h2 className="text-base font-semibold text-gray-900 mb-6">Sign in</h2>
+    <div
+      className="bg-white rounded-[18px] border border-[#E8E5E0] p-8"
+      style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.06)' }}
+    >
+      <h2 className="text-xl font-semibold text-[#1A1A1A] mb-1 tracking-tight">Welcome back</h2>
+      <p className="text-sm text-[#A8A8A8] mb-8">Sign in to manage your bookings.</p>
       <LoginForm />
-    </Card>
+    </div>
   )
 }

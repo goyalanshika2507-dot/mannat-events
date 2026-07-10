@@ -1,15 +1,28 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
 
 export const metadata: Metadata = {
   title: {
-    default: 'Mannat Events',
+    default: 'Mannat Events — Bespoke Event & Hospitality Management',
     template: '%s | Mannat Events',
   },
-  description: 'Professional event booking management platform.',
+  description: 'A premium event and hospitality booking management platform.',
 }
 
 export default function RootLayout({
@@ -18,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-gray-50 text-gray-900 antialiased min-h-screen">
+    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+      <body className="antialiased min-h-screen">
         {children}
       </body>
     </html>

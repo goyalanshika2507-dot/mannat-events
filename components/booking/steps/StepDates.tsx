@@ -9,6 +9,7 @@ import { BookingFormData } from '@/lib/types'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
+import { CalendarDays } from 'lucide-react'
 
 interface StepDatesProps {
   data: Partial<BookingFormData>
@@ -36,7 +37,6 @@ export function StepDates({ data, onNext }: StepDatesProps) {
   const checkOut = watch('check_out')
   const duration = calculateDuration(checkIn, checkOut)
 
-  // Logic: Agar checkIn change ho, toh purani invalid checkOut ko clear kar do
   useEffect(() => {
     if (checkIn && checkOut && checkOut <= checkIn) {
       setValue('check_out', '')
@@ -44,8 +44,8 @@ export function StepDates({ data, onNext }: StepDatesProps) {
   }, [checkIn, checkOut, setValue])
 
   return (
-    <form onSubmit={handleSubmit(onNext)} noValidate className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit(onNext)} noValidate className="space-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <Label htmlFor="check_in" required>
             Check-in date
@@ -75,18 +75,25 @@ export function StepDates({ data, onNext }: StepDatesProps) {
 
       {/* Duration summary */}
       {duration > 0 && (
-        <div className="rounded border border-gray-200 bg-gray-50 px-4 py-3">
-          <p className="text-sm text-gray-700">
-            <span className="font-medium">Duration:</span>{' '}
-            {duration} {duration === 1 ? 'night' : 'nights'}
-            {' '}({formatDate(checkIn)} &ndash; {formatDate(checkOut)})
-          </p>
+        <div className="rounded-[12px] border border-[#E8E5E0] bg-[#FAF8F5] px-6 py-4 flex items-center gap-4 transition-all duration-300">
+          <div className="text-[#C9A84C] shrink-0">
+            <CalendarDays size={20} />
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-0.5">Stay Period</p>
+            <p className="text-sm font-semibold text-[#1A1A1A]">
+              {duration} {duration === 1 ? 'night' : 'nights'}
+              <span className="font-normal text-[#737373] ml-1.5">
+                ({formatDate(checkIn)} &ndash; {formatDate(checkOut)})
+              </span>
+            </p>
+          </div>
         </div>
       )}
 
-      <div className="flex justify-end">
-        <Button type="submit" size="lg">
-          Next
+      <div className="flex justify-end pt-2">
+        <Button type="submit" size="lg" className="w-full sm:w-auto">
+          Next Step
         </Button>
       </div>
     </form>

@@ -1,6 +1,7 @@
 import { BookingFormData } from '@/lib/types'
 import { formatDate, getMealLabel, calculateDuration } from '@/lib/utils/booking'
 import { Button } from '@/components/ui/Button'
+import { Card } from '@/components/ui/Card'
 
 interface StepReviewProps {
   data: BookingFormData
@@ -12,13 +13,16 @@ interface StepReviewProps {
 interface ReviewRowProps {
   label: string
   value: string | number
+  mono?: boolean
 }
 
-function ReviewRow({ label, value }: ReviewRowProps) {
+function ReviewRow({ label, value, mono = false }: ReviewRowProps) {
   return (
-    <div className="flex justify-between py-2 border-b border-gray-100 last:border-0">
-      <span className="text-sm text-gray-600">{label}</span>
-      <span className="text-sm font-medium text-gray-900">{value}</span>
+    <div className="flex justify-between items-center py-3.5 border-b border-[#F0EDE9] last:border-0">
+      <span className="text-xs font-semibold uppercase tracking-wider text-[#A8A8A8]">{label}</span>
+      <span className={mono ? 'font-mono text-xs text-[#1A1A1A] bg-[#FAF8F5] px-2 py-0.5 rounded' : 'text-sm font-semibold text-[#1A1A1A]'}>
+        {value}
+      </span>
     </div>
   )
 }
@@ -27,58 +31,63 @@ export function StepReview({ data, onSubmit, onPrev, isSubmitting }: StepReviewP
   const duration = calculateDuration(data.check_in, data.check_out)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Stay details */}
-      <section>
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-          Stay Details
-        </h3>
-        <div className="border border-gray-200 rounded-lg px-4 divide-y divide-gray-100">
+      <Card className="p-0 overflow-hidden">
+        <div className="px-6 py-4 border-b border-[#F0EDE9] bg-[#FDFCFA] flex justify-between items-center">
+          <h4 className="text-caption text-[#C9A84C]">Stay Details</h4>
+          <span className="text-[10px] text-[#A8A8A8] uppercase font-bold tracking-wider">Accommodation</span>
+        </div>
+        <div className="px-6 py-2">
           <ReviewRow label="Check-in"  value={formatDate(data.check_in)} />
           <ReviewRow label="Check-out" value={formatDate(data.check_out)} />
           <ReviewRow label="Duration"  value={`${duration} ${duration === 1 ? 'night' : 'nights'}`} />
           <ReviewRow label="Guests"    value={data.guests} />
         </div>
-      </section>
+      </Card>
 
       {/* Meal plan */}
-      <section>
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
-          Meal Plan
-        </h3>
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          {/* Table header */}
-          <div className="grid grid-cols-4 bg-gray-50 border-b border-gray-200 px-4 py-2">
-            <span className="text-xs font-semibold text-gray-600">Day</span>
-            <span className="text-xs font-semibold text-gray-600">Breakfast</span>
-            <span className="text-xs font-semibold text-gray-600">Lunch</span>
-            <span className="text-xs font-semibold text-gray-600">Dinner</span>
-          </div>
-          {/* Table rows */}
-          {data.meals.map((meal) => (
-            <div
-              key={meal.day}
-              className="grid grid-cols-4 px-4 py-2 border-b border-gray-100 last:border-0"
-            >
-              <span className="text-sm text-gray-700">Day {meal.day}</span>
-              <span className="text-sm text-gray-500 italic">Included</span>
-              <span className="text-sm text-gray-900">{getMealLabel(meal.lunch)}</span>
-              <span className="text-sm text-gray-900">{getMealLabel(meal.dinner)}</span>
-            </div>
-          ))}
+      <Card className="p-0 overflow-hidden">
+        <div className="px-6 py-4 border-b border-[#F0EDE9] bg-[#FDFCFA] flex justify-between items-center">
+          <h4 className="text-caption text-[#C9A84C]">Custom Cuisines</h4>
+          <span className="text-[10px] text-[#A8A8A8] uppercase font-bold tracking-wider">Daily Plan</span>
         </div>
-      </section>
+        <div className="overflow-x-auto">
+          <table className="luxury-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Breakfast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.meals.map((meal) => (
+                <tr key={meal.day}>
+                  <td className="font-medium">Day {meal.day}</td>
+                  <td className="text-[#A8A8A8] italic">Included</td>
+                  <td>{getMealLabel(meal.lunch)}</td>
+                  <td>{getMealLabel(meal.dinner)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Card>
 
       {/* Actions */}
-      <div className="flex justify-between">
-        <Button type="button" variant="secondary" size="lg" onClick={onPrev}>
+      <div className="flex flex-col-reverse sm:flex-row justify-between gap-4 pt-2">
+        <Button type="button" variant="secondary" size="lg" onClick={onPrev} className="w-full sm:w-auto">
           Previous
         </Button>
         <Button
           type="button"
           size="lg"
+          variant="gold"
           loading={isSubmitting}
           onClick={onSubmit}
+          className="w-full sm:w-auto"
         >
           Confirm Booking
         </Button>
