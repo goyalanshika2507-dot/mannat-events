@@ -1,6 +1,6 @@
 'use client'
 
-import { useReducer, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { BookingFormData, DayMeal } from '@/lib/types'
 import { calculateDuration } from '@/lib/utils/booking'
@@ -18,6 +18,7 @@ import { StepTransportation } from '@/components/booking/steps/StepTransportatio
 import { StepMeals } from '@/components/booking/steps/StepMeals'
 import { StepSpecialRequests } from '@/components/booking/steps/StepSpecialRequests'
 import { StepReview } from '@/components/booking/steps/StepReview'
+import { LiveBookingSummary } from '@/components/booking/LiveBookingSummary'
 
 interface WizardState {
   step: number
@@ -37,6 +38,7 @@ type WizardAction =
   | { type: 'NEXT_MEALS'; payload: { meals: DayMeal[] } }
   | { type: 'NEXT_REQUESTS'; payload: { special_requests: string } }
   | { type: 'PREV' }
+  | { type: 'RESTORE'; payload: WizardState }
 
 function wizardReducer(
   state: WizardState,
@@ -115,6 +117,9 @@ function wizardReducer(
         step: Math.max(1, state.step - 1),
       }
 
+    case 'RESTORE':
+      return action.payload
+
     default:
       return state
   }
@@ -136,6 +141,7 @@ const STEP_LABELS = [
 ]
 
 const TOTAL_STEPS = STEP_LABELS.length
+const STORAGE_KEY = 'mannat-booking-progress'
 
 export function BookingWizard() {
   const router = useRouter()
@@ -147,6 +153,43 @@ export function BookingWizard() {
     step: 1,
     data: {},
   })
+  
+  const [hasLoaded, setHasLoaded] = useState(false)
+
+  useEffect(() => {
+    try {
+      const savedProgress = localStorage.getItem(STORAGE_KEY)
+
+      if (savedProgress) {
+        const parsed = JSON.parse(savedProgress) as WizardState
+
+        if (
+          typeof parsed.step === 'number' &&
+          parsed.step >= 1 &&
+          parsed.step <= TOTAL_STEPS &&
+          parsed.data
+        ) {
+          dispatch({
+            type: 'RESTORE',
+            payload: parsed,
+          })
+        }
+      }
+    } catch {
+      localStorage.removeItem(STORAGE_KEY)
+    } finally {
+      setHasLoaded(true)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!hasLoaded) return
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(state)
+    )
+  }, [state, hasLoaded])
 
   const duration = calculateDuration(
     state.data.check_in ?? '',
@@ -178,6 +221,7 @@ export function BookingWizard() {
         return
       }
 
+      localStorage.removeItem(STORAGE_KEY)
       router.push(`/booking/confirmation?id=${json.booking_id}`)
     } catch {
       setSubmitError('An unexpected error occurred. Please try again.')
@@ -186,7 +230,10 @@ export function BookingWizard() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
+
+      <main className="min-w-0">
 
       <ProgressBar
         currentStep={state.step}
@@ -398,9 +445,20 @@ export function BookingWizard() {
         </>
       )}
 
+            </main>
+
+      <aside className="hidden md:block">
+        <div className="sticky top-8">
+          <LiveBookingSummary data={state.data} />
+        </div>
+      </aside>
+
     </div>
-  )
+  </div>
+)
 }
+
+        
 
 function isCompleteData(data: Partial<BookingFormData>): data is BookingFormData {
   return (

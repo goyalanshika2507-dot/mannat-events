@@ -37,8 +37,7 @@ export function StepPhotography({
   const selected = data.photography
 
   return (
-    <div className="space-y-8">
-
+    <div className="space-y-8 pb-24 md:pb-0">
       <div>
         <h2 className="text-3xl font-light">
           Photography Package
@@ -50,9 +49,7 @@ export function StepPhotography({
       </div>
 
       <div className="grid md:grid-cols-3 gap-5">
-
         {OPTIONS.map((option) => (
-
           <Card
             key={option.id}
             as="button"
@@ -63,7 +60,6 @@ export function StepPhotography({
             }
             className={cn(
               'cursor-pointer p-6 border-2 transition-all hover:-translate-y-1 hover:shadow-xl',
-
               selected === option.id
                 ? 'border-[#C9A84C]'
                 : 'border-transparent'
@@ -76,20 +72,35 @@ export function StepPhotography({
             <p className="mt-3 text-sm text-[#737373]">
               {option.description}
             </p>
-
           </Card>
-
         ))}
-
       </div>
 
-      <Button
-        variant="secondary"
-        onClick={onPrev}
-      >
-        Previous
-      </Button>
+      {/* Desktop Previous */}
+      <div className="hidden md:flex justify-start">
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={onPrev}
+        >
+          Previous
+        </Button>
+      </div>
 
+      {/* Mobile Sticky Bottom Navigation */}
+      <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E5E0] bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div className="max-w-lg mx-auto">
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={onPrev}
+            className="w-full"
+          >
+            Previous
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }

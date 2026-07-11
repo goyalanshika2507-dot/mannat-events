@@ -6,36 +6,12 @@ import { BookingFormData } from '@/lib/types'
 import { cn } from '@/lib/utils/cn'
 
 const COLOURS = [
-  {
-    id: 'gold',
-    title: 'Royal Gold',
-    color: '#C9A84C',
-  },
-  {
-    id: 'white',
-    title: 'Classic White',
-    color: '#F8F8F8',
-  },
-  {
-    id: 'red',
-    title: 'Royal Red',
-    color: '#8B0000',
-  },
-  {
-    id: 'blue',
-    title: 'Royal Blue',
-    color: '#1E3A8A',
-  },
-  {
-    id: 'pastel',
-    title: 'Pastel',
-    color: '#EBC8C8',
-  },
-  {
-    id: 'green',
-    title: 'Emerald',
-    color: '#047857',
-  },
+  { id: 'gold', title: 'Royal Gold', color: '#C9A84C' },
+  { id: 'white', title: 'Classic White', color: '#F8F8F8' },
+  { id: 'red', title: 'Royal Red', color: '#8B0000' },
+  { id: 'blue', title: 'Royal Blue', color: '#1E3A8A' },
+  { id: 'pastel', title: 'Pastel', color: '#EBC8C8' },
+  { id: 'green', title: 'Emerald', color: '#047857' },
 ]
 
 interface Props {
@@ -52,8 +28,7 @@ export function StepThemeColour({
   const selected = data.theme_colour
 
   return (
-    <div className="space-y-8">
-
+    <div className="space-y-8 pb-24 md:pb-0">
       <div>
         <h2 className="text-3xl font-light">
           Choose Theme Colour
@@ -65,9 +40,7 @@ export function StepThemeColour({
       </div>
 
       <div className="grid md:grid-cols-3 gap-5">
-
         {COLOURS.map((item) => (
-
           <Card
             key={item.id}
             as="button"
@@ -78,7 +51,6 @@ export function StepThemeColour({
             }
             className={cn(
               'cursor-pointer p-6 border-2 transition-all hover:shadow-xl hover:-translate-y-1',
-
               selected === item.id
                 ? 'border-[#C9A84C]'
                 : 'border-transparent'
@@ -94,20 +66,35 @@ export function StepThemeColour({
             <h3 className="text-lg font-medium">
               {item.title}
             </h3>
-
           </Card>
-
         ))}
-
       </div>
 
-      <Button
-        variant="secondary"
-        onClick={onPrev}
-      >
-        Previous
-      </Button>
+      {/* Desktop Previous */}
+      <div className="hidden md:flex justify-start">
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={onPrev}
+        >
+          Previous
+        </Button>
+      </div>
 
+      {/* Mobile Sticky Bottom Navigation */}
+      <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E5E0] bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div className="max-w-lg mx-auto">
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={onPrev}
+            className="w-full"
+          >
+            Previous
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }

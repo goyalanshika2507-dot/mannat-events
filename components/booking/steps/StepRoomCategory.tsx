@@ -42,8 +42,7 @@ export function StepRoomCategory({
   const selected = data.room_category
 
   return (
-    <div className="space-y-8">
-
+    <div className="space-y-8 pb-24 md:pb-0">
       <div>
         <h2 className="text-3xl font-light">
           Choose Room Category
@@ -55,9 +54,7 @@ export function StepRoomCategory({
       </div>
 
       <div className="grid md:grid-cols-2 gap-5">
-
-        {ROOMS.map(room => (
-
+        {ROOMS.map((room) => (
           <Card
             key={room.id}
             onClick={() =>
@@ -67,7 +64,6 @@ export function StepRoomCategory({
             }
             className={cn(
               'cursor-pointer p-8 border-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl',
-
               selected === room.id
                 ? 'border-[#C9A84C]'
                 : 'border-transparent'
@@ -80,20 +76,35 @@ export function StepRoomCategory({
             <p className="mt-3 text-sm text-[#737373]">
               {room.description}
             </p>
-
           </Card>
-
         ))}
-
       </div>
 
-      <Button
-        variant="secondary"
-        onClick={onPrev}
-      >
-        Previous
-      </Button>
+      {/* Desktop Previous */}
+      <div className="hidden md:flex justify-start">
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={onPrev}
+        >
+          Previous
+        </Button>
+      </div>
 
+      {/* Mobile Sticky Bottom Navigation */}
+      <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E5E0] bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+        <div className="max-w-lg mx-auto">
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={onPrev}
+            className="w-full"
+          >
+            Previous
+          </Button>
+        </div>
+      </div>
     </div>
   )
 }
