@@ -38,11 +38,9 @@ export const StepGuestsSchema = z.object({
     .max(500, 'Maximum 500 guests allowed'),
 })
 
-// ---- Step 3: Meals ----
+// ---- Meals ----
 
-const MealOptionEnum = z.enum(['skip', 'veg', 'non-veg'], {
-  error: 'Please select a meal option',
-})
+const MealOptionEnum = z.enum(['skip', 'veg', 'non-veg'])
 
 const DayMealSchema = z.object({
   day: z.number().int().positive(),
@@ -51,16 +49,79 @@ const DayMealSchema = z.object({
 })
 
 export const StepMealsSchema = z.object({
-  meals: z.array(DayMealSchema).min(1, 'Meal selections are required'),
+  meals: z
+    .array(DayMealSchema)
+    .min(1, 'Meal selections are required'),
+})
+
+// ---- Phase 2 Event Details ----
+
+export const StepEventSchema = z.object({
+  event_type: z.string().min(1, 'Event type is required'),
+})
+
+export const StepDecorationSchema = z.object({
+  decoration_theme: z
+    .string()
+    .min(1, 'Decoration theme is required'),
+})
+
+export const StepThemeColourSchema = z.object({
+  theme_colour: z
+    .string()
+    .min(1, 'Theme colour is required'),
+})
+
+export const StepRoomSchema = z.object({
+  room_category: z
+    .string()
+    .min(1, 'Room category is required'),
+})
+
+// ---- Additional Services ----
+
+export const StepEntertainmentSchema = z.object({
+  entertainment: z.array(z.string()),
+})
+
+export const StepPhotographySchema = z.object({
+  photography: z.string().min(1, 'Photography option is required'),
+})
+
+export const StepTransportationSchema = z.object({
+  transportation: z
+    .string()
+    .min(1, 'Transportation option is required'),
+})
+
+export const StepSpecialRequestsSchema = z.object({
+  special_requests: z.string(),
 })
 
 // ---- Full Booking Schema ----
 
-export const BookingSchema = StepDatesSchema.and(StepGuestsSchema).and(StepMealsSchema)
+export const BookingSchema = z.object({
+  check_in: z.string().min(1),
+  check_out: z.string().min(1),
+
+  guests: z.number().int().min(1).max(500),
+
+  event_type: z.string().min(1),
+  decoration_theme: z.string().min(1),
+  theme_colour: z.string().min(1),
+  room_category: z.string().min(1),
+
+  entertainment: z.array(z.string()),
+  photography: z.string().min(1),
+  transportation: z.string().min(1),
+  special_requests: z.string(),
+
+  meals: z.array(DayMealSchema).min(1),
+})
 
 // ---- Inferred Types ----
 
-export type StepDatesValues  = z.infer<typeof StepDatesSchema>
+export type StepDatesValues = z.infer<typeof StepDatesSchema>
 export type StepGuestsValues = z.infer<typeof StepGuestsSchema>
-export type StepMealsValues  = z.infer<typeof StepMealsSchema>
-export type BookingValues     = z.infer<typeof BookingSchema>
+export type StepMealsValues = z.infer<typeof StepMealsSchema>
+export type BookingValues = z.infer<typeof BookingSchema>
