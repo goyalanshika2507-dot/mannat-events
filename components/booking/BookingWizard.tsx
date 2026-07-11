@@ -402,21 +402,19 @@ export function BookingWizard() {
   )
 }
 
-function isCompleteData(
-  data: Partial<BookingFormData>
-): data is BookingFormData {
+function isCompleteData(data: Partial<BookingFormData>): data is BookingFormData {
   return (
-    data.check_in !== undefined &&
-    data.check_out !== undefined &&
-    data.guests !== undefined &&
-    data.event_type !== undefined &&
-    data.decoration_theme !== undefined &&
-    data.theme_colour !== undefined &&
-    data.room_category !== undefined &&
-    data.entertainment !== undefined &&
-    data.photography !== undefined &&
-    data.transportation !== undefined &&
-    data.meals !== undefined &&
-    data.special_requests !== undefined
+    'check_in' in data &&
+    'check_out' in data &&
+    'guests' in data &&
+    'event_type' in data &&
+    'decoration_theme' in data &&
+    'theme_colour' in data &&
+    'room_category' in data &&
+    'entertainment' in data &&
+    'photography' in data &&
+    'transportation' in data &&
+    'meals' in data &&
+    'special_requests' in data
   )
 }

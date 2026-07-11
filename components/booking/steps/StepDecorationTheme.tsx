@@ -39,7 +39,7 @@ export function StepDecorationTheme({
   onNext,
   onPrev,
 }: Props) {
-  const selected = data.decoration_theme
+  const selected = data.decoration_theme ?? ''
 
   return (
     <div className="space-y-8">

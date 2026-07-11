@@ -2,18 +2,13 @@
 // Core Application Types — Mannat Events Phase 1
 // -------------------------------------------------------
 
-// ---- Meal Types ----
-
 export type MealOption = 'skip' | 'veg' | 'non-veg'
 
 export interface DayMeal {
-  day: number        // 1-indexed
+  day: number
   lunch: MealOption
   dinner: MealOption
-  // Breakfast is always included — not stored
 }
-
-// ---- Booking Status ----
 
 export type BookingStatus = 'pending' | 'confirmed' | 'completed' | 'cancelled'
 
@@ -24,14 +19,12 @@ export const BOOKING_STATUS_LABELS: Record<BookingStatus, string> = {
   cancelled: 'Cancelled',
 }
 
-// ---- Booking ----
-
 export interface Booking {
   id: string
   booking_id: string
   user_id: string
-  check_in: string    // ISO date string YYYY-MM-DD
-  check_out: string   // ISO date string YYYY-MM-DD
+  check_in: string
+  check_out: string
   duration: number
   guests: number
   meals: DayMeal[]
@@ -56,10 +49,19 @@ export interface StepMealsData {
   meals: DayMeal[]
 }
 
-export interface BookingFormData extends StepDatesData, StepGuestsData, StepMealsData {}
+// Interface ko thoda behtar tarike se structured kiya hai
+export interface BookingFormData extends StepDatesData, StepGuestsData, StepMealsData {
+  event_type: string
+  decoration_theme: string
+  theme_colour: string
+  room_category: string
+  entertainment: string[]
+  photography: string
+  transportation: string
+  special_requests: string
+}
 
 // ---- Meal Summary ----
-
 export interface MealSummary {
   vegLunch: number
   nonVegLunch: number
@@ -70,7 +72,6 @@ export interface MealSummary {
 }
 
 // ---- API Responses ----
-
 export interface ApiError {
   error: string
   code?: string
