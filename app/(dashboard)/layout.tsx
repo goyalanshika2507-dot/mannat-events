@@ -10,6 +10,11 @@ export default async function DashboardLayout({
 }) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
+  const { data: profile } = await supabase
+  .from('profiles')
+  .select('full_name, role')
+  .eq('id', user!.id)
+  .single()
 
   if (!user) redirect('/login')
 
@@ -49,13 +54,15 @@ export default async function DashboardLayout({
 
           {/* Nav links */}
           <nav className="hidden sm:flex items-center gap-6">
-            <Link
+            {profile?.role === 'admin' && (
+              <Link
               href="/admin"
               className="text-[10px] font-bold uppercase tracking-widest text-[#737373] hover:text-[#1A1A1A] transition-colors duration-200"
-            >
-              Admin Panel
-            </Link>
-          </nav>
+              >
+                Admin Panel
+                </Link>
+              )}
+              </nav>
 
           {/* Right side */}
           <div className="flex items-center gap-4">
