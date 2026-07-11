@@ -447,8 +447,8 @@ export function BookingWizard() {
 
             </main>
 
-      <aside className="hidden md:block">
-        <div className="sticky top-8">
+      <aside className="block">
+        <div className="md:sticky md:top-8">
           <LiveBookingSummary data={state.data} />
         </div>
       </aside>
