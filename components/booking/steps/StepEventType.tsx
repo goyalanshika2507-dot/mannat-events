@@ -57,9 +57,10 @@ export function StepEventType({
         {EVENTS.map((event) => (
           <Card
             key={event.id}
+            as="button"
             onClick={() => onNext({ event_type: event.id })}
             className={cn(
-              'cursor-pointer p-8 transition-all duration-300 border-2 hover:-translate-y-1 hover:shadow-xl',
+              'w-full text-left cursor-pointer p-8 transition-all duration-300 border-2 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2',
               selected === event.id
                 ? 'border-[#C9A84C]'
                 : 'border-transparent'

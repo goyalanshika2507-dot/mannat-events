@@ -50,7 +50,7 @@ export function StepThemeColour({
               })
             }
             className={cn(
-              'cursor-pointer p-6 border-2 transition-all hover:shadow-xl hover:-translate-y-1',
+              'w-full text-left cursor-pointer p-8 transition-all duration-300 border-2 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2',
               selected === item.id
                 ? 'border-[#C9A84C]'
                 : 'border-transparent'

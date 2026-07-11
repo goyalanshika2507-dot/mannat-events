@@ -235,11 +235,13 @@ export function BookingWizard() {
 
       <main className="min-w-0">
 
+    <div className="sticky top-4 z-40 bg-white/95 backdrop-blur-md py-3 mb-6">
       <ProgressBar
         currentStep={state.step}
         totalSteps={TOTAL_STEPS}
         stepLabels={STEP_LABELS}
       />
+    </div>
 
       {state.step === 1 && (
         <StepDates

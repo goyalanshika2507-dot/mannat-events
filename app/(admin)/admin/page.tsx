@@ -4,7 +4,10 @@ import { BookingTable } from '@/components/admin/BookingTable'
 import { Booking } from '@/lib/types'
 import { AdminSummaryCards } from '@/components/admin/AdminSummaryCards'
 import { AdminSearch } from '@/components/admin/AdminSearch'
-import { OccupancyAnalytics, ActivityTimeline } from '@/components/admin/AdminPlaceholders'
+import {
+  OccupancyAnalytics,
+  ActivityTimeline,
+} from '@/components/admin/AdminPlaceholders'
 
 export const metadata: Metadata = {
   title: 'Admin — All Bookings',
@@ -12,19 +15,29 @@ export const metadata: Metadata = {
 }
 
 interface AdminPageProps {
-  searchParams: Promise<{ status?: string; search?: string }>
+  searchParams: Promise<{
+    status?: string
+    bookingId?: string
+    email?: string
+    from?: string
+    to?: string
+  }>
 }
 
 const STATUS_FILTERS = [
-  { value: '',          label: 'All' },
-  { value: 'pending',   label: 'Pending' },
+  { value: '', label: 'All' },
+  { value: 'pending', label: 'Pending' },
   { value: 'confirmed', label: 'Confirmed' },
   { value: 'completed', label: 'Completed' },
   { value: 'cancelled', label: 'Cancelled' },
 ]
 
-export default async function AdminPage({ searchParams }: AdminPageProps) {
-  const { status, search } = await searchParams
+export default async function AdminPage({
+  searchParams,
+}: AdminPageProps) {
+  const { status, bookingId, email, from, to } =
+    await searchParams
+
   const supabase = await createClient()
 
   const { data: allBookings } = await supabase
@@ -34,57 +47,131 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
 
   const bookings = (allBookings ?? []) as Booking[]
 
-  let pending = 0, confirmed = 0, completed = 0, cancelled = 0
-  for (const b of bookings) {
-    if (b.status === 'pending')   pending++
-    if (b.status === 'confirmed') confirmed++
-    if (b.status === 'completed') completed++
-    if (b.status === 'cancelled') cancelled++
+  let pending = 0
+  let confirmed = 0
+  let completed = 0
+  let cancelled = 0
+
+  for (const booking of bookings) {
+    if (booking.status === 'pending') pending++
+    if (booking.status === 'confirmed') confirmed++
+    if (booking.status === 'completed') completed++
+    if (booking.status === 'cancelled') cancelled++
   }
 
+  // Today's date in YYYY-MM-DD format
+  const today = new Date().toLocaleDateString('en-CA', {
+    timeZone: 'Asia/Kolkata',
+  })
+
+  // Count bookings whose check-in date is today
+  const todaysArrivals = bookings.filter(
+    (booking) => booking.check_in === today
+  ).length
+
   let filteredBookings = bookings
-  if (status) filteredBookings = filteredBookings.filter((b) => b.status === status)
-  if (search) {
-    const s = search.toLowerCase()
-    filteredBookings = filteredBookings.filter((b) =>
-      b.booking_id.toLowerCase().includes(s) || b.user_id.toLowerCase().includes(s)
+
+  if (status) {
+    filteredBookings = filteredBookings.filter(
+      (booking) => booking.status === status
+    )
+  }
+
+  if (bookingId) {
+    const value = bookingId.toLowerCase()
+
+    filteredBookings = filteredBookings.filter((booking) =>
+      booking.booking_id.toLowerCase().includes(value)
+    )
+  }
+
+  if (email) {
+    const value = email.toLowerCase()
+
+    filteredBookings = filteredBookings.filter((booking) =>
+      booking.customer_email
+        ?.toLowerCase()
+        .includes(value)
+    )
+  }
+
+  if (from) {
+    filteredBookings = filteredBookings.filter(
+      (booking) =>
+        new Date(booking.created_at) >= new Date(from)
+    )
+  }
+
+  if (to) {
+    const endDate = new Date(to)
+    endDate.setHours(23, 59, 59, 999)
+
+    filteredBookings = filteredBookings.filter(
+      (booking) =>
+        new Date(booking.created_at) <= endDate
     )
   }
 
   return (
     <div className="space-y-8">
-      {/* Page header */}
       <div>
-        <p className="text-caption text-[#C9A84C] mb-2">Management</p>
-        <h1 className="text-headline">All Bookings</h1>
+        <p className="text-caption text-[#C9A84C] mb-2">
+          Management
+        </p>
+
+        <h1 className="text-headline">
+          All Bookings
+        </h1>
+
         <p className="mt-2 text-sm text-[#737373]">
           View, filter and manage all customer bookings.
         </p>
       </div>
 
-      {/* Summary cards */}
       <AdminSummaryCards
         total={bookings.length}
+        todaysArrivals={todaysArrivals}
         pending={pending}
         confirmed={confirmed}
         completed={completed}
         cancelled={cancelled}
       />
 
-      {/* Two Column Grid layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        {/* Main section */}
         <div className="lg:col-span-2 space-y-6">
-          {/* Filters + Search row */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-            {/* Status tabs */}
+          <div className="space-y-4 pt-2">
             <div className="flex items-center gap-1 border border-[#E8E5E0] bg-white rounded-[10px] p-1 overflow-x-auto">
               {STATUS_FILTERS.map((filter) => {
-                const isActive = (status ?? '') === filter.value
+                const isActive =
+                  (status ?? '') === filter.value
+
                 const params = new URLSearchParams()
-                if (filter.value) params.set('status', filter.value)
-                if (search) params.set('search', search)
-                const href = `/admin${params.toString() ? '?' + params.toString() : ''}`
+
+                if (filter.value) {
+                  params.set('status', filter.value)
+                }
+
+                if (bookingId) {
+                  params.set('bookingId', bookingId)
+                }
+
+                if (email) {
+                  params.set('email', email)
+                }
+
+                if (from) {
+                  params.set('from', from)
+                }
+
+                if (to) {
+                  params.set('to', to)
+                }
+
+                const href = `/admin${
+                  params.toString()
+                    ? `?${params.toString()}`
+                    : ''
+                }`
 
                 return (
                   <a
@@ -106,16 +193,16 @@ export default async function AdminPage({ searchParams }: AdminPageProps) {
             <AdminSearch />
           </div>
 
-          {/* Table */}
-          <BookingTable bookings={filteredBookings} />
+          <BookingTable
+            bookings={filteredBookings}
+          />
 
-          {/* Footer meta */}
           <p className="text-xs text-[#A8A8A8] pb-4">
-            Showing {filteredBookings.length} of {bookings.length} bookings
+            Showing {filteredBookings.length} of{' '}
+            {bookings.length} bookings
           </p>
         </div>
 
-        {/* Sidebar placeholders */}
         <div className="space-y-6 lg:sticky lg:top-24">
           <OccupancyAnalytics />
           <ActivityTimeline />

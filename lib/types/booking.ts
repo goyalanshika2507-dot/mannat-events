@@ -34,6 +34,8 @@ export interface Booking {
   id: string
   booking_id: string
   user_id: string
+  customer_email: string | null
+
 
   check_in: string
   check_out: string
@@ -112,3 +114,4 @@ export interface ApiError {
 export interface CreateBookingResponse {
   booking_id: string
 }
+

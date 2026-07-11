@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
         .insert({
           booking_id,
           user_id: user.id,
+          customer_email: user.email ?? null,
           check_in: parsed.check_in,
           check_out: parsed.check_out,
           duration,

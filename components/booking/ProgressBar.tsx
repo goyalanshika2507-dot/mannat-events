@@ -10,7 +10,8 @@ export function ProgressBar({ currentStep, totalSteps, stepLabels }: ProgressBar
   const percentage = Math.round((currentStep / totalSteps) * 100)
 
   return (
-    <div className="mb-12">
+    // 'sticky top-0' aur 'bg-white' add kiya gaya hai
+    <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm pt-4 pb-2 border-b border-[#E8E5E0]">
       {/* Step description */}
       <div className="flex items-baseline justify-between mb-4">
         <div>
@@ -36,7 +37,7 @@ export function ProgressBar({ currentStep, totalSteps, stepLabels }: ProgressBar
       </div>
 
       {/* Minimalist step dots/labels */}
-      <div className="flex justify-between items-center px-1">
+      <div className="flex justify-between items-center px-1 pb-2">
         {stepLabels.map((label, i) => {
           const stepNum = i + 1
           const isCompleted = stepNum < currentStep
