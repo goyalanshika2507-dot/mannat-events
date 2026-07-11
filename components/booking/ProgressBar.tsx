@@ -10,34 +10,34 @@ export function ProgressBar({ currentStep, totalSteps, stepLabels }: ProgressBar
   const percentage = Math.round((currentStep / totalSteps) * 100)
 
   return (
-    // 'sticky top-0' aur 'bg-white' add kiya gaya hai
-    <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm pt-4 pb-2 border-b border-[#E8E5E0]">
+    <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm pt-2 pb-6 border-b border-[#E8E5E0] mb-10">
       {/* Step description */}
-      <div className="flex items-baseline justify-between mb-4">
+      <div className="flex items-baseline justify-between mb-6">
         <div>
-          <span className="text-caption text-[#C9A84C]">Step {currentStep} of {totalSteps}</span>
-          <h2 className="text-xl font-light text-[#1A1A1A] mt-1 tracking-tight">
+          <span className="text-xs font-bold tracking-widest text-[#C9A84C] uppercase">
+            Step {currentStep} of {totalSteps}
+          </span>
+          <h2 className="text-3xl font-light text-[#1A1A1A] mt-2 tracking-tight">
             {stepLabels[currentStep - 1]}
           </h2>
         </div>
-        <span className="text-xs font-semibold text-[#A8A8A8] tracking-widest">{percentage}%</span>
+        <span className="text-sm font-semibold text-[#1A1A1A]">{percentage}%</span>
       </div>
 
       {/* Modern, elegant progress track */}
-      <div className="w-full h-1 bg-[#E8E5E0] rounded-full overflow-hidden mb-6">
+      <div className="w-full h-1.5 bg-[#E8E5E0] rounded-full overflow-hidden mb-8">
         <div
-          className="h-full bg-[#1A1A1A] rounded-full transition-all duration-500 ease-out"
+          className="h-full bg-[#1A1A1A] transition-all duration-500 ease-out"
           style={{ width: `${percentage}%` }}
           role="progressbar"
           aria-valuenow={percentage}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label={`Booking progress: ${percentage}%`}
         />
       </div>
 
       {/* Minimalist step dots/labels */}
-      <div className="flex justify-between items-center px-1 pb-2">
+      <div className="flex justify-between items-center px-1">
         {stepLabels.map((label, i) => {
           const stepNum = i + 1
           const isCompleted = stepNum < currentStep
@@ -46,7 +46,7 @@ export function ProgressBar({ currentStep, totalSteps, stepLabels }: ProgressBar
             <div key={label} className="flex flex-col items-center gap-2">
               <div
                 className={cn(
-                  'w-1.5 h-1.5 rounded-full transition-all duration-300',
+                  'w-2 h-2 rounded-full transition-all duration-300',
                   isCompleted ? 'bg-[#1A1A1A]' : isCurrent ? 'bg-[#C9A84C] scale-125' : 'bg-[#D4CFC9]'
                 )}
               />
