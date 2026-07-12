@@ -230,227 +230,148 @@ export function BookingWizard() {
   }
 
   return (
-  <div className="max-w-7xl mx-auto">
-    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_360px] gap-10 items-start">
+  <div className="w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_380px] gap-12 xl:gap-20 items-start">
 
       <main className="min-w-0">
-
-    <div className="sticky top-4 z-40 bg-white/95 backdrop-blur-md py-3 mb-6">
-      <ProgressBar
-        currentStep={state.step}
-        totalSteps={TOTAL_STEPS}
-        stepLabels={STEP_LABELS}
-      />
-    </div>
-
-      {state.step === 1 && (
-        <StepDates
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_DATES',
-              payload,
-            })
-          }
-        />
-      )}
-
-      {state.step === 2 && (
-        <StepGuests
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_GUESTS',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 3 && (
-        <StepEventType
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_EVENT',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 4 && (
-        <StepDecorationTheme
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_DECORATION',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 5 && (
-        <StepThemeColour
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_THEME',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 6 && (
-        <StepRoomCategory
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_ROOM',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 7 && (
-        <StepEntertainment
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_ENTERTAINMENT',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 8 && (
-        <StepPhotography
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_PHOTOGRAPHY',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 9 && (
-        <StepTransportation
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_TRANSPORT',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 10 && (
-        <StepMeals
-          data={state.data}
-          duration={duration}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_MEALS',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 11 && (
-        <StepSpecialRequests
-          data={state.data}
-          onNext={(payload) =>
-            dispatch({
-              type: 'NEXT_REQUESTS',
-              payload,
-            })
-          }
-          onPrev={() =>
-            dispatch({
-              type: 'PREV',
-            })
-          }
-        />
-      )}
-
-      {state.step === 12 && isCompleteData(state.data) && (
-        <>
-          <StepReview
-            data={state.data}
-            onSubmit={handleSubmit}
-            onPrev={() =>
-              dispatch({
-                type: 'PREV',
-              })
-            }
-            isSubmitting={isSubmitting}
+        <div className="sticky top-0 z-40 bg-[#FAF9F7]/95 backdrop-blur-md py-3 mb-6">
+          <ProgressBar
+            currentStep={state.step}
+            totalSteps={TOTAL_STEPS}
+            stepLabels={STEP_LABELS}
           />
+        </div>
 
-          {submitError && (
-            <p className="mt-4 text-center text-sm text-red-600">
-              {submitError}
-            </p>
-          )}
-        </>
-      )}
+        {state.step === 1 && (
+          <StepDates
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_DATES', payload })
+            }
+          />
+        )}
 
-            </main>
+        {state.step === 2 && (
+          <StepGuests
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_GUESTS', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
 
-      <aside className="block">
-        <div className="md:sticky md:top-8">
+        {state.step === 3 && (
+          <StepEventType
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_EVENT', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 4 && (
+          <StepDecorationTheme
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_DECORATION', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 5 && (
+          <StepThemeColour
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_THEME', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 6 && (
+          <StepRoomCategory
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_ROOM', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 7 && (
+          <StepEntertainment
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_ENTERTAINMENT', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 8 && (
+          <StepPhotography
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_PHOTOGRAPHY', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 9 && (
+          <StepTransportation
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_TRANSPORT', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 10 && (
+          <StepMeals
+            data={state.data}
+            duration={duration}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_MEALS', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 11 && (
+          <StepSpecialRequests
+            data={state.data}
+            onNext={(payload) =>
+              dispatch({ type: 'NEXT_REQUESTS', payload })
+            }
+            onPrev={() => dispatch({ type: 'PREV' })}
+          />
+        )}
+
+        {state.step === 12 && isCompleteData(state.data) && (
+          <>
+            <StepReview
+              data={state.data}
+              onSubmit={handleSubmit}
+              onPrev={() => dispatch({ type: 'PREV' })}
+              isSubmitting={isSubmitting}
+            />
+
+            {submitError && (
+              <p className="mt-4 text-center text-sm text-red-600">
+                {submitError}
+              </p>
+            )}
+          </>
+        )}
+      </main>
+
+      <aside className="hidden lg:block min-w-0">
+        <div className="sticky top-24">
           <LiveBookingSummary data={state.data} />
         </div>
       </aside>
