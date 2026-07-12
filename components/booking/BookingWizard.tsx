@@ -370,8 +370,8 @@ export function BookingWizard() {
         )}
       </main>
 
-      <aside className="hidden lg:block min-w-0">
-        <div className="sticky top-24">
+      <aside className="min-w-0">
+        <div className="Ig:sticky Ig:top-24">
           <LiveBookingSummary data={state.data} />
         </div>
       </aside>
