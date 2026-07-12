@@ -28,73 +28,80 @@ export function StepThemeColour({
   const selected = data.theme_colour
 
   return (
-    <div className="space-y-8 pb-24 md:pb-0">
-      <div>
-        <h2 className="text-3xl font-light">
-          Choose Theme Colour
-        </h2>
+  <div className="pb-24 md:pb-0">
+    {/* Section Introduction */}
+    <div className="mb-8">
+      <h2 className="text-2xl md:text-3xl font-serif font-medium text-[#1A1A1A]">
+        Choose Theme Colour
+      </h2>
 
-        <p className="mt-3 text-[#737373]">
-          Select your preferred event colour palette.
-        </p>
-      </div>
+      <p className="mt-3 text-base text-[#737373] leading-relaxed">
+        Select the colour palette that best complements your event.
+      </p>
+    </div>
 
-      <div className="grid md:grid-cols-3 gap-5">
-        {COLOURS.map((item) => (
-          <Card
-            key={item.id}
-            as="button"
-            onClick={() =>
-              onNext({
-                theme_colour: item.id,
-              })
-            }
-            className={cn(
-              'w-full text-left cursor-pointer p-8 transition-all duration-300 border-2 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2',
-              selected === item.id
-                ? 'border-[#C9A84C]'
-                : 'border-transparent'
-            )}
-          >
-            <div
-              className="w-full h-24 rounded-xl mb-5 border"
-              style={{
-                backgroundColor: item.color,
-              }}
-            />
+    {/* Colour Options */}
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+      {COLOURS.map((item) => (
+        <Card
+          key={item.id}
+          as="button"
+          onClick={() =>
+            onNext({
+              theme_colour: item.id,
+            })
+          }
+          className={cn(
+            'group w-full text-left cursor-pointer overflow-hidden p-0 rounded-2xl border transition-all duration-300',
+            'hover:-translate-y-0.5 hover:shadow-md',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A85C] focus-visible:ring-offset-2',
+            selected === item.id
+              ? 'border-[#C5A85C] shadow-sm'
+              : 'border-[#E8E2D8] bg-white'
+          )}
+        >
+          {/* Colour Preview */}
+          <div
+            className="w-full h-28 md:h-32 border-b border-[#E8E2D8]"
+            style={{
+              backgroundColor: item.color,
+            }}
+          />
 
-            <h3 className="text-lg font-medium">
+          {/* Colour Name */}
+          <div className="px-5 py-4 bg-white">
+            <h3 className="text-base md:text-lg font-serif font-medium text-[#1A1A1A]">
               {item.title}
             </h3>
-          </Card>
-        ))}
-      </div>
-
-      {/* Desktop Previous */}
-      <div className="hidden md:flex justify-start">
-        <Button
-          type="button"
-          variant="secondary"
-          onClick={onPrev}
-        >
-          Previous
-        </Button>
-      </div>
-
-      {/* Mobile Sticky Bottom Navigation */}
-      <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E5E0] bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-        <div className="max-w-lg mx-auto">
-          <Button
-            type="button"
-            variant="secondary"
-            size="lg"
-            onClick={onPrev}
-            className="w-full"
-          >
-            Previous
-          </Button>
-        </div>
-      </div>
+          </div>
+        </Card>
+      ))}
     </div>
-  )
+
+    {/* Desktop Navigation */}
+    <div className="hidden md:flex justify-start mt-10 pt-6 border-t border-[#E8E2D8]">
+      <Button
+        type="button"
+        variant="secondary"
+        size="lg"
+        onClick={onPrev}
+      >
+        Previous
+      </Button>
+    </div>
+
+    {/* Mobile Navigation */}
+    <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E2D8] bg-white/95 backdrop-blur-md px-5 py-4 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
+      <Button
+        type="button"
+        variant="secondary"
+        size="lg"
+        onClick={onPrev}
+        className="w-full"
+      >
+        Previous
+      </Button>
+    </div>
+  </div>
+)
 }

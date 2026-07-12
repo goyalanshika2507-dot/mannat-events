@@ -53,83 +53,74 @@ export function StepDates({
   }, [checkIn, checkOut, setValue])
 
   return (
-    <form
-      onSubmit={handleSubmit(onNext)}
-      noValidate
-      className="space-y-8 pb-24 md:pb-0"
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <form
+    onSubmit={handleSubmit(onNext)}
+    noValidate
+    className="pb-24 md:pb-0"
+  >
+    {/* Date Fields */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+      <div className="space-y-3">
+        <Label htmlFor="check_in" required>
+          Check-in date
+        </Label>
+
+        <Input
+          id="check_in"
+          type="date"
+          min={today}
+          error={errors.check_in?.message}
+          {...register('check_in')}
+        />
+      </div>
+
+      <div className="space-y-3">
+        <Label htmlFor="check_out" required>
+          Check-out date
+        </Label>
+
+        <Input
+          id="check_out"
+          type="date"
+          min={checkIn || today}
+          error={errors.check_out?.message}
+          {...register('check_out')}
+        />
+      </div>
+    </div>
+
+    {/* Stay Summary */}
+    {duration > 0 && (
+      <div className="mt-8 rounded-2xl border border-[#E8E2D8] bg-[#FDFCFA] px-6 py-5 flex items-start gap-4">
+        <div className="w-11 h-11 rounded-xl bg-[#F5EDD6] flex items-center justify-center text-[#C5A85C] shrink-0">
+          <CalendarDays size={21} strokeWidth={1.7} />
+        </div>
+
         <div>
-          <Label htmlFor="check_in" required>
-            Check-in date
-          </Label>
+          <p className="text-sm font-semibold text-[#1A1A1A]">
+            {duration} {duration === 1 ? 'night' : 'nights'}
+          </p>
 
-          <Input
-            id="check_in"
-            type="date"
-            min={today}
-            error={errors.check_in?.message}
-            {...register('check_in')}
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="check_out" required>
-            Check-out date
-          </Label>
-
-          <Input
-            id="check_out"
-            type="date"
-            min={checkIn || today}
-            error={errors.check_out?.message}
-            {...register('check_out')}
-          />
+          <p className="mt-1 text-sm text-[#737373] leading-relaxed">
+            {formatDate(checkIn)} – {formatDate(checkOut)}
+          </p>
         </div>
       </div>
+    )}
 
-      {duration > 0 && (
-        <div className="rounded-[12px] border border-[#E8E5E0] bg-[#FAF8F5] px-6 py-4 flex items-center gap-4 transition-all duration-300">
-          <div className="text-[#C9A84C] shrink-0">
-            <CalendarDays size={20} />
-          </div>
+    {/* Desktop Navigation */}
+    <div className="hidden md:flex justify-end mt-10 pt-6 border-t border-[#E8E2D8]">
+      <Button type="submit" size="lg">
+        Next Step
+      </Button>
+    </div>
 
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#737373] mb-0.5">
-              Stay Period
-            </p>
-
-            <p className="text-sm font-semibold text-[#1A1A1A]">
-              {duration} {duration === 1 ? 'night' : 'nights'}
-
-              <span className="font-normal text-[#737373] ml-1.5">
-                ({formatDate(checkIn)} &ndash;{' '}
-                {formatDate(checkOut)})
-              </span>
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* Desktop Next Button */}
-      <div className="hidden md:flex justify-end pt-2">
-        <Button type="submit" size="lg">
-          Next Step
-        </Button>
-      </div>
-
-      {/* Mobile Sticky Bottom Navigation */}
-      <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E5E0] bg-white/95 backdrop-blur-md px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
-        <div className="max-w-lg mx-auto">
-          <Button
-            type="submit"
-            size="lg"
-            className="w-full"
-          >
-            Next Step
-          </Button>
-        </div>
-      </div>
-    </form>
-  )
+    {/* Mobile Navigation */}
+    <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E2D8] bg-white/95 backdrop-blur-md px-5 py-4 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
+      <Button type="submit" size="lg" className="w-full">
+        Next Step
+      </Button>
+    </div>
+  </form>
+)
 }

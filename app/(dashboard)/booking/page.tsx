@@ -8,23 +8,29 @@ export const metadata: Metadata = {
 
 export default function BookingPage() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-12">
+    <div className="w-full">
       {/* Page Header */}
-      <div className="mb-12">
-        <p className="text-sm font-medium uppercase tracking-widest text-[#C9A84C] mb-2">
-          Folio Creation
-        </p>
+      <section className="mb-12 border-b border-[#E8E5E0] pb-10 md:mb-16 md:pb-12">
+        <div className="max-w-3xl">
+          <p className="text-caption">
+            Folio Creation
+          </p>
 
-        <h1 className="text-5xl font-light text-[#1A1A1A]">
-          Plan My Stay
-        </h1>
+          <h1 className="mt-4 text-headline">
+            Plan My Stay
+          </h1>
 
-        <p className="mt-4 text-base text-[#737373] max-w-lg">
-          Indicate check-in dates, guest headcount, and event preferences.
-        </p>
-      </div>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#737373]">
+            Build your personalized stay by selecting your dates,
+            guest details, event preferences and additional services.
+          </p>
+        </div>
+      </section>
 
-      <BookingWizard />
+      {/* Booking Wizard */}
+      <section className="pb-16">
+        <BookingWizard />
+      </section>
     </div>
   )
 }

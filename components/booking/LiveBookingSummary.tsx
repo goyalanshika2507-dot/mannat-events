@@ -16,14 +16,14 @@ function SummaryRow({
   if (value === undefined || value === null || value === '') return null
 
   return (
-    <div className="flex justify-between gap-4 py-3 border-b border-[#F0EDE9] last:border-0">
-      <span className="text-xs text-[#A8A8A8] uppercase tracking-wide">
+    <div className="py-4 border-b border-[#EEEAE4] last:border-0">
+      <p className="text-[11px] font-semibold text-[#A08D62] uppercase tracking-[0.14em] mb-1.5">
         {label}
-      </span>
+      </p>
 
-      <span className="text-sm font-medium text-[#1A1A1A] text-right">
+      <p className="text-[15px] font-medium leading-relaxed text-[#1A1A1A] break-words">
         {value}
-      </span>
+      </p>
     </div>
   )
 }
@@ -39,20 +39,26 @@ export function LiveBookingSummary({
   const hasData = Object.keys(data).length > 0
 
   return (
-    <Card className="p-0 overflow-hidden">
-      <div className="px-6 py-5 border-b border-[#F0EDE9] bg-[#FDFCFA]">
-        <p className="text-xs uppercase tracking-[0.18em] text-[#C9A84C] font-semibold">
+    <Card className="p-0 overflow-hidden rounded-2xl border border-[#E8E2D8] shadow-sm bg-white">
+      {/* Header */}
+      <div className="px-7 py-6 border-b border-[#EEEAE4] bg-[#FDFCFA]">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-[#C5A85C] font-semibold">
           Your Booking
         </p>
 
-        <h3 className="mt-1 text-xl font-medium text-[#1A1A1A]">
+        <h3 className="mt-2 text-2xl font-serif font-medium text-[#1A1A1A]">
           Live Summary
         </h3>
+
+        <p className="mt-2 text-sm leading-relaxed text-[#737373]">
+          Your selections update automatically as you complete each step.
+        </p>
       </div>
 
-      <div className="px-6 py-2">
+      {/* Summary Content */}
+      <div className="px-7 py-2 max-h-[calc(100vh-180px)] overflow-y-auto">
         {!hasData && (
-          <p className="py-6 text-sm text-[#A8A8A8]">
+          <p className="py-8 text-[15px] leading-relaxed text-[#8A8A8A]">
             Your selections will appear here as you plan your event.
           </p>
         )}
@@ -69,36 +75,19 @@ export function LiveBookingSummary({
 
         <SummaryRow label="Guests" value={data.guests} />
         <SummaryRow label="Event" value={data.event_type} />
-        <SummaryRow
-          label="Decoration"
-          value={data.decoration_theme}
-        />
-        <SummaryRow
-          label="Theme Colour"
-          value={data.theme_colour}
-        />
-        <SummaryRow
-          label="Room"
-          value={data.room_category}
-        />
+        <SummaryRow label="Decoration" value={data.decoration_theme} />
+        <SummaryRow label="Theme Colour" value={data.theme_colour} />
+        <SummaryRow label="Room" value={data.room_category} />
 
-        {data.entertainment &&
-          data.entertainment.length > 0 && (
-            <SummaryRow
-              label="Entertainment"
-              value={data.entertainment.join(', ')}
-            />
-          )}
+        {data.entertainment && data.entertainment.length > 0 && (
+          <SummaryRow
+            label="Entertainment"
+            value={data.entertainment.join(', ')}
+          />
+        )}
 
-        <SummaryRow
-          label="Photography"
-          value={data.photography}
-        />
-
-        <SummaryRow
-          label="Transport"
-          value={data.transportation}
-        />
+        <SummaryRow label="Photography" value={data.photography} />
+        <SummaryRow label="Transport" value={data.transportation} />
 
         {data.meals && (
           <SummaryRow
