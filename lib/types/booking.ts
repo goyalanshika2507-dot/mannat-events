@@ -35,6 +35,8 @@ export interface WeddingFunction {
 // Day Planning Types
 // -------------------------------------------------------
 
+import { MenuConfig } from '@/lib/menu/types'
+
 export type FoodPreference = 'veg' | 'non-veg'
 
 export interface MealSelection {
@@ -42,6 +44,7 @@ export interface MealSelection {
   menu_item_ids: string[]
   menu_item_names: string[]
   guest_count: number
+  menu_config?: MenuConfig
 }
 
 export interface DayPlan {

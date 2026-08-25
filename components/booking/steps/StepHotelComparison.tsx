@@ -84,6 +84,13 @@ const MENU_RATES: Record<string, number> = {
   'Gold Royal Feast Menu': 2100,
   'Diamond Grand Buffet Menu': 2800,
   'Imperial Taj Special Menu': 3600,
+  // New Banquet Packages
+  'Premium Veg Banquet': 2000,
+  'Executive Veg Banquet': 2500,
+  'Platinum Veg Banquet': 3000,
+  'Premium Non-Veg Banquet': 2650,
+  'Executive Non-Veg Banquet': 3150,
+  'Platinum Non-Veg Banquet': 3650,
 }
 
 const DECOR_RATES: Record<string, number> = {

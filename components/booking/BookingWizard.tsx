@@ -546,8 +546,20 @@ export function BookingWizard() {
                 type: 'SET_DAY_PLAN',
                 day: step.day,
                 plan: {
-                  lunch: { type: plan.lunch.type, guest_count: plan.lunch.guest_count, menu_item_ids: [], menu_item_names: [menuData.lunchMenuPackage] },
-                  dinner: { type: plan.dinner.type, guest_count: plan.dinner.guest_count, menu_item_ids: [], menu_item_names: [menuData.dinnerMenuPackage] },
+                  lunch: { 
+                    type: plan.lunch.type, 
+                    guest_count: plan.lunch.guest_count, 
+                    menu_item_ids: [], 
+                    menu_item_names: [menuData.lunchMenuPackage],
+                    menu_config: menuData.lunchMenuConfig
+                  },
+                  dinner: { 
+                    type: plan.dinner.type, 
+                    guest_count: plan.dinner.guest_count, 
+                    menu_item_ids: [], 
+                    menu_item_names: [menuData.dinnerMenuPackage],
+                    menu_config: menuData.dinnerMenuConfig
+                  },
                 },
               })
               next()

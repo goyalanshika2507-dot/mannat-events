@@ -100,6 +100,95 @@ export function StepReview({ data, onSubmit, onPrev, isSubmitting }: StepReviewP
         </Card>
       )}
 
+      {/* Menu Configuration Details */}
+      {dayPlans.some(p => p.lunch?.menu_config || p.dinner?.menu_config) && (
+        <Card className="p-0 overflow-hidden">
+          <div className="px-6 py-4 border-b border-[#F0EDE9] bg-[#FDFCFA]">
+            <h4 className="text-caption text-[#C9A84C]">Menu Configuration Details</h4>
+          </div>
+          <div className="px-6 py-4 space-y-6">
+            {dayPlans.map(plan => {
+              const lunchConf = plan.lunch?.menu_config
+              const dinnerConf = plan.dinner?.menu_config
+              if (!lunchConf && !dinnerConf) return null
+
+              return (
+                <div key={plan.day} className="space-y-4 border-b border-[#F0EDE9] last:border-0 pb-6 last:pb-0">
+                  <h5 className="font-serif font-bold text-[#1A1A1A]">Day {plan.day}</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Lunch */}
+                    {lunchConf && (
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center bg-green-50/50 p-2 rounded-lg border border-green-100">
+                          <span className="text-xs font-bold text-green-700 uppercase">Lunch: {lunchConf.packageName}</span>
+                          <span className="text-xs font-bold text-[#C5A85C]">₹{lunchConf.pricePerHead}/head</span>
+                        </div>
+                        <div className="text-xs space-y-2 text-[#737373] pl-2">
+                          {lunchConf.selections.map(sel => {
+                            if (sel.items.length === 0) return null
+                            return (
+                              <div key={sel.categoryId}>
+                                <strong className="text-[#1A1A1A] block">{sel.categoryId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}:</strong>
+                                <span>{sel.items.join(', ')}</span>
+                              </div>
+                            )
+                          })}
+                          {lunchConf.liveStations && lunchConf.liveStations.length > 0 && (
+                            <div>
+                              <strong className="text-[#1A1A1A] block">Live Stations:</strong>
+                              <span>{lunchConf.liveStations.join(', ')}</span>
+                            </div>
+                          )}
+                          {lunchConf.addOns && lunchConf.addOns.length > 0 && (
+                            <div>
+                              <strong className="text-[#907030] block">Add-ons:</strong>
+                              <span>{lunchConf.addOns.join(', ')}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Dinner */}
+                    {dinnerConf && (
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center bg-red-50/50 p-2 rounded-lg border border-red-100">
+                          <span className="text-xs font-bold text-red-700 uppercase">Dinner: {dinnerConf.packageName}</span>
+                          <span className="text-xs font-bold text-[#C5A85C]">₹{dinnerConf.pricePerHead}/head</span>
+                        </div>
+                        <div className="text-xs space-y-2 text-[#737373] pl-2">
+                          {dinnerConf.selections.map(sel => {
+                            if (sel.items.length === 0) return null
+                            return (
+                              <div key={sel.categoryId}>
+                                <strong className="text-[#1A1A1A] block">{sel.categoryId.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}:</strong>
+                                <span>{sel.items.join(', ')}</span>
+                              </div>
+                            )
+                          })}
+                          {dinnerConf.liveStations && dinnerConf.liveStations.length > 0 && (
+                            <div>
+                              <strong className="text-[#1A1A1A] block">Live Stations:</strong>
+                              <span>{dinnerConf.liveStations.join(', ')}</span>
+                            </div>
+                          )}
+                          {dinnerConf.addOns && dinnerConf.addOns.length > 0 && (
+                            <div>
+                              <strong className="text-[#907030] block">Add-ons:</strong>
+                              <span>{dinnerConf.addOns.join(', ')}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </Card>
+      )}
+
       {/* Wedding Functions — only if assigned */}
       {functions.length > 0 && (
         <Card className="p-0 overflow-hidden">
