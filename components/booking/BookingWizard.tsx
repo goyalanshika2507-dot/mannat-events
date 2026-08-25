@@ -18,8 +18,6 @@ import {
 
 import { StepDates } from './steps/StepDates'
 import { StepDayPlan } from './steps/StepDayPlan'
-import { StepMenuPackage } from './steps/StepMenuPackage'
-import { StepDinnerFunction } from './steps/StepDinnerFunction'
 import { StepDecorationTheme } from './steps/StepDecorationTheme'
 import { StepHotelComparison } from './steps/StepHotelComparison'
 import { DynamicProgressBar } from './DynamicProgressBar'
@@ -31,32 +29,25 @@ import { Label } from '@/components/ui/Label'
 
 type StepKind =
   | { kind: 'dates' }
-  | { kind: 'day-plan'; day: number }
-  | { kind: 'menu-package'; day: number }
-  | { kind: 'dinner-function'; day: number }
+  | { kind: 'all-days' }
   | { kind: 'decoration' }
   | { kind: 'verify' }
   | { kind: 'hotel-comparison' }
 
-function buildStepList(duration: number): StepKind[] {
-  const steps: StepKind[] = [{ kind: 'dates' }]
-  for (let day = 1; day <= duration; day++) {
-    steps.push({ kind: 'day-plan', day })
-    steps.push({ kind: 'menu-package', day })
-    steps.push({ kind: 'dinner-function', day })
-  }
-  steps.push({ kind: 'decoration' })
-  steps.push({ kind: 'verify' })
-  steps.push({ kind: 'hotel-comparison' })
-  return steps
+function buildStepList(_duration: number): StepKind[] {
+  return [
+    { kind: 'dates' },
+    { kind: 'all-days' },
+    { kind: 'decoration' },
+    { kind: 'verify' },
+    { kind: 'hotel-comparison' },
+  ]
 }
 
 function stepLabel(step: StepKind): string {
   switch (step.kind) {
     case 'dates':            return 'Stay Dates'
-    case 'day-plan':         return `Day ${step.day} Planning`
-    case 'menu-package':     return `Day ${step.day} Menu Package`
-    case 'dinner-function':  return `Day ${step.day} Functions`
+    case 'all-days':         return 'Day Planning'
     case 'decoration':       return 'Decoration Package'
     case 'verify':           return 'Mobile Verification'
     case 'hotel-comparison': return 'Hotel Comparison'
@@ -232,23 +223,16 @@ function StepMobileVerification({ onVerified, onPrev }: { onVerified: (phone: st
       setError('Please enter a valid 10-digit mobile number.')
       return
     }
+    // Demo mode — no real SMS sent
     setIsLoading(true)
-    try {
-      const supabase = createClient()
-      await supabase.auth.signInWithOtp({
-        phone: formatPhone(phone),
-        options: { shouldCreateUser: true },
-      })
-    } catch {
-      /* ignore SMS provider error for mock OTP support */
-    } finally {
+    setTimeout(() => {
       setIsLoading(false)
       setStep('otp')
       startCooldown()
-    }
+    }, 400)
   }
 
-  async function verifyOTP(e: React.FormEvent) {
+  function verifyOTP(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
     const cleanOtp = otp.trim()
@@ -256,49 +240,19 @@ function StepMobileVerification({ onVerified, onPrev }: { onVerified: (phone: st
       setError('Please enter the OTP.')
       return
     }
-    
-    // Support mock OTP '0000' or '000000' for demo/testing
-    if (cleanOtp === '0000' || cleanOtp === '000000' || cleanOtp === '1234' || cleanOtp === '123456') {
+    // Demo mode — only accept 0000
+    if (cleanOtp === '0000') {
       onVerified(formatPhone(phone))
       return
     }
-
-    setIsLoading(true)
-    try {
-      const supabase = createClient()
-      const { error: verifyError } = await supabase.auth.verifyOtp({
-        phone: formatPhone(phone),
-        token: cleanOtp,
-        type: 'sms',
-      })
-      if (verifyError) {
-        setError('Invalid OTP code. (Use mock OTP 0000 for testing)')
-        return
-      }
-      onVerified(formatPhone(phone))
-    } catch {
-      setError('Unable to verify OTP. (Use mock OTP 0000 for testing)')
-    } finally {
-      setIsLoading(false)
-    }
+    setError('Invalid OTP code. For testing, please enter 0000.')
   }
 
-  async function resendOTP() {
+  function resendOTP() {
     if (resendCooldown > 0) return
     setError(null)
-    setIsLoading(true)
-    try {
-      const supabase = createClient()
-      await supabase.auth.signInWithOtp({
-        phone: formatPhone(phone),
-        options: { shouldCreateUser: true },
-      })
-    } catch {
-      /* ignore */
-    } finally {
-      setIsLoading(false)
-      startCooldown()
-    }
+    // Demo mode — just restart the cooldown, no network request
+    startCooldown()
   }
 
   return (
@@ -516,74 +470,19 @@ export function BookingWizard() {
           />
         )
 
-      case 'day-plan': {
-        const plan = getDayPlan(step.day)!
+      case 'all-days': {
         const duration = calculateDuration(data.check_in ?? '', data.check_out ?? '')
+        const plans = data.day_plans ?? []
         return (
           <StepDayPlan
-            day={step.day}
+            day={1}
             totalDays={duration}
-            plan={plan}
+            plan={plans[0]!}
+            plans={plans}
             vegMenuItems={[]}
             nonVegMenuItems={[]}
-            onNext={(newPlan) => {
-              dispatch({ type: 'SET_DAY_PLAN', day: step.day, plan: newPlan })
-              next()
-            }}
-            onPrev={prev}
-          />
-        )
-      }
-
-      case 'menu-package': {
-        const plan = getDayPlan(step.day)!
-        return (
-          <StepMenuPackage
-            day={step.day}
-            plan={plan}
-            onNext={(menuData) => {
-              dispatch({
-                type: 'SET_DAY_PLAN',
-                day: step.day,
-                plan: {
-                  lunch: { 
-                    type: plan.lunch.type, 
-                    guest_count: plan.lunch.guest_count, 
-                    menu_item_ids: [], 
-                    menu_item_names: [menuData.lunchMenuPackage],
-                    menu_config: menuData.lunchMenuConfig
-                  },
-                  dinner: { 
-                    type: plan.dinner.type, 
-                    guest_count: plan.dinner.guest_count, 
-                    menu_item_ids: [], 
-                    menu_item_names: [menuData.dinnerMenuPackage],
-                    menu_config: menuData.dinnerMenuConfig
-                  },
-                },
-              })
-              next()
-            }}
-            onPrev={prev}
-          />
-        )
-      }
-
-      case 'dinner-function': {
-        const plan = getDayPlan(step.day)!
-        return (
-          <StepDinnerFunction
-            day={step.day}
-            plan={plan}
-            onNext={(funcData) => {
-              dispatch({
-                type: 'SET_DAY_PLAN',
-                day: step.day,
-                plan: {
-                  lunch_function: funcData.lunchFunction,
-                  dinner_function: funcData.dinnerFunction,
-                },
-              })
+            onNext={(updatedPlans) => {
+              updatedPlans.forEach(p => dispatch({ type: 'SET_DAY_PLAN', day: p.day, plan: p }))
               next()
             }}
             onPrev={prev}
