@@ -34,7 +34,7 @@ const DECORATION_PACKAGES: {
       'Welcome arch & walkway drapes',
       'Standard seating covers & runners',
     ],
-    imageUrl: '/mandap.jpg',
+    imageUrl: '/wedding_mandap.png',
   },
   {
     id: 'gold',
@@ -76,7 +76,7 @@ const DECORATION_PACKAGES: {
       'Designer lounge furniture & bar setup',
       'Complete venue transformation & FX',
     ],
-    imageUrl: '/palace.jpg',
+    imageUrl: '/venue_palace.png',
   },
 ]
 

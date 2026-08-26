@@ -43,22 +43,22 @@ export function ordinal(n: number): string {
 export function generateDefaultDayPlans(duration: number): DayPlan[] {
   return Array.from({ length: duration }, (_, i) => ({
     day: i + 1,
-    rooms: 10,
-    guest_count: 50,
-    food_preference: 'veg' as const,
+    rooms: 0,
+    guest_count: 0,
+    food_preference: null as unknown as 'veg',
     lunch_function: 'Welcome Lunch',
     dinner_function: 'Welcome Dinner',
     lunch: {
-      type: 'veg' as const,
+      type: null as unknown as 'veg',
       menu_item_ids: [],
-      menu_item_names: ['Welcome Lunch'],
-      guest_count: 50,
+      menu_item_names: [],
+      guest_count: 0,
     },
     dinner: {
-      type: 'veg' as const,
+      type: null as unknown as 'veg',
       menu_item_ids: [],
-      menu_item_names: ['Welcome Dinner'],
-      guest_count: 50,
+      menu_item_names: [],
+      guest_count: 0,
     },
   }))
 }

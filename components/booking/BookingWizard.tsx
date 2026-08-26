@@ -29,25 +29,26 @@ import { Label } from '@/components/ui/Label'
 
 type StepKind =
   | { kind: 'dates' }
-  | { kind: 'all-days' }
+  | { kind: 'day-plan'; day: number }
   | { kind: 'decoration' }
   | { kind: 'verify' }
   | { kind: 'hotel-comparison' }
 
-function buildStepList(_duration: number): StepKind[] {
-  return [
-    { kind: 'dates' },
-    { kind: 'all-days' },
-    { kind: 'decoration' },
-    { kind: 'verify' },
-    { kind: 'hotel-comparison' },
-  ]
+function buildStepList(duration: number): StepKind[] {
+  const steps: StepKind[] = [{ kind: 'dates' }]
+  for (let day = 1; day <= duration; day++) {
+    steps.push({ kind: 'day-plan', day })
+  }
+  steps.push({ kind: 'decoration' })
+  steps.push({ kind: 'verify' })
+  steps.push({ kind: 'hotel-comparison' })
+  return steps
 }
 
 function stepLabel(step: StepKind): string {
   switch (step.kind) {
     case 'dates':            return 'Stay Dates'
-    case 'all-days':         return 'Day Planning'
+    case 'day-plan':         return `Day ${step.day} Planning`
     case 'decoration':       return 'Decoration Package'
     case 'verify':           return 'Mobile Verification'
     case 'hotel-comparison': return 'Hotel Comparison'
@@ -470,19 +471,18 @@ export function BookingWizard() {
           />
         )
 
-      case 'all-days': {
+      case 'day-plan': {
+        const plan = data.day_plans?.find(p => p.day === step.day)!
         const duration = calculateDuration(data.check_in ?? '', data.check_out ?? '')
-        const plans = data.day_plans ?? []
         return (
           <StepDayPlan
-            day={1}
+            day={step.day}
             totalDays={duration}
-            plan={plans[0]!}
-            plans={plans}
+            plan={plan}
             vegMenuItems={[]}
             nonVegMenuItems={[]}
-            onNext={(updatedPlans) => {
-              updatedPlans.forEach(p => dispatch({ type: 'SET_DAY_PLAN', day: p.day, plan: p }))
+            onNext={(newPlan) => {
+              dispatch({ type: 'SET_DAY_PLAN', day: step.day, plan: newPlan })
               next()
             }}
             onPrev={prev}

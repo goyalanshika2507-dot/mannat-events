@@ -545,6 +545,23 @@ export function StepHotelComparison({ data, onSelectHotel, onPrev, isSubmitting 
           </div>
         </div>
       )}
+      {/* Event Estimate Summary for selected choice */}
+      <div className="mt-8 mb-6 p-6 rounded-3xl border border-[#C5A85C] bg-[#FDFAF3] text-center max-w-sm mx-auto shadow-sm">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-[#A08040] mb-1">
+          Your Event Estimate
+        </p>
+        <p className="text-xs text-[#737373]">
+          Selected Venue: <strong className="text-[#1A1A1A]">{selectedHotel.name}</strong>
+        </p>
+        <div className="border-t border-[#E8D9A8] my-3" />
+        <p className="text-[11px] font-bold text-[#737373] uppercase tracking-wider">
+          Estimated Total
+        </p>
+        <p className="text-3xl font-extrabold mt-1 font-serif" style={{ color: '#C5A85C' }}>
+          {selectedHotel.price_display}
+        </p>
+        <p className="text-[10px] text-[#A8A8A8] mt-1">{selectedHotel.tax_info}</p>
+      </div>
 
       {/* Nav */}
       <div className="hidden md:flex justify-between items-center mt-10 pt-6 border-t border-[#E8E2D8]">

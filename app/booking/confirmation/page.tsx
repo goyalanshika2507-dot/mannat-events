@@ -103,6 +103,12 @@ export default async function ConfirmationPage({ searchParams }: ConfirmationPag
                 {peakGuests && peakGuests > 0 && (
                   <DetailRow label="Peak Guests" value={peakGuests} />
                 )}
+                {booking.selected_hotel && (
+                  <>
+                    <DetailRow label="Selected Venue" value={booking.selected_hotel.name} />
+                    <DetailRow label="Estimated Total" value={`₹${booking.selected_hotel.package_price.toLocaleString('en-IN')}`} />
+                  </>
+                )}
               </>
             )}
           </div>
