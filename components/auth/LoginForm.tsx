@@ -1,75 +1,100 @@
-﻿'use client'
+'use client'
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useRouter, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Eye, EyeOff, Mail, Lock, CheckCircle2, AlertCircle } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
-import { LoginSchema, LoginFormValues } from '@/lib/validators/auth'
-import { parseAuthError } from '@/lib/utils/auth'
+import { toast } from 'sonner'
+import { Phone, ShieldCheck, KeyRound, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { Label } from '@/components/ui/Label'
 
 export function LoginForm() {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const verified = searchParams.get('verified') === '1'
-  const passwordReset = searchParams.get('reset') === '1'
-  const callbackError = searchParams.get('error') === 'auth_callback_error'
+  const [mobile, setMobile] = useState('')
+  const [otp, setOtp] = useState('')
+  const [otpSent, setOtpSent] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+  const [isVerifying, setIsVerifying] = useState(false)
+  const [mobileError, setMobileError] = useState('')
+  const [otpError, setOtpError] = useState('')
+  const [countdown, setCountdown] = useState(0)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
-  const [serverError, setServerError] = useState<string | null>(null)
-  const [emailNotVerified, setEmailNotVerified] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<LoginFormValues>({
-    resolver: zodResolver(LoginSchema),
-    defaultValues: {
-      email: '',
-      password: '',
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current)
     }
-  })
+  }, [])
 
-  const emailValue = watch('email')
+  function startCountdown() {
+    setCountdown(30)
+    if (timerRef.current) clearInterval(timerRef.current)
+    timerRef.current = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current!)
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+  }
 
-  async function onSubmit(values: LoginFormValues) {
-    setServerError(null)
-    setEmailNotVerified(false)
-    setIsLoading(true)
+  function formatPhone(raw: string): string {
+    const digits = raw.replace(/\D/g, '')
+    if (digits.startsWith('91') && digits.length === 12) return `+${digits}`
+    return `+91${digits}`
+  }
+
+  async function handleSendOtp() {
+    const digits = mobile.replace(/\D/g, '')
+    if (!/^\d{10}$/.test(digits)) {
+      setMobileError('Please enter a valid 10-digit mobile number')
+      return
+    }
+    setMobileError('')
+    setIsSending(true)
+
+    setTimeout(() => {
+      setIsSending(false)
+      setOtpSent(true)
+      startCountdown()
+      toast.success('OTP sent (Test Mode: enter 0000)')
+    }, 600)
+  }
+
+  async function handleVerify() {
+    if (otp !== '0000') {
+      setOtpError('Invalid OTP. For testing, use 0000.')
+      return
+    }
+    setOtpError('')
+    setIsVerifying(true)
+
+    const formattedPhone = formatPhone(mobile)
 
     try {
-      const supabase = createClient()
-
-      const { error } = await supabase.auth.signInWithPassword({
-        email: values.email,
-        password: values.password,
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: formattedPhone })
       })
 
-      if (error) {
-        const parsed = parseAuthError(error.message)
-        if (parsed.kind === 'email_not_verified') {
-          setEmailNotVerified(true)
-        } else {
-          setServerError(parsed.message)
-        }
-        return
-      }
+      const result = await res.json()
+      setIsVerifying(false)
 
-      router.push('/dashboard')
-      router.refresh()
+      if (result.ok) {
+        document.cookie = `mannat-session=${encodeURIComponent(formattedPhone)}; path=/; max-age=86400; SameSite=Lax`
+        toast.success('Signed in successfully!')
+        router.push('/dashboard')
+        router.refresh()
+      } else {
+        toast.error(result.error || 'Failed to authenticate')
+      }
     } catch {
-      setServerError('Unable to sign in. Please try again.')
-    } finally {
-      setIsLoading(false)
+      setIsVerifying(false)
+      toast.error('An error occurred during sign in')
     }
   }
 
@@ -77,176 +102,118 @@ export function LoginForm() {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.4 }}
+      className="space-y-6"
     >
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
-        <AnimatePresence mode="wait">
-          {verified && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="rounded-[10px] border border-[#C9A84C]/30 bg-[#F5EDD6]/40 px-4 py-3.5 flex items-start gap-3 text-sm text-[#1A1A1A]"
-              role="status"
-            >
-              <CheckCircle2 size={16} className="text-[#C9A84C] mt-0.5 shrink-0" />
-              <span>Your email has been verified. You can now sign in.</span>
-            </motion.div>
-          )}
+      <AnimatePresence mode="wait">
+        {!otpSent ? (
+          <motion.div
+            key="phone-step"
+            initial={{ opacity: 0, x: -8 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 8 }}
+            className="space-y-5"
+          >
+            <div className="space-y-2">
+              <Label htmlFor="phone" required variant="dark">Mobile Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={mobile}
+                onChange={e => setMobile(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && handleSendOtp()}
+                placeholder="Enter 10-digit mobile number"
+                error={mobileError}
+                disabled={isSending}
+                variant="dark"
+                rightElement={<Phone className="h-4 w-4 text-[#C9A84C]/60" />}
+              />
+            </div>
 
-          {passwordReset && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="rounded-[10px] border border-[#C9A84C]/30 bg-[#F5EDD6]/40 px-4 py-3.5 flex items-start gap-3 text-sm text-[#1A1A1A]"
-              role="status"
+            <Button
+              onClick={handleSendOtp}
+              loading={isSending}
+              className="w-full flex items-center justify-center gap-2"
+              size="lg"
             >
-              <CheckCircle2 size={16} className="text-[#C9A84C] mt-0.5 shrink-0" />
-              <span>Your password has been updated. Please sign in with your new password.</span>
-            </motion.div>
-          )}
-
-          {callbackError && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="rounded-[10px] border-red-200 bg-red-50/50 px-4 py-3.5 flex items-start gap-3 text-sm text-red-700"
-              role="alert"
+              Get OTP <ArrowRight size={14} />
+            </Button>
+          </motion.div>
+        ) : (
+          <motion.div
+            key="otp-step"
+            initial={{ opacity: 0, x: 8 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -8 }}
+            className="space-y-5"
+          >
+            <div
+              className="rounded-xl p-4 text-xs flex items-start gap-2.5"
+              style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.2)' }}
             >
-              <AlertCircle size={16} className="text-red-600 mt-0.5 shrink-0" />
-              <span>Authentication link expired or is invalid. Please try again.</span>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <ShieldCheck size={15} className="shrink-0 mt-0.5" style={{ color: '#C9A84C' }} />
+              <div>
+                <p className="font-semibold mb-0.5" style={{ color: '#FAF3E8' }}>Verification Code Sent</p>
+                <p style={{ color: 'rgba(250,243,232,0.55)' }}>
+                  Sent to <span className="font-mono text-[#C9A84C]">{formatPhone(mobile)}</span>.{' '}
+                  Enter <strong className="text-white">0000</strong> for testing.
+                </p>
+              </div>
+            </div>
 
-        <div>
-          <Label htmlFor="email" required variant="dark">
-            Email address
-          </Label>
-          <Input
-            id="email"
-            type="email"
-            autoComplete="email"
-            placeholder="you@example.com"
-            error={errors.email?.message}
-            disabled={isLoading}
-            className="pl-10"
-            variant="dark"
-            rightElement={
-              <Mail className="h-4 w-4 text-[#A8A8A8]" />
-            }
-            {...register('email')}
-          />
-        </div>
+            <div className="space-y-2">
+              <Label htmlFor="otp" required variant="dark">Enter OTP</Label>
+              <Input
+                id="otp"
+                type="text"
+                inputMode="numeric"
+                maxLength={4}
+                value={otp}
+                onChange={e => setOtp(e.target.value.replace(/\D/g, ''))}
+                onKeyDown={e => e.key === 'Enter' && handleVerify()}
+                placeholder="0 0 0 0"
+                error={otpError}
+                disabled={isVerifying}
+                variant="dark"
+                className="text-center tracking-[0.4em] font-mono font-bold text-lg"
+                rightElement={<KeyRound className="h-4 w-4 text-[#C9A84C]/60" />}
+              />
+            </div>
 
-        <div>
-          <div className="flex items-center justify-between mb-2">
-            <Label htmlFor="password" required className="mb-0" variant="dark">
-              Password
-            </Label>
-            <Link
-              href="/forgot-password"
-              className="text-xs font-bold uppercase tracking-widest text-[#737373] hover:text-[#1A1A1A] transition-colors duration-200"
+            <Button
+              onClick={handleVerify}
+              loading={isVerifying}
+              className="w-full"
+              size="lg"
             >
-              Forgot?
-            </Link>
-          </div>
-          <Input
-            id="password"
-            type={showPassword ? 'text' : 'password'}
-            autoComplete="current-password"
-            placeholder="ΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇóΓÇó"
-            error={errors.password?.message}
-            disabled={isLoading}
-            className="pl-10 pr-12"
-            variant="dark"
-            rightElement={
+              Verify &amp; Sign In
+            </Button>
+
+            <div className="flex justify-between items-center text-xs pt-1">
               <button
                 type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="text-[#A8A8A8] hover:text-[#1A1A1A] transition-colors focus:outline-none"
+                onClick={() => { setOtpSent(false); setOtp(''); setOtpError('') }}
+                style={{ color: 'rgba(250,243,232,0.4)' }}
+                className="hover:text-white transition-colors"
               >
-                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                ← Change Number
               </button>
-            }
-            {...register('password')}
-          />
-        </div>
-
-        {/* Remember Me checkbox & layout */}
-        <div className="flex items-center justify-between py-1">
-          <label className="flex items-center gap-2.5 cursor-pointer group">
-            <input
-              type="checkbox"
-              className="rounded-md border-[#E8E5E0] text-[#C9A84C] focus:ring-[#C9A84C] h-4 w-4 accent-[#C9A84C]"
-            />
-            <span className="text-xs font-semibold text-[#737373] group-hover:text-[#1A1A1A] transition-colors select-none">
-              Remember me
-            </span>
-          </label>
-        </div>
-
-        <AnimatePresence>
-          {emailNotVerified && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="rounded-[10px] border border-[#C9A84C]/30 bg-[#F5EDD6]/40 p-4 space-y-2.5"
-              role="alert"
-            >
-              <p className="text-sm font-semibold text-[#1A1A1A] flex items-center gap-2">
-                <AlertCircle size={16} className="text-[#C9A84C] shrink-0" />
-                Email verification required
-              </p>
-              <p className="text-xs text-[#737373] leading-relaxed">
-                Please verify your email address before signing in. Check your inbox
-                for the confirmation link we sent you.
-              </p>
-              <Link
-                href={
-                  emailValue
-                    ? `/verify-email?email=${encodeURIComponent(emailValue)}`
-                    : '/verify-email'
-                }
-                className="inline-block text-xs font-bold uppercase tracking-wider text-[#1A1A1A] hover:text-brand-gold transition-colors underline underline-offset-2"
-              >
-                Resend verification email
-              </Link>
-            </motion.div>
-          )}
-
-          {serverError && (
-            <motion.p
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-xs font-semibold text-red-600 flex items-center gap-1.5"
-              role="alert"
-            >
-              <AlertCircle size={14} className="shrink-0" />
-              {serverError}
-            </motion.p>
-          )}
-        </AnimatePresence>
-
-        <Button
-          type="submit"
-          loading={isLoading}
-          className="w-full shadow-sm hover:shadow"
-          size="lg"
-        >
-          Sign In
-        </Button>
-
-        <p className="text-center text-xs text-[#737373] font-medium pt-2">
-          Don&apos;t have an account?{' '}
-          <Link href="/signup" className="font-bold text-[#1A1A1A] hover:text-[#C9A84C] transition-colors underline underline-offset-2">
-            Create one
-          </Link>
-        </p>
-      </form>
+              {countdown > 0 ? (
+                <span style={{ color: 'rgba(250,243,232,0.3)' }}>Resend in {countdown}s</span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleSendOtp}
+                  className="font-semibold transition-colors"
+                  style={{ color: '#C9A84C' }}
+                >
+                  Resend OTP
+                </button>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }

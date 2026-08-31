@@ -3,10 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ShieldCheck } from 'lucide-react'
 
-interface Props { isLoggedIn: boolean }
+interface Props {
+  isLoggedIn: boolean
+  isAdmin?: boolean
+}
 
-export function LandingNavbar({ isLoggedIn }: Props) {
+export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -30,7 +34,7 @@ export function LandingNavbar({ isLoggedIn }: Props) {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold transition-transform duration-300 group-hover:rotate-3"
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold transition-transform duration-300 group-hover:rotate-3 shadow-md"
               style={{ background: 'linear-gradient(135deg, #9A7B2E, #C9A84C)', color: '#0A0807' }}
             >
               M
@@ -61,41 +65,63 @@ export function LandingNavbar({ isLoggedIn }: Props) {
             ))}
           </nav>
 
-          {/* CTA */}
+          {/* CTA Header Actions */}
           <div className="hidden md:flex items-center gap-4">
-            {isLoggedIn ? (
+            {isLoggedIn && (
               <Link href="/dashboard">
                 <button
-                  className="rounded-full px-6 py-2.5 text-sm font-semibold tracking-wider transition-all duration-300"
+                  className="rounded-full px-5 py-2.5 text-xs font-semibold tracking-wider transition-all duration-300 hover:text-white"
                   style={{
-                    background: 'linear-gradient(135deg, #9A7B2E, #C9A84C)',
-                    color: '#0A0807',
+                    background: 'rgba(255,255,255,0.06)',
+                    color: 'rgba(250,243,232,0.8)',
+                    border: '1px solid rgba(201,168,76,0.25)'
                   }}
                 >
                   My Dashboard
                 </button>
               </Link>
-            ) : (
-              <>
-                <Link
-                  href="/login"
-                  className="text-sm font-medium transition-colors"
-                  style={{ color: 'rgba(250,243,232,0.6)' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FAF3E8')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(250,243,232,0.6)')}
+            )}
+
+            {isAdmin ? (
+              /* ADMIN USER: Replace VIEW RESERVATION with ADMIN PANEL */
+              <Link href="/admin">
+                <button
+                  className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 cursor-pointer"
+                  style={{
+                    background: 'linear-gradient(135deg, #C5A85C 0%, #E8D9A8 50%, #A08040 100%)',
+                    color: '#0A0807',
+                    border: '1px solid #E8D9A8',
+                    boxShadow: '0 4px 20px rgba(201,168,76,0.35)',
+                  }}
                 >
-                  Sign In
-                </Link>
-                <Link href="/booking">
+                  <ShieldCheck size={15} />
+                  <span>ADMIN PANEL</span>
+                </button>
+              </Link>
+            ) : (
+              /* NORMAL USER / GUEST: Keep VIEW RESERVATION button unchanged */
+              <>
+                {!isLoggedIn && (
+                  <Link
+                    href="/login"
+                    className="text-sm font-medium transition-colors mr-2"
+                    style={{ color: 'rgba(250,243,232,0.6)' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FAF3E8')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(250,243,232,0.6)')}
+                  >
+                    Sign In
+                  </Link>
+                )}
+                <Link href={isLoggedIn ? '/dashboard' : '/login'}>
                   <button
-                    className="rounded-full px-6 py-2.5 text-sm font-semibold tracking-wider transition-all duration-300 hover:opacity-90"
+                    className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:opacity-90 cursor-pointer"
                     style={{
-                      background: 'linear-gradient(135deg, #9A7B2E, #C9A84C)',
+                      background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)',
                       color: '#0A0807',
                       boxShadow: '0 4px 20px rgba(201,168,76,0.3)',
                     }}
                   >
-                    Start Planning
+                    VIEW RESERVATION
                   </button>
                 </Link>
               </>
@@ -142,17 +168,27 @@ export function LandingNavbar({ isLoggedIn }: Props) {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4 w-full px-8">
-                <Link href={isLoggedIn ? '/dashboard' : '/booking'} onClick={() => setMobileOpen(false)}>
-                  <button className="w-full rounded-full py-4 font-semibold tracking-wider"
-                    style={{ background: 'linear-gradient(135deg, #9A7B2E, #C9A84C)', color: '#0A0807' }}>
-                    {isLoggedIn ? 'My Dashboard' : 'Start Planning'}
-                  </button>
-                </Link>
-                {!isLoggedIn && (
-                  <Link href="/login" onClick={() => setMobileOpen(false)}>
-                    <button className="w-full rounded-full py-4 font-medium text-sm tracking-wider"
+                {isAdmin ? (
+                  <Link href="/admin" onClick={() => setMobileOpen(false)}>
+                    <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2"
+                      style={{ background: 'linear-gradient(135deg, #C5A85C, #E8D9A8)', color: '#0A0807' }}>
+                      <ShieldCheck size={16} /> ADMIN PANEL
+                    </button>
+                  </Link>
+                ) : (
+                  <Link href={isLoggedIn ? '/dashboard' : '/login'} onClick={() => setMobileOpen(false)}>
+                    <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase"
+                      style={{ background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)', color: '#0A0807' }}>
+                      VIEW RESERVATION
+                    </button>
+                  </Link>
+                )}
+
+                {isLoggedIn && (
+                  <Link href="/dashboard" onClick={() => setMobileOpen(false)}>
+                    <button className="w-full rounded-full py-3.5 font-medium text-sm tracking-wider"
                       style={{ border: '1px solid rgba(201,168,76,0.3)', color: '#FAF3E8' }}>
-                      Sign In
+                      My Dashboard
                     </button>
                   </Link>
                 )}

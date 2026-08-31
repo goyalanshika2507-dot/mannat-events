@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Check, Info, ShieldCheck, Crown, Gem, Award } from 'lucide-react'
+import { Sparkles, Check, Info, Crown, Gem, Award, Loader2 } from 'lucide-react'
 import { BookingFormData, DecorationPackageTier } from '@/lib/types'
 import { Button } from '@/components/ui/Button'
 import { cn } from '@/lib/utils/cn'
@@ -13,81 +13,58 @@ interface Props {
   onPrev: () => void
 }
 
-const DECORATION_PACKAGES: {
+interface DecorPkg {
   id: DecorationPackageTier
   title: string
   subtitle: string
-  icon: React.ReactNode
   badge: string
   features: string[]
-  imageUrl: string
-}[] = [
-  {
-    id: 'silver',
-    title: 'Silver Package',
-    subtitle: 'Elegant Standard Decor',
-    icon: <Award size={20} className="text-slate-500" />,
-    badge: 'Essential',
-    features: [
-      'Standard floral mandap setup',
-      'Ambient LED warm lighting',
-      'Welcome arch & walkway drapes',
-      'Standard seating covers & runners',
-    ],
-    imageUrl: '/wedding_mandap.png',
-  },
-  {
-    id: 'gold',
-    title: 'Gold Package',
-    subtitle: 'Royal Mughal Aesthetics',
-    icon: <Sparkles size={20} className="text-amber-500" />,
-    badge: 'Popular',
-    features: [
-      'Ornate dome mandap with fresh blooms',
-      'Fairytale fairytale fairy lights & chandelier',
-      'Photobooth with floral backdrop',
-      'Royal red sandstone stage backdrop',
-    ],
-    imageUrl: '/royal.jpg',
-  },
-  {
-    id: 'platinum',
-    title: 'Platinum Package',
-    subtitle: 'Opulent Palace Styling',
-    icon: <Gem size={20} className="text-cyan-600" />,
-    badge: 'Premium',
-    features: [
-      'Custom grand stage with import flowers',
-      'Taj-view entrance gate with mirrors',
-      'Intricate floral aisles & varmala stage',
-      'Architectural projection lighting',
-    ],
-    imageUrl: '/floral.jpg',
-  },
-  {
-    id: 'luxury',
-    title: 'Luxury Package',
-    subtitle: 'Bespoke Imperial Extravaganza',
-    icon: <Crown size={20} className="text-[#C5A85C]" />,
-    badge: 'Signature',
-    features: [
-      'Fully customized imperial theme',
-      'Exotic orchid & rose floral canopy',
-      'Designer lounge furniture & bar setup',
-      'Complete venue transformation & FX',
-    ],
-    imageUrl: '/venue_palace.png',
-  },
-]
+  image_url: string
+  price: number
+  is_active: boolean
+}
 
 export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
   const [selectedTier, setSelectedTier] = useState<DecorationPackageTier>(
     data.decoration_package ?? 'gold'
   )
+  const [packages, setPackages] = useState<DecorPkg[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/api/config/decoration-packages')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          setPackages(data)
+        }
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to load decoration packages:', err)
+        setLoading(false)
+      })
+  }, [])
 
   function handleContinue() {
-    const pkg = DECORATION_PACKAGES.find(p => p.id === selectedTier)
+    const pkg = packages.find(p => p.id === selectedTier)
     onNext(selectedTier, pkg?.title ?? 'Gold Package')
+  }
+
+  const getIcon = (id: string) => {
+    if (id === 'silver') return <Award size={20} className="text-slate-500" />
+    if (id === 'gold') return <Sparkles size={20} className="text-amber-500" />
+    if (id === 'platinum') return <Gem size={20} className="text-cyan-600" />
+    return <Crown size={20} className="text-[#C5A85C]" />
+  }
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center py-32 gap-3">
+        <Loader2 className="animate-spin text-[#C5A85C]" size={36} />
+        <p className="text-sm text-[#737373] font-light">Loading decoration options...</p>
+      </div>
+    )
   }
 
   return (
@@ -122,7 +99,7 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
 
       {/* 4 Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {DECORATION_PACKAGES.map((pkg) => {
+        {packages.map((pkg) => {
           const isSel = selectedTier === pkg.id
           return (
             <button
@@ -139,7 +116,7 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
               {/* Image & Badge */}
               <div className="relative h-44 w-full bg-[#F5EDD6] overflow-hidden">
                 <img
-                  src={pkg.imageUrl}
+                  src={pkg.image_url}
                   alt={pkg.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -157,7 +134,7 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
 
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <div className="flex items-center gap-2 mb-1">
-                    {pkg.icon}
+                    {getIcon(pkg.id)}
                     <h3 className="text-lg font-bold">{pkg.title}</h3>
                   </div>
                   <p className="text-xs text-white/80">{pkg.subtitle}</p>

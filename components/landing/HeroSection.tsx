@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowRight, Sparkles, ChevronRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface Props {
   isLoggedIn: boolean
+  isAdmin?: boolean
 }
 
 const SLIDES = [
@@ -14,26 +15,23 @@ const SLIDES = [
     id: 1,
     image: '/venue_palace.png',
     title: 'Taj View Terraces',
-    eyebrow: 'Agra Heritage',
-    subtitle: 'Where the Silhouette of the Taj Mahal Frames Your Forever',
+    subtitle: 'Panoramic Vistas of India’s Greatest Monument of Love',
   },
   {
     id: 2,
     image: '/wedding_mandap.png',
     title: 'Mughal Sandstone Pavilions',
-    eyebrow: 'Royal Agra',
-    subtitle: 'Sacred Rituals Lit by Traditional Brass Oil Lamps',
+    subtitle: 'Timeless Architecture Framed in Golden Dusk Light',
   },
   {
     id: 3,
     image: '/wedding_feast.png',
     title: 'Imperial Culinary Banquets',
-    eyebrow: 'Agra Dining',
     subtitle: 'Bespoke Feast Experiences Designed with Intention',
   },
 ]
 
-export function HeroSection({ isLoggedIn }: Props) {
+export function HeroSection({ isLoggedIn, isAdmin }: Props) {
   const [current, setCurrent] = useState(0)
 
   // Autoplay slideshow every 7 seconds
@@ -145,7 +143,7 @@ export function HeroSection({ isLoggedIn }: Props) {
             className="text-sm sm:text-base leading-relaxed mb-10 max-w-xl"
             style={{ color: 'rgba(250,243,232,0.65)' }}
           >
-            Orchestrating bespoke, grand celebrations across Agra\'s finest Taj-facing terraces, majestic red sandstone estates, and luxurious palace hotels. We translate your dreams into royal legacies.
+            Orchestrating bespoke, grand celebrations across Agra’s finest Taj-facing terraces, majestic red sandstone estates, and luxurious palace hotels. We translate your dreams into royal legacies.
           </p>
 
           {/* Action CTAs */}
@@ -168,7 +166,7 @@ export function HeroSection({ isLoggedIn }: Props) {
               </button>
             </Link>
 
-            <Link href={isLoggedIn ? '/dashboard' : '/login'} className="w-full sm:w-auto">
+            <Link href={isAdmin ? '/admin' : (isLoggedIn ? '/dashboard' : '/login')} className="w-full sm:w-auto">
               <button
                 className="w-full sm:w-auto rounded-full px-9 py-4.5 font-bold text-xs tracking-widest uppercase transition-all duration-300 border hover:bg-white/[0.03]"
                 style={{
@@ -176,7 +174,7 @@ export function HeroSection({ isLoggedIn }: Props) {
                   color: 'rgba(250,243,232,0.85)',
                 }}
               >
-                View Reservation
+                {isAdmin ? 'ADMIN PANEL' : 'View Reservation'}
               </button>
             </Link>
           </div>

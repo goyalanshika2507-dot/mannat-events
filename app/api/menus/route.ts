@@ -16,8 +16,8 @@ export async function GET() {
   }
 
   // Group by type
-  const veg    = (data ?? []).filter((m) => m.type === 'veg')
-  const nonVeg = (data ?? []).filter((m) => m.type === 'non-veg')
+  const veg    = (data ?? []).filter((m: any) => m.type === 'veg')
+  const nonVeg = (data ?? []).filter((m: any) => m.type === 'non-veg')
 
   return NextResponse.json({ veg, 'non-veg': nonVeg })
 }

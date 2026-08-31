@@ -78,13 +78,12 @@ const HOTEL_DEFINITIONS = [
   },
 ]
 
-// Price calculation helpers
-const MENU_RATES: Record<string, number> = {
+// Fallback pricing constants (used if API fails or is loading)
+const FALLBACK_MENU_RATES: Record<string, number> = {
   'Silver Banquet Menu': 1400,
   'Gold Royal Feast Menu': 2100,
   'Diamond Grand Buffet Menu': 2800,
   'Imperial Taj Special Menu': 3600,
-  // New Banquet Packages
   'Premium Veg Banquet': 2000,
   'Executive Veg Banquet': 2500,
   'Platinum Veg Banquet': 3000,
@@ -93,19 +92,43 @@ const MENU_RATES: Record<string, number> = {
   'Platinum Non-Veg Banquet': 3650,
 }
 
-const DECOR_RATES: Record<string, number> = {
+const FALLBACK_DECOR_RATES: Record<string, number> = {
   silver: 280000,
   gold: 480000,
   platinum: 750000,
   luxury: 1100000,
 }
 
+import { useEffect } from 'react'
+
 export function StepHotelComparison({ data, onSelectHotel, onPrev, isSubmitting }: Props) {
   const [activeTab, setActiveTab] = useState<'cards' | 'financial' | 'specs'>('cards')
+  const [menuRates, setMenuRates] = useState<Record<string, number>>(FALLBACK_MENU_RATES)
+  const [decorRates, setDecorRates] = useState<Record<string, number>>(FALLBACK_DECOR_RATES)
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/api/config/banquet-packages').then(r => r.json()),
+      fetch('/api/config/decoration-packages').then(r => r.json())
+    ])
+      .then(([banquets, decors]) => {
+        const mRates: Record<string, number> = {}
+        const dRates: Record<string, number> = {}
+        if (Array.isArray(banquets)) {
+          banquets.forEach((b: any) => { mRates[b.name] = b.pricePerHead })
+        }
+        if (Array.isArray(decors)) {
+          decors.forEach((d: any) => { dRates[d.id] = d.price })
+        }
+        if (Object.keys(mRates).length > 0) setMenuRates(mRates)
+        if (Object.keys(dRates).length > 0) setDecorRates(dRates)
+      })
+      .catch(() => { /* keep fallbacks */ })
+  }, [])
 
   const duration = data.day_plans?.length ?? 1
   const decorTier = data.decoration_package ?? 'gold'
-  const decorBasePrice = DECOR_RATES[decorTier] ?? 480000
+  const decorBasePrice = decorRates[decorTier] ?? 480000
 
   // Calculate detailed financial breakdown and package totals for each hotel
   const hotelCalculations = HOTEL_DEFINITIONS.map(h => {
@@ -123,11 +146,11 @@ export function StepHotelComparison({ data, onSelectHotel, onPrev, isSubmitting 
         totalLunchGuests += lunchGuests
         totalDinnerGuests += dinnerGuests
         
-        const lunchPkg = p.lunch?.menu_item_names?.[0] ?? 'Gold Royal Feast Menu'
-        const dinnerPkg = p.dinner?.menu_item_names?.[0] ?? 'Gold Royal Feast Menu'
+        const lunchPkg = p.lunch?.menu_config?.packageName ?? p.lunch?.menu_item_names?.[0] ?? 'Gold Royal Feast Menu'
+        const dinnerPkg = p.dinner?.menu_config?.packageName ?? p.dinner?.menu_item_names?.[0] ?? 'Gold Royal Feast Menu'
         
-        const lunchPlateRate = MENU_RATES[lunchPkg] ?? 2100
-        const dinnerPlateRate = MENU_RATES[dinnerPkg] ?? 2400
+        const lunchPlateRate = menuRates[lunchPkg] ?? 2100
+        const dinnerPlateRate = menuRates[dinnerPkg] ?? 2400
         
         totalCatering += (lunchGuests * lunchPlateRate) + (dinnerGuests * dinnerPlateRate)
       }

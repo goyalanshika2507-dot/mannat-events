@@ -1,0 +1,5605 @@
+{
+  "menu_categories": [
+    {
+      "id": "welcome-drinks",
+      "label": "Welcome Drinks",
+      "emoji": "🥤",
+      "sort_order": 1
+    },
+    {
+      "id": "starters-veg-indian",
+      "label": "Starters — Veg Indian",
+      "emoji": "🥗",
+      "sort_order": 2
+    },
+    {
+      "id": "starters-veg-oriental",
+      "label": "Starters — Veg Oriental & Western",
+      "emoji": "🥡",
+      "sort_order": 3
+    },
+    {
+      "id": "soup",
+      "label": "Soup",
+      "emoji": "🍲",
+      "sort_order": 4
+    },
+    {
+      "id": "salads",
+      "label": "Salads",
+      "emoji": "🥙",
+      "sort_order": 5
+    },
+    {
+      "id": "raita-curd",
+      "label": "Raita / Curd",
+      "emoji": "🫙",
+      "sort_order": 6
+    },
+    {
+      "id": "paneer-main",
+      "label": "Paneer Main Course",
+      "emoji": "🧀",
+      "sort_order": 7
+    },
+    {
+      "id": "veg-main",
+      "label": "Veg Main Course",
+      "emoji": "🍛",
+      "sort_order": 8
+    },
+    {
+      "id": "dal",
+      "label": "Dal",
+      "emoji": "🫕",
+      "sort_order": 9
+    },
+    {
+      "id": "rice-noodles",
+      "label": "Rice / Noodles",
+      "emoji": "🍚",
+      "sort_order": 10
+    },
+    {
+      "id": "breads",
+      "label": "Breads (Assorted)",
+      "emoji": "🫓",
+      "sort_order": 11
+    },
+    {
+      "id": "desserts",
+      "label": "Desserts",
+      "emoji": "🍮",
+      "sort_order": 12
+    },
+    {
+      "id": "starters-nonveg-indian",
+      "label": "Starters — Non-Veg Indian",
+      "emoji": "🍗",
+      "sort_order": 13
+    },
+    {
+      "id": "starters-nonveg-oriental",
+      "label": "Starters — Non-Veg Oriental & Western",
+      "emoji": "🥡",
+      "sort_order": 14
+    },
+    {
+      "id": "nonveg-main",
+      "label": "Non-Veg Main Course",
+      "emoji": "🍖",
+      "sort_order": 15
+    }
+  ],
+  "menu_items": [
+    {
+      "id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b",
+      "name": "Mango Lassi",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "a007e82a-a768-46df-bbe1-ab66555690ec",
+      "name": "Rose Sherbat",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "78dcf50c-c325-4e08-baac-1d8d870a2e97",
+      "name": "Lemon Mint Cooler",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "2afb5b72-6204-4890-b793-18023d696379",
+      "name": "Jaljeera",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "92f307ff-8c09-44a5-9976-01cb4e9676a3",
+      "name": "Aam Panna",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e",
+      "name": "Thandai",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885",
+      "name": "Masala Chach (Buttermilk)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 7
+    },
+    {
+      "id": "2971c78a-c8ad-42c6-b467-a1e0af809a25",
+      "name": "Coconut Water",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 8
+    },
+    {
+      "id": "926dfc88-248d-40a5-8c82-681a95167d58",
+      "name": "Paneer Tikka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 9
+    },
+    {
+      "id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a",
+      "name": "Hara Bhara Kebab",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 10
+    },
+    {
+      "id": "60228dd0-d7db-4c9f-9c10-17c645542741",
+      "name": "Corn Palak Tikki",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 11
+    },
+    {
+      "id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31",
+      "name": "Dahi Puri Chaat",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 12
+    },
+    {
+      "id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad",
+      "name": "Aloo Tikki Chaat",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 13
+    },
+    {
+      "id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d",
+      "name": "Veg Seekh Kebab",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 14
+    },
+    {
+      "id": "160cd56e-4592-44c1-8f70-a3c593fee189",
+      "name": "Mushroom Tikka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 15
+    },
+    {
+      "id": "e4b3816c-d3d9-4429-ae32-082010bd60b4",
+      "name": "Peshwari Paneer Tikka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 16
+    },
+    {
+      "id": "d5344f88-ce10-4385-ace9-3b71e68838df",
+      "name": "Veg Spring Rolls",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 17
+    },
+    {
+      "id": "20f0d993-049e-4998-ba86-16462c51129b",
+      "name": "Crispy Corn",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 18
+    },
+    {
+      "id": "9af7a08c-c68a-46dc-81e7-59350601355d",
+      "name": "Veg Manchurian (Dry)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 19
+    },
+    {
+      "id": "67c6e0e8-abb9-4278-81e6-1898e7932c86",
+      "name": "Chilli Paneer (Dry)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 20
+    },
+    {
+      "id": "f9a656ca-e86c-4e32-bd53-7127426a47c1",
+      "name": "Stuffed Mushroom",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 21
+    },
+    {
+      "id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c",
+      "name": "Bruschetta",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 22
+    },
+    {
+      "id": "40e39c6c-8570-43f6-9197-f6c027bea289",
+      "name": "Tomato Shorba",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 23
+    },
+    {
+      "id": "595a2b23-d9fa-49af-b36f-4d9e066fd098",
+      "name": "Sweet Corn Vegetable Soup",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 24
+    },
+    {
+      "id": "fca28208-a7c7-4296-b9bc-7f896c9035ab",
+      "name": "Dal Shorba",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 25
+    },
+    {
+      "id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539",
+      "name": "Mulligatawny Soup (Veg)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 26
+    },
+    {
+      "id": "a732bd47-f54a-43e2-977b-b1d511a86874",
+      "name": "Mushroom Cream Soup",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 27
+    },
+    {
+      "id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a",
+      "name": "Hot & Sour Vegetable Soup",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 28
+    },
+    {
+      "id": "295ccea0-d449-4138-abab-eaadae5915c7",
+      "name": "Green Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 29
+    },
+    {
+      "id": "3e33f303-c774-436a-8ad9-2dd059660390",
+      "name": "Russian Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 30
+    },
+    {
+      "id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e",
+      "name": "Sprouts Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 31
+    },
+    {
+      "id": "fbd5e11e-49de-4223-812b-31a7e9399aa3",
+      "name": "Corn Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 32
+    },
+    {
+      "id": "b5e181a8-823e-49ac-aa80-e30381474a54",
+      "name": "Pasta Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 33
+    },
+    {
+      "id": "365d13d0-c869-4370-abdd-05f143c7e329",
+      "name": "Coleslaw",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 34
+    },
+    {
+      "id": "3f5d3620-9168-4a19-9055-55b02baf3d44",
+      "name": "Fruit Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 35
+    },
+    {
+      "id": "362f8e54-e91f-4534-a2b3-402cf052f5db",
+      "name": "Papdi Chaat",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 36
+    },
+    {
+      "id": "a89aca2c-d184-4532-be23-7401ccb08939",
+      "name": "Boondi Raita",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 37
+    },
+    {
+      "id": "506960e4-4327-4456-9c0b-bb515b85cc38",
+      "name": "Mixed Raita",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 38
+    },
+    {
+      "id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d",
+      "name": "Cucumber Raita",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 39
+    },
+    {
+      "id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6",
+      "name": "Plain Curd",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 40
+    },
+    {
+      "id": "aa62738b-9c85-4900-9309-7396d283ecf7",
+      "name": "Pineapple Raita",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 41
+    },
+    {
+      "id": "905a8737-ca9e-468a-b8c2-ced9736b6176",
+      "name": "Paneer Butter Masala",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 42
+    },
+    {
+      "id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53",
+      "name": "Shahi Paneer",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 43
+    },
+    {
+      "id": "b07ec918-0cb2-42f0-b726-841116b2cf7a",
+      "name": "Kadai Paneer",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 44
+    },
+    {
+      "id": "e50a9858-8854-4d80-ab92-f6fca437f834",
+      "name": "Palak Paneer",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 45
+    },
+    {
+      "id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5",
+      "name": "Paneer Lababdar",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 46
+    },
+    {
+      "id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c",
+      "name": "Paneer Makhani",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 47
+    },
+    {
+      "id": "1cfce577-b094-486d-9c2e-4ba4580e74bc",
+      "name": "Aloo Gobi",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 48
+    },
+    {
+      "id": "a2c64e39-afbd-4cca-a191-25aefd84565e",
+      "name": "Veg Kolhapuri",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 49
+    },
+    {
+      "id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e",
+      "name": "Matar Mushroom",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 50
+    },
+    {
+      "id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35",
+      "name": "Bhindi Masala",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 51
+    },
+    {
+      "id": "060365f6-9c21-4b68-9706-f4319437e774",
+      "name": "Lauki Kofta",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 52
+    },
+    {
+      "id": "710a96bd-71f9-4bd7-be4a-92ce3850c281",
+      "name": "Mix Vegetable",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 53
+    },
+    {
+      "id": "e354208d-891a-4074-a0fc-b294d9a8040f",
+      "name": "Dum Aloo",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 54
+    },
+    {
+      "id": "0014ccee-fb98-42ae-8056-1cac7350f395",
+      "name": "Navratan Korma",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 55
+    },
+    {
+      "id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840",
+      "name": "Dal Makhani",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 56
+    },
+    {
+      "id": "4a097a89-66da-440a-9e4c-93f8f8954849",
+      "name": "Dal Tadka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 57
+    },
+    {
+      "id": "f1558ce7-2416-47d7-8289-529ac91aed70",
+      "name": "Dal Fry",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 58
+    },
+    {
+      "id": "40de5bca-cf6a-444a-821a-e450c790d883",
+      "name": "Panchmel Dal",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 59
+    },
+    {
+      "id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3",
+      "name": "Chana Masala",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 60
+    },
+    {
+      "id": "85609d63-2698-4f55-b375-78e3f7ae8426",
+      "name": "Steamed Rice",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 61
+    },
+    {
+      "id": "f288a74e-9d5d-415f-a565-5ef7331565a2",
+      "name": "Jeera Rice",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 62
+    },
+    {
+      "id": "9e29a277-fda5-436e-a1f5-e175831f9cdb",
+      "name": "Veg Pulao",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 63
+    },
+    {
+      "id": "3e004071-ff64-4884-99be-5c77631d9b69",
+      "name": "Veg Biryani",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 64
+    },
+    {
+      "id": "64135cc8-8299-415f-9835-13ff0fa156a7",
+      "name": "Schezwan Fried Rice",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 65
+    },
+    {
+      "id": "a94ad770-3bc8-420f-b601-3689d54d5950",
+      "name": "Veg Hakka Noodles",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 66
+    },
+    {
+      "id": "7792537e-50d5-4848-938a-678d336d2701",
+      "name": "Butter Naan",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 67
+    },
+    {
+      "id": "85681637-ca3f-4a25-9bd0-25c0013aa014",
+      "name": "Tandoori Roti",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 68
+    },
+    {
+      "id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8",
+      "name": "Laccha Paratha",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 69
+    },
+    {
+      "id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604",
+      "name": "Missi Roti",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 70
+    },
+    {
+      "id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd",
+      "name": "Kulcha",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 71
+    },
+    {
+      "id": "b84a3965-b54c-4940-a482-3e42dfd6df05",
+      "name": "Gulab Jamun",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 72
+    },
+    {
+      "id": "8e25cde1-c71b-4037-aac8-6fcd113301fe",
+      "name": "Rasgulla",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 73
+    },
+    {
+      "id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94",
+      "name": "Kheer",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 74
+    },
+    {
+      "id": "634b6791-94ef-4bef-9b0f-af71bdd5e797",
+      "name": "Gajar Halwa",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 75
+    },
+    {
+      "id": "8e9c9dbe-85f8-4352-9304-437972f9444f",
+      "name": "Moong Dal Halwa",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 76
+    },
+    {
+      "id": "dc71a652-a4e7-4954-9f42-69b18f87b193",
+      "name": "Phirni",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 77
+    },
+    {
+      "id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410",
+      "name": "Jalebi with Rabri",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 78
+    },
+    {
+      "id": "5fac1573-942c-4ddc-a382-df46f1c72444",
+      "name": "Ras Malai",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 79
+    },
+    {
+      "id": "92dd81b4-03a4-475b-b564-4a0153b089d6",
+      "name": "Kulfi Falooda",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 80
+    },
+    {
+      "id": "3a27fb42-eb0b-4250-aa89-fa9865426742",
+      "name": "Fresh Lime Soda",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 81
+    },
+    {
+      "id": "547c4c57-4152-4177-8148-99d0b7489253",
+      "name": "Dahi Ke Sholay",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 82
+    },
+    {
+      "id": "77fd5f22-acc8-4557-9204-3242773fe6bc",
+      "name": "Paneer Malai Tikka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 83
+    },
+    {
+      "id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639",
+      "name": "Thai Veg Satay",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 84
+    },
+    {
+      "id": "46814876-a128-4069-bda7-7938d91b88d5",
+      "name": "Lemon Coriander Soup",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 85
+    },
+    {
+      "id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6",
+      "name": "Greek Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 86
+    },
+    {
+      "id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3",
+      "name": "Thai Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 87
+    },
+    {
+      "id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce",
+      "name": "Paneer Pasanda",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 88
+    },
+    {
+      "id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b",
+      "name": "Tindora Masala",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 89
+    },
+    {
+      "id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf",
+      "name": "Veg Jaipuri",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 90
+    },
+    {
+      "id": "6ee59f23-f602-4b51-9c7c-f41989642422",
+      "name": "Rajma Masala",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 91
+    },
+    {
+      "id": "c973048e-00d7-4265-907f-26ce3e05b110",
+      "name": "Kashmiri Pulao",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 92
+    },
+    {
+      "id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2",
+      "name": "Garlic Naan",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 93
+    },
+    {
+      "id": "f116ab87-743a-44fd-944b-be4dc1efd459",
+      "name": "Shahi Tukda",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 94
+    },
+    {
+      "id": "684fcab9-d444-44ee-aab1-247ba53ea21d",
+      "name": "Gondhoraj Nimbu Sherbat",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 95
+    },
+    {
+      "id": "b06320f3-4c43-4c16-845d-d4545e87e5d3",
+      "name": "Achari Paneer Tikka",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 96
+    },
+    {
+      "id": "a06e64b1-6c00-4a2c-9e15-170642861979",
+      "name": "Rajasthani Mirchi Vada",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 97
+    },
+    {
+      "id": "71bd741f-f2e8-43b0-8e49-80a8a92675e7",
+      "name": "Veg Dim Sum",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 98
+    },
+    {
+      "id": "d7f17c1d-be98-4dfa-8432-03c3f6d014c1",
+      "name": "Gazpacho (Chilled)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 99
+    },
+    {
+      "id": "7ad70074-9a12-4a17-a1ef-3130511b4373",
+      "name": "Quinoa Salad",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 100
+    },
+    {
+      "id": "171d7dc8-226c-4548-b5c8-9e1ba193af28",
+      "name": "Paneer Khurchan",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 101
+    },
+    {
+      "id": "c537fe57-5bd3-4ea2-9e3e-9adaaf1f7287",
+      "name": "Kathal Masala (Jackfruit)",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 102
+    },
+    {
+      "id": "42d0910e-bff8-4d1c-bbd9-305ae9fb23ae",
+      "name": "Stuffed Capsicum",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 103
+    },
+    {
+      "id": "72beb300-92d6-4a37-aec7-e525fb31d7c0",
+      "name": "Amti Dal",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 104
+    },
+    {
+      "id": "f4755eda-84b6-4a25-a1c2-fd51dcf40135",
+      "name": "Zaffrani Rice",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 105
+    },
+    {
+      "id": "f4447d6f-1c5c-4641-bea9-6c4f0dc21ba6",
+      "name": "Stuffed Naan",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 106
+    },
+    {
+      "id": "305e30f2-248a-40dc-baa7-d03f33c00d31",
+      "name": "Malpua with Rabri",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 107
+    },
+    {
+      "id": "5818a38f-21c5-4d47-bf09-2b312cb5d53c",
+      "name": "Badam Halwa",
+      "sub_label": null,
+      "type": "veg",
+      "is_active": true,
+      "sort_order": 108
+    },
+    {
+      "id": "a3341414-9345-4ac3-945d-806d2ce197f3",
+      "name": "Mango Lassi",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 109
+    },
+    {
+      "id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df",
+      "name": "Rose Sherbat",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 110
+    },
+    {
+      "id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161",
+      "name": "Lemon Mint Cooler",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 111
+    },
+    {
+      "id": "a1a64323-b986-4cd8-a9cc-874abd906e7e",
+      "name": "Jaljeera",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 112
+    },
+    {
+      "id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d",
+      "name": "Aam Panna",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 113
+    },
+    {
+      "id": "4bba32c1-e67e-4ca4-a462-b1802a335934",
+      "name": "Masala Chach (Buttermilk)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 114
+    },
+    {
+      "id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a",
+      "name": "Coconut Water",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 115
+    },
+    {
+      "id": "154c67a3-b392-4748-8eb2-1f12bd688b7c",
+      "name": "Chicken Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 116
+    },
+    {
+      "id": "f76b79fe-6189-4147-bd3c-9de649d81574",
+      "name": "Seekh Kebab",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 117
+    },
+    {
+      "id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed",
+      "name": "Murgh Malai Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 118
+    },
+    {
+      "id": "0481026c-4d76-4478-8b37-6e38e97f9e57",
+      "name": "Achari Chicken Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 119
+    },
+    {
+      "id": "234ff222-e049-4d8b-b678-d6025605ca71",
+      "name": "Tandoori Chicken (half)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 120
+    },
+    {
+      "id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247",
+      "name": "Mutton Sheekh Kebab",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 121
+    },
+    {
+      "id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1",
+      "name": "Galouti Kebab",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 122
+    },
+    {
+      "id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3",
+      "name": "Raan Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 123
+    },
+    {
+      "id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471",
+      "name": "Chicken Manchurian (Dry)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 124
+    },
+    {
+      "id": "e4f62a6e-479b-44c1-9b31-90ce325649ba",
+      "name": "Chilli Chicken (Dry)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 125
+    },
+    {
+      "id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7",
+      "name": "Fish Amritsari",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 126
+    },
+    {
+      "id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55",
+      "name": "Tandoori Prawns",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 127
+    },
+    {
+      "id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40",
+      "name": "Honey Chilli Chicken",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 128
+    },
+    {
+      "id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa",
+      "name": "Chicken Lollipop",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 129
+    },
+    {
+      "id": "e63f5d26-87be-40ed-bd47-9006ef839061",
+      "name": "Chicken Shorba",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 130
+    },
+    {
+      "id": "eb825a37-dc15-47cf-89d9-148991f3c2bd",
+      "name": "Tomato Shorba",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 131
+    },
+    {
+      "id": "d77f4779-e0f8-4407-980c-f1613bf0518a",
+      "name": "Mulligatawny Soup",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 132
+    },
+    {
+      "id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4",
+      "name": "Sweet Corn Chicken Soup",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 133
+    },
+    {
+      "id": "d1016794-e951-454a-be6c-baa7d2a491a9",
+      "name": "Hot & Sour Chicken Soup",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 134
+    },
+    {
+      "id": "26a7a263-cb0d-43c1-899e-d21a3439deac",
+      "name": "Mutton Nihari Soup",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 135
+    },
+    {
+      "id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83",
+      "name": "Green Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 136
+    },
+    {
+      "id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48",
+      "name": "Russian Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 137
+    },
+    {
+      "id": "a98ed434-638d-4da3-bf23-de839443c234",
+      "name": "Chicken Caesar Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 138
+    },
+    {
+      "id": "34a5e385-36ee-438d-b632-939b63535a2a",
+      "name": "Coleslaw",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 139
+    },
+    {
+      "id": "bd170beb-265b-4edd-9067-59fada2b3e5b",
+      "name": "Fruit Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 140
+    },
+    {
+      "id": "725537c4-4462-4347-bc8b-d3a8b1848192",
+      "name": "Pasta Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 141
+    },
+    {
+      "id": "20567857-5f06-4e05-aac0-272ece8f098d",
+      "name": "Corn Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 142
+    },
+    {
+      "id": "561a79ab-5f91-42fe-94f7-29cb9af4601c",
+      "name": "Boondi Raita",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 143
+    },
+    {
+      "id": "62bb7511-2dd3-40e0-8146-80d9da69f788",
+      "name": "Mixed Raita",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 144
+    },
+    {
+      "id": "aead8fd8-841c-40de-aa9a-d4a263dd9517",
+      "name": "Cucumber Raita",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 145
+    },
+    {
+      "id": "8abfad46-8ef0-47fc-aba4-d84a200de086",
+      "name": "Plain Curd",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 146
+    },
+    {
+      "id": "99f991ba-4f67-4769-a38c-896f7a3d7196",
+      "name": "Butter Chicken",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 147
+    },
+    {
+      "id": "048c7193-2031-4813-9283-93351ed0354c",
+      "name": "Murgh Saagwala",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 148
+    },
+    {
+      "id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e",
+      "name": "Kadai Chicken",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 149
+    },
+    {
+      "id": "46697089-1f41-4ddb-b47c-b44965c45af9",
+      "name": "Chicken Lababdar",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 150
+    },
+    {
+      "id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a",
+      "name": "Mutton Rogan Josh",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 151
+    },
+    {
+      "id": "f9373772-8430-4c9e-9ddb-8cea9917ec50",
+      "name": "Mutton Korma",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 152
+    },
+    {
+      "id": "cccfaa7f-e447-43d7-9a89-3377e3024fea",
+      "name": "Keema Matar",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 153
+    },
+    {
+      "id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857",
+      "name": "Fish Curry",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 154
+    },
+    {
+      "id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65",
+      "name": "Prawn Masala",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 155
+    },
+    {
+      "id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c",
+      "name": "Paneer Butter Masala",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 156
+    },
+    {
+      "id": "40a96b29-7517-4790-bcae-fbbe6eb6feec",
+      "name": "Dal Makhani",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 157
+    },
+    {
+      "id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0",
+      "name": "Mix Vegetable",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 158
+    },
+    {
+      "id": "a68f6f71-be61-4850-aa72-645474dbf7fb",
+      "name": "Aloo Gobi",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 159
+    },
+    {
+      "id": "5ca0d625-269d-4285-ab6f-fc951b6765c7",
+      "name": "Navratan Korma",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 160
+    },
+    {
+      "id": "fca1fe20-6167-4370-acae-71e120e8dc0b",
+      "name": "Dal Tadka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 161
+    },
+    {
+      "id": "5f6886e1-1354-40ff-bfb9-ef949e525dea",
+      "name": "Dal Fry",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 162
+    },
+    {
+      "id": "4412c550-0154-4f7c-9a80-f4c122c87c10",
+      "name": "Chana Masala",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 163
+    },
+    {
+      "id": "ae562eab-372f-4837-a5a0-93988dc2b06a",
+      "name": "Steamed Rice",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 164
+    },
+    {
+      "id": "47feb726-7003-43b7-be93-f257cab552ba",
+      "name": "Jeera Rice",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 165
+    },
+    {
+      "id": "5404c16c-4935-4046-b322-ab6f182e362f",
+      "name": "Chicken Biryani",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 166
+    },
+    {
+      "id": "67c5dd6b-0053-4725-a172-596737efd30b",
+      "name": "Mutton Biryani",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 167
+    },
+    {
+      "id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b",
+      "name": "Egg Fried Rice",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 168
+    },
+    {
+      "id": "f14a5ef7-6336-42da-8d86-8a43bf475b62",
+      "name": "Chicken Hakka Noodles",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 169
+    },
+    {
+      "id": "69b1d707-2a28-49ae-acfb-06650781d756",
+      "name": "Butter Naan",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 170
+    },
+    {
+      "id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db",
+      "name": "Tandoori Roti",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 171
+    },
+    {
+      "id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db",
+      "name": "Laccha Paratha",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 172
+    },
+    {
+      "id": "2b1832f7-114c-4d9c-80b7-47e325985e7b",
+      "name": "Missi Roti",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 173
+    },
+    {
+      "id": "6aa06dac-7c3d-4119-a55a-ee6023333f61",
+      "name": "Kulcha",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 174
+    },
+    {
+      "id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca",
+      "name": "Gulab Jamun",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 175
+    },
+    {
+      "id": "bb730c9a-5233-4380-890b-d3d356c2c55e",
+      "name": "Rasgulla",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 176
+    },
+    {
+      "id": "88c48916-bab8-4eda-8c09-75af1bd4f388",
+      "name": "Kheer",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 177
+    },
+    {
+      "id": "d7d0ade9-ad51-4af2-a622-307e44387569",
+      "name": "Gajar Halwa",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 178
+    },
+    {
+      "id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9",
+      "name": "Phirni",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 179
+    },
+    {
+      "id": "2d9302ad-9df8-41c7-a436-19f48c35f2db",
+      "name": "Ras Malai",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 180
+    },
+    {
+      "id": "4043936c-ea4d-4046-a716-948691ae9809",
+      "name": "Kulfi Falooda",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 181
+    },
+    {
+      "id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef",
+      "name": "Jalebi with Rabri",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 182
+    },
+    {
+      "id": "baa050c0-c462-46d1-b20c-9777aaff822e",
+      "name": "Ice Cream (2 flavours)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 183
+    },
+    {
+      "id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6",
+      "name": "Fresh Lime Soda",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 184
+    },
+    {
+      "id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24",
+      "name": "Fish Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 185
+    },
+    {
+      "id": "43f1c24e-a62a-429d-84de-dac692f724a4",
+      "name": "Jhinga (Prawn) Tikka",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 186
+    },
+    {
+      "id": "d4d095fd-6d82-43a2-8615-c9519962429f",
+      "name": "Mutton Seekh (Oriental)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 187
+    },
+    {
+      "id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921",
+      "name": "Tom Kha Gai (Thai)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 188
+    },
+    {
+      "id": "4a273f93-97c1-4927-ba4f-6490e22f8e47",
+      "name": "Grilled Chicken Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 189
+    },
+    {
+      "id": "73d98c40-d04a-4f34-8a90-3b796109521b",
+      "name": "Thai Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 190
+    },
+    {
+      "id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c",
+      "name": "Chicken Chettinad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 191
+    },
+    {
+      "id": "9abc2584-3980-494b-910c-9e19ed1d8e72",
+      "name": "Rajma Masala",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 192
+    },
+    {
+      "id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d",
+      "name": "Prawn Fried Rice",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 193
+    },
+    {
+      "id": "972b7750-45b3-4bc5-808c-eb7e83f319a9",
+      "name": "Garlic Naan",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 194
+    },
+    {
+      "id": "d91ab881-7c12-45fe-a756-a21bffa95d89",
+      "name": "Ice Cream (3 flavours)",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 195
+    },
+    {
+      "id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668",
+      "name": "Shahi Tukda",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 196
+    },
+    {
+      "id": "8353353a-624c-4140-a62e-5e3ac4d3f0aa",
+      "name": "Gondhoraj Nimbu Sherbat",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 197
+    },
+    {
+      "id": "ad09690b-b652-4a88-be0d-5ffb8e1c63a5",
+      "name": "Peshwari Murgh",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 198
+    },
+    {
+      "id": "06721a8f-29a0-4023-9e95-6e14ef3eb191",
+      "name": "Burrah Kebab",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 199
+    },
+    {
+      "id": "46ed04c3-7fd5-444c-86a7-b30dcd58a4fd",
+      "name": "Prawn Tempura",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 200
+    },
+    {
+      "id": "00daff8e-9b44-46f8-bb00-f685eb116a76",
+      "name": "Wonton Soup",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 201
+    },
+    {
+      "id": "624f6bdc-5a50-45c7-a6bd-63b5e4c5120a",
+      "name": "Smoked Salmon Salad",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 202
+    },
+    {
+      "id": "dc88a84d-ba56-47c3-bf7f-4b2278025dc2",
+      "name": "Nawabi Murgh",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 203
+    },
+    {
+      "id": "744ad95b-43dc-4d52-9b40-f03ded9f0d69",
+      "name": "Nihari Gosht",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 204
+    },
+    {
+      "id": "0d4085bd-03e4-4262-9521-72de5f8c1415",
+      "name": "Amti Dal",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 205
+    },
+    {
+      "id": "c508cdb6-763d-4dae-9f9c-3b163751fa3c",
+      "name": "Zaffrani Biryani",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 206
+    },
+    {
+      "id": "0ab75b44-2704-48f3-a0a9-1edb0d17b2aa",
+      "name": "Stuffed Naan",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 207
+    },
+    {
+      "id": "a82e97d3-3989-4a32-82a2-9ff3bbf29a37",
+      "name": "Malpua with Rabri",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 208
+    },
+    {
+      "id": "62848f82-b27f-4de4-8aff-75ebb0363e48",
+      "name": "Badam Halwa",
+      "sub_label": null,
+      "type": "non-veg",
+      "is_active": true,
+      "sort_order": 209
+    }
+  ],
+  "banquet_packages": [
+    {
+      "id": "veg-premium",
+      "name": "Premium Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 2000,
+      "tagline": "₹2,000 per head · A rich vegetarian banquet experience",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "veg-executive",
+      "name": "Executive Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 2500,
+      "tagline": "₹2,500 per head · A premium vegetarian feast with extra variety",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "veg-platinum",
+      "name": "Platinum Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 3000,
+      "tagline": "₹3,000 per head · The ultimate luxury vegetarian banquet",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "non-veg-premium",
+      "name": "Premium Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 2650,
+      "tagline": "₹2,650 per head · A rich non-vegetarian banquet experience",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "non-veg-executive",
+      "name": "Executive Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3150,
+      "tagline": "₹3,150 per head · A premium non-vegetarian feast with extra variety",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "non-veg-platinum",
+      "name": "Platinum Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3650,
+      "tagline": "₹3,650 per head · The ultimate luxury non-vegetarian banquet",
+      "is_active": true,
+      "sort_order": 6
+    }
+  ],
+  "package_categories": [
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "limit_count": 2,
+      "sort_order": 1
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "limit_count": 4,
+      "sort_order": 2
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "limit_count": 2,
+      "sort_order": 3
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "limit_count": 4,
+      "sort_order": 5
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "limit_count": 2,
+      "sort_order": 7
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "limit_count": 3,
+      "sort_order": 8
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "limit_count": 4,
+      "sort_order": 12
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "limit_count": 3,
+      "sort_order": 1
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "limit_count": 5,
+      "sort_order": 2
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "limit_count": 3,
+      "sort_order": 3
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "limit_count": 5,
+      "sort_order": 5
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "limit_count": 2,
+      "sort_order": 7
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "limit_count": 4,
+      "sort_order": 8
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "limit_count": 5,
+      "sort_order": 12
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "limit_count": 4,
+      "sort_order": 1
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "limit_count": 6,
+      "sort_order": 2
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "limit_count": 3,
+      "sort_order": 3
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "limit_count": 6,
+      "sort_order": 5
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "limit_count": 3,
+      "sort_order": 7
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "limit_count": 4,
+      "sort_order": 8
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "limit_count": 6,
+      "sort_order": 12
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "limit_count": 2,
+      "sort_order": 1
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "limit_count": 4,
+      "sort_order": 2
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "limit_count": 2,
+      "sort_order": 3
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "limit_count": 4,
+      "sort_order": 5
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "limit_count": 3,
+      "sort_order": 7
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "limit_count": 2,
+      "sort_order": 8
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "limit_count": 4,
+      "sort_order": 12
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "limit_count": 3,
+      "sort_order": 1
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "limit_count": 5,
+      "sort_order": 2
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "limit_count": 3,
+      "sort_order": 3
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "limit_count": 5,
+      "sort_order": 5
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "limit_count": 4,
+      "sort_order": 7
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "limit_count": 2,
+      "sort_order": 8
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "limit_count": 5,
+      "sort_order": 12
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "limit_count": 4,
+      "sort_order": 1
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "limit_count": 6,
+      "sort_order": 2
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "limit_count": 4,
+      "sort_order": 3
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "limit_count": 2,
+      "sort_order": 4
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "limit_count": 6,
+      "sort_order": 5
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "raita-curd",
+      "limit_count": 1,
+      "sort_order": 6
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "limit_count": 5,
+      "sort_order": 7
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "limit_count": 2,
+      "sort_order": 8
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "limit_count": 1,
+      "sort_order": 9
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "limit_count": 2,
+      "sort_order": 10
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "limit_count": null,
+      "sort_order": 11
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "limit_count": 6,
+      "sort_order": 12
+    }
+  ],
+  "package_items": [
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-indian",
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "starters-veg-oriental",
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "soup",
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "salads",
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "paneer-main",
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "veg-main",
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "dal",
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "breads",
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+    },
+    {
+      "package_id": "veg-premium",
+      "category_id": "desserts",
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "547c4c57-4152-4177-8148-99d0b7489253"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-indian",
+      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "starters-veg-oriental",
+      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "soup",
+      "item_id": "46814876-a128-4069-bda7-7938d91b88d5"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "salads",
+      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "paneer-main",
+      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "veg-main",
+      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "dal",
+      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "breads",
+      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+    },
+    {
+      "package_id": "veg-executive",
+      "category_id": "desserts",
+      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "684fcab9-d444-44ee-aab1-247ba53ea21d"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "547c4c57-4152-4177-8148-99d0b7489253"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "b06320f3-4c43-4c16-845d-d4545e87e5d3"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-indian",
+      "item_id": "a06e64b1-6c00-4a2c-9e15-170642861979"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "starters-veg-oriental",
+      "item_id": "71bd741f-f2e8-43b0-8e49-80a8a92675e7"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "46814876-a128-4069-bda7-7938d91b88d5"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "soup",
+      "item_id": "d7f17c1d-be98-4dfa-8432-03c3f6d014c1"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "salads",
+      "item_id": "7ad70074-9a12-4a17-a1ef-3130511b4373"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "paneer-main",
+      "item_id": "171d7dc8-226c-4548-b5c8-9e1ba193af28"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "c537fe57-5bd3-4ea2-9e3e-9adaaf1f7287"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "42d0910e-bff8-4d1c-bbd9-305ae9fb23ae"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "dal",
+      "item_id": "72beb300-92d6-4a37-aec7-e525fb31d7c0"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "f4755eda-84b6-4a25-a1c2-fd51dcf40135"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "breads",
+      "item_id": "f4447d6f-1c5c-4641-bea9-6c4f0dc21ba6"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "305e30f2-248a-40dc-baa7-d03f33c00d31"
+    },
+    {
+      "package_id": "veg-platinum",
+      "category_id": "desserts",
+      "item_id": "5818a38f-21c5-4d47-bf09-2b312cb5d53c"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "welcome-drinks",
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "soup",
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "salads",
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "raita-curd",
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "nonveg-main",
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "veg-main",
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "dal",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "dal",
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "dal",
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "dal",
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "rice-noodles",
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "breads",
+      "item_id": "6aa06dac-7c3d-4119-a55a-ee6023333f61"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "category_id": "desserts",
+      "item_id": "baa050c0-c462-46d1-b20c-9777aaff822e"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "welcome-drinks",
+      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "soup",
+      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "salads",
+      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "raita-curd",
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "nonveg-main",
+      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "veg-main",
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "dal",
+      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "rice-noodles",
+      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "breads",
+      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "category_id": "desserts",
+      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "welcome-drinks",
+      "item_id": "8353353a-624c-4140-a62e-5e3ac4d3f0aa"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "ad09690b-b652-4a88-be0d-5ffb8e1c63a5"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-indian",
+      "item_id": "06721a8f-29a0-4023-9e95-6e14ef3eb191"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "starters-nonveg-oriental",
+      "item_id": "46ed04c3-7fd5-444c-86a7-b30dcd58a4fd"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "soup",
+      "item_id": "00daff8e-9b44-46f8-bb00-f685eb116a76"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "salads",
+      "item_id": "624f6bdc-5a50-45c7-a6bd-63b5e4c5120a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "raita-curd",
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "dc88a84d-ba56-47c3-bf7f-4b2278025dc2"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "nonveg-main",
+      "item_id": "744ad95b-43dc-4d52-9b40-f03ded9f0d69"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "veg-main",
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "dal",
+      "item_id": "0d4085bd-03e4-4262-9521-72de5f8c1415"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "rice-noodles",
+      "item_id": "c508cdb6-763d-4dae-9f9c-3b163751fa3c"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "breads",
+      "item_id": "0ab75b44-2704-48f3-a0a9-1edb0d17b2aa"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "a82e97d3-3989-4a32-82a2-9ff3bbf29a37"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "category_id": "desserts",
+      "item_id": "62848f82-b27f-4de4-8aff-75ebb0363e48"
+    }
+  ],
+  "live_stations": [
+    {
+      "id": "tawa",
+      "label": "Tawa Tak-A-Tak Station",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "chaat",
+      "label": "Chaat Corner",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "ice-cream",
+      "label": "Ice Cream Counter",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "pasta",
+      "label": "Pasta & Pizza Station",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "indian-sweets",
+      "label": "Live Indian Sweets Counter",
+      "is_active": true,
+      "sort_order": 5
+    }
+  ],
+  "live_station_items": [
+    {
+      "id": "cdc266da-7486-452c-9e1e-201000d1a624",
+      "station_id": "tawa",
+      "name": "Tawa Paneer",
+      "sort_order": 1
+    },
+    {
+      "id": "4664647c-9fb9-41a8-8efb-95bffa3a62c4",
+      "station_id": "tawa",
+      "name": "Tawa Aloo",
+      "sort_order": 2
+    },
+    {
+      "id": "50678dd9-909e-4f77-9cdf-ba5fccbf5176",
+      "station_id": "tawa",
+      "name": "Tawa Mushroom",
+      "sort_order": 3
+    },
+    {
+      "id": "12f94dd1-52c3-4ec7-85a3-acc8e6a33a57",
+      "station_id": "tawa",
+      "name": "Tawa Gobhi",
+      "sort_order": 4
+    },
+    {
+      "id": "3d33e797-1f7d-477f-baa5-ababcb682498",
+      "station_id": "chaat",
+      "name": "Pani Puri",
+      "sort_order": 1
+    },
+    {
+      "id": "0a1022c6-2485-460e-a169-0531eb23744e",
+      "station_id": "chaat",
+      "name": "Sev Puri",
+      "sort_order": 2
+    },
+    {
+      "id": "20e27c0f-9108-4aa6-85a3-ff843f5d71d5",
+      "station_id": "chaat",
+      "name": "Bhel Puri",
+      "sort_order": 3
+    },
+    {
+      "id": "556eb393-2f9f-46c4-9fd5-991fc195ab63",
+      "station_id": "chaat",
+      "name": "Dahi Bhalla",
+      "sort_order": 4
+    },
+    {
+      "id": "2e75e902-9687-4906-84bb-c8d69fe50af9",
+      "station_id": "ice-cream",
+      "name": "Vanilla",
+      "sort_order": 1
+    },
+    {
+      "id": "f168e325-2c35-41a9-be59-8ba6c0512e1e",
+      "station_id": "ice-cream",
+      "name": "Chocolate",
+      "sort_order": 2
+    },
+    {
+      "id": "33182d9a-7886-4e09-a848-a5da06017752",
+      "station_id": "ice-cream",
+      "name": "Strawberry",
+      "sort_order": 3
+    },
+    {
+      "id": "b16844bb-f115-44f4-91ed-cf9476e7852d",
+      "station_id": "ice-cream",
+      "name": "Butterscotch",
+      "sort_order": 4
+    },
+    {
+      "id": "243a822f-343a-43b0-bea3-e6534261c1e8",
+      "station_id": "ice-cream",
+      "name": "Mango",
+      "sort_order": 5
+    },
+    {
+      "id": "2dd752c4-672f-47eb-bf96-97965a26ad8d",
+      "station_id": "pasta",
+      "name": "Penne Arrabbiata",
+      "sort_order": 1
+    },
+    {
+      "id": "17a7e5b6-36ef-49b5-b5be-59c9526346f7",
+      "station_id": "pasta",
+      "name": "Mac & Cheese",
+      "sort_order": 2
+    },
+    {
+      "id": "2033dd65-5776-4880-9245-034f63784303",
+      "station_id": "pasta",
+      "name": "Margherita Pizza",
+      "sort_order": 3
+    },
+    {
+      "id": "c001e972-d3a8-4641-bac2-d9b40d542a30",
+      "station_id": "indian-sweets",
+      "name": "Jalebi (freshly fried)",
+      "sort_order": 1
+    },
+    {
+      "id": "a72052f6-c182-49a7-ad7d-01d74519d7c0",
+      "station_id": "indian-sweets",
+      "name": "Gulab Jamun (warm)",
+      "sort_order": 2
+    },
+    {
+      "id": "a4c014fd-a55f-4ceb-abdc-0992ce79e7c9",
+      "station_id": "indian-sweets",
+      "name": "Malpua",
+      "sort_order": 3
+    }
+  ],
+  "package_live_stations": [
+    {
+      "package_id": "veg-premium",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "veg-premium",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "veg-premium",
+      "station_id": "ice-cream"
+    },
+    {
+      "package_id": "veg-executive",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "veg-executive",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "veg-executive",
+      "station_id": "pasta"
+    },
+    {
+      "package_id": "veg-executive",
+      "station_id": "ice-cream"
+    },
+    {
+      "package_id": "veg-platinum",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "veg-platinum",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "veg-platinum",
+      "station_id": "pasta"
+    },
+    {
+      "package_id": "veg-platinum",
+      "station_id": "indian-sweets"
+    },
+    {
+      "package_id": "veg-platinum",
+      "station_id": "ice-cream"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "station_id": "ice-cream"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "station_id": "pasta"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "station_id": "ice-cream"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "station_id": "tawa"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "station_id": "chaat"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "station_id": "pasta"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "station_id": "indian-sweets"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "station_id": "ice-cream"
+    }
+  ],
+  "menu_addons": [
+    {
+      "name": "High Tea (per head surcharge)",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "name": "Mocktail Bar Setup",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "name": "Paan Counter",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "name": "Extra Live Station",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "name": "Extended Service (per hour)",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "name": "Fruit Platter Station",
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "name": "Chocolate Fountain",
+      "is_active": true,
+      "sort_order": 7
+    },
+    {
+      "name": "Imported Cheese Board",
+      "is_active": true,
+      "sort_order": 8
+    }
+  ],
+  "package_addons": [
+    {
+      "package_id": "veg-premium",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "veg-premium",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "veg-premium",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "veg-premium",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "veg-premium",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "veg-executive",
+      "addon_name": "Fruit Platter Station"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Fruit Platter Station"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Chocolate Fountain"
+    },
+    {
+      "package_id": "veg-platinum",
+      "addon_name": "Imported Cheese Board"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "non-veg-premium",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "non-veg-executive",
+      "addon_name": "Fruit Platter Station"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "High Tea (per head surcharge)"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Mocktail Bar Setup"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Paan Counter"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Extra Live Station"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Extended Service (per hour)"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Fruit Platter Station"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Chocolate Fountain"
+    },
+    {
+      "package_id": "non-veg-platinum",
+      "addon_name": "Imported Cheese Board"
+    }
+  ],
+  "decoration_packages": [
+    {
+      "id": "silver",
+      "title": "Silver Package",
+      "subtitle": "Elegant Standard Decor",
+      "badge": "Essential",
+      "features": [
+        "Standard floral mandap setup",
+        "Ambient LED warm lighting",
+        "Welcome arch & walkway drapes",
+        "Standard seating covers & runners"
+      ],
+      "image_url": "/wedding_mandap.png",
+      "price": 280000,
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "gold",
+      "title": "Gold Package",
+      "subtitle": "Royal Mughal Aesthetics",
+      "badge": "Popular",
+      "features": [
+        "Ornate dome mandap with fresh blooms",
+        "Fairytale fairytale fairy lights & chandelier",
+        "Photobooth with floral backdrop",
+        "Royal red sandstone stage backdrop"
+      ],
+      "image_url": "/royal.jpg",
+      "price": 480000,
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "platinum",
+      "title": "Platinum Package",
+      "subtitle": "Opulent Palace Styling",
+      "badge": "Premium",
+      "features": [
+        "Custom grand stage with import flowers",
+        "Taj-view entrance gate with mirrors",
+        "Intricate floral aisles & varmala stage",
+        "Architectural projection lighting"
+      ],
+      "image_url": "/floral.jpg",
+      "price": 750000,
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "luxury",
+      "title": "Luxury Package",
+      "subtitle": "Bespoke Imperial Extravaganza",
+      "badge": "Signature",
+      "features": [
+        "Fully customized imperial theme",
+        "Exotic orchid & rose floral canopy",
+        "Designer lounge furniture & bar setup",
+        "Complete venue transformation & FX"
+      ],
+      "image_url": "/venue_palace.png",
+      "price": 1100000,
+      "is_active": true,
+      "sort_order": 4
+    }
+  ],
+  "wedding_functions": [
+    {
+      "id": "e144e9bf-9de3-4c28-ac77-c0142d46983b",
+      "name": "Welcome Lunch",
+      "type": "lunch",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "3fa72328-868e-44bc-9e57-522df098edcb",
+      "name": "Welcome Dinner",
+      "type": "dinner",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "35c07db1-348b-40f0-a139-059d3edbafb8",
+      "name": "Mehendi",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "8d65583c-a4c5-4000-970d-cd3997d97fdc",
+      "name": "Haldi",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "6e99b566-00c6-4909-b81f-9ff2607e81f9",
+      "name": "Sangeet",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "9c99d531-5c97-4893-8071-c5cf838d01dd",
+      "name": "Wedding Ceremony",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "id": "ee731754-6b24-4684-a08d-7fa8441f2211",
+      "name": "Mandap Decoration",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 7
+    },
+    {
+      "id": "62df6fa7-df5f-4560-86b3-650ffe002fe5",
+      "name": "Baraat",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 8
+    },
+    {
+      "id": "6c573a9a-13cb-488a-a893-6c70375a9c8f",
+      "name": "Hath Teela",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 9
+    },
+    {
+      "id": "a4f0d07a-8f08-45e9-ada9-a10b85b30bb8",
+      "name": "Cocktail",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 10
+    },
+    {
+      "id": "8b1e551d-e463-4ed6-b830-cc58520b6690",
+      "name": "Phere",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 11
+    },
+    {
+      "id": "10df47e8-1fbe-4200-9936-849c9113ac58",
+      "name": "Reception",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 12
+    },
+    {
+      "id": "a93450b7-49f7-48c8-843a-565db0c189c2",
+      "name": "Other",
+      "type": "both",
+      "is_active": true,
+      "sort_order": 13
+    }
+  ],
+  "bookings": [],
+  "profiles": [
+    {
+      "id": "admin-user-id",
+      "email": "admin@mannatevents.com",
+      "full_name": "Mannat Admin",
+      "role": "admin",
+      "phone": "+919876543210"
+    },
+    {
+      "id": "37a8ed7f-6b84-48b9-a856-380d6da79241",
+      "email": "",
+      "full_name": "Guest User",
+      "role": "user",
+      "phone": "+917060360600",
+      "created_at": "2026-08-28T17:23:58.768Z",
+      "updated_at": "2026-08-28T17:23:58.768Z"
+    }
+  ]
+}

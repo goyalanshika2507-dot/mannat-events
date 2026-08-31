@@ -9,7 +9,6 @@ import { ProcessSection }     from '@/components/landing/ProcessSection'
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection'
 import { CTASection }         from '@/components/landing/CTASection'
 import { LandingFooter }      from '@/components/landing/LandingFooter'
-
 import { DestinationsSection } from '@/components/landing/DestinationsSection'
 
 export const metadata: Metadata = {
@@ -28,9 +27,19 @@ export default async function RootPage() {
   const { data: { user } } = await supabase.auth.getUser()
   const isLoggedIn = !!user
 
+  let isAdmin = false
+  if (user) {
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+    isAdmin = profile?.role === 'admin'
+  }
+
   return (
     <div className="relative" style={{ background: '#0A0807' }}>
-      <LandingNavbar isLoggedIn={isLoggedIn} />
+      <LandingNavbar isLoggedIn={isLoggedIn} isAdmin={isAdmin} />
 
       <main>
         <HeroSection isLoggedIn={isLoggedIn} />

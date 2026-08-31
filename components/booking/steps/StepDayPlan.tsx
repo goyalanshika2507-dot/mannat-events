@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Bed, Users, UtensilsCrossed, Calendar, Leaf, Flame, CheckCircle2, Sparkles } from 'lucide-react'
 import { DayPlan, FoodPreference } from '@/lib/types'
@@ -19,27 +19,9 @@ interface Props {
   onPrev: () => void
 }
 
-const LUNCH_FUNCTIONS = [
-  'Welcome Lunch',
-  'Mehendi',
-  'Haldi',
-  'Cocktail',
-  'Jaimala / Wedding Ceremony',
-  'Phere',
-  'Reception',
-  'Other',
-]
-
-const DINNER_FUNCTIONS = [
-  'Welcome Dinner',
-  'Mehendi',
-  'Haldi',
-  'Cocktail',
-  'Jaimala / Wedding Ceremony',
-  'Phere',
-  'Reception',
-  'Other',
-]
+// Fallback static lists (used if API fails to load)
+const FALLBACK_LUNCH = ['Welcome Lunch','Mehendi','Haldi','Cocktail','Jaimala / Wedding Ceremony','Phere','Reception','Other']
+const FALLBACK_DINNER = ['Welcome Dinner','Mehendi','Haldi','Cocktail','Jaimala / Wedding Ceremony','Phere','Reception','Other']
 
 export function StepDayPlan({
   day, totalDays, plan, onNext, onPrev,
@@ -53,8 +35,25 @@ export function StepDayPlan({
   const [lunchFoodPref, setLunchFoodPref] = useState<FoodPreference | null>(plan.lunch.type ?? null)
   const [dinnerFoodPref, setDinnerFoodPref] = useState<FoodPreference | null>(plan.dinner.type ?? null)
 
-  const [lunchFunction, setLunchFunction] = useState<string>(plan.lunch_function ?? LUNCH_FUNCTIONS[0])
-  const [dinnerFunction, setDinnerFunction] = useState<string>(plan.dinner_function ?? DINNER_FUNCTIONS[0])
+  // Function lists from DB (falls back to static defaults)
+  const [lunchFunctions, setLunchFunctions] = useState<string[]>(FALLBACK_LUNCH)
+  const [dinnerFunctions, setDinnerFunctions] = useState<string[]>(FALLBACK_DINNER)
+
+  useEffect(() => {
+    fetch('/api/config/wedding-functions')
+      .then(r => r.json())
+      .then((fns: any[]) => {
+        if (!Array.isArray(fns)) return
+        const lunch = fns.filter(f => f.type === 'lunch' || f.type === 'both').map(f => f.name)
+        const dinner = fns.filter(f => f.type === 'dinner' || f.type === 'both').map(f => f.name)
+        if (lunch.length > 0) setLunchFunctions(lunch)
+        if (dinner.length > 0) setDinnerFunctions(dinner)
+      })
+      .catch(() => { /* keep fallback */ })
+  }, [])
+
+  const [lunchFunction, setLunchFunction] = useState<string>(plan.lunch_function ?? '')
+  const [dinnerFunction, setDinnerFunction] = useState<string>(plan.dinner_function ?? '')
 
   const [lunchMenuConfig, setLunchMenuConfig] = useState<MenuConfig | undefined>(plan.lunch.menu_config)
   const [dinnerMenuConfig, setDinkerMenuConfig] = useState<MenuConfig | undefined>(plan.dinner.menu_config)
@@ -248,7 +247,8 @@ export function StepDayPlan({
                 onChange={e => setLunchFunction(e.target.value)}
                 className="w-full border border-[#E8E2D8] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#1A1A1A] focus:outline-none focus:border-[#C5A85C] bg-white shadow-xs cursor-pointer"
               >
-                {LUNCH_FUNCTIONS.map(fn => <option key={fn} value={fn}>{fn}</option>)}
+                <option value="">— Select Lunch Function —</option>
+                {lunchFunctions.map(fn => <option key={fn} value={fn}>{fn}</option>)}
               </select>
             </div>
 
@@ -337,7 +337,8 @@ export function StepDayPlan({
                 onChange={e => setDinnerFunction(e.target.value)}
                 className="w-full border border-[#E8E2D8] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#1A1A1A] focus:outline-none focus:border-[#C5A85C] bg-white shadow-xs cursor-pointer"
               >
-                {DINNER_FUNCTIONS.map(fn => <option key={fn} value={fn}>{fn}</option>)}
+                <option value="">— Select Dinner Function —</option>
+                {dinnerFunctions.map(fn => <option key={fn} value={fn}>{fn}</option>)}
               </select>
             </div>
 

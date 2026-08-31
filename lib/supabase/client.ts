@@ -1,17 +1,9 @@
-import { createBrowserClient } from '@supabase/ssr'
+'use client'
 
-export function createClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+import { mockSupabase } from './mockDb'
 
-  // Agar variables nahi mile, toh ye console mein error dikhayega
-  if (!url || !key) {
-    console.error("DEBUG ERROR: Supabase env variables are missing!");
-    console.error("URL:", url, "KEY:", key);
-  }
-
-  return createBrowserClient(
-    url!,
-    key!
-  )
+export function createClient(...args: any[]) {
+  return mockSupabase
 }
+
+export const mockBrowserSupabase = mockSupabase
