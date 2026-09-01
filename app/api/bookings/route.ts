@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { generateBookingId, calculateDuration } from '@/lib/utils/booking'
+import { getLocalDb, saveLocalDb } from '@/lib/supabase/mockDb'
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,9 +21,10 @@ export async function POST(request: NextRequest) {
       ? `Selected Hotel: ${body.selected_hotel.name} (${body.selected_hotel.price_display}), Decor Tier: ${body.decoration_package ?? 'Gold'}`
       : `Decor Tier: ${body.decoration_package ?? 'Gold'}`
 
-    // Try Supabase Auth user check
+    // 1. Resolve User & Profile
     let userId: string | null = null
     let customerEmail: string | null = body.email ?? null
+    let phone: string = body.phone || '+919999999999'
 
     try {
       const supabase = await createClient()
@@ -30,47 +32,89 @@ export async function POST(request: NextRequest) {
       if (user) {
         userId = user.id
         customerEmail = user.email ?? customerEmail
+        if (user.phone) phone = user.phone
       }
     } catch {
       /* ignore auth check failure for guest bookings */
     }
 
-    // Try DB Insert via Service Client
-    try {
-      const serviceClient = createServiceClient()
-      const { data: booking, error: insertError } = await serviceClient
-        .from('bookings')
-        .insert({
-          booking_id,
-          user_id: userId,
-          customer_email: customerEmail ?? 'guest@mannatevents.com',
-          check_in: body.check_in,
-          check_out: body.check_out,
-          duration,
-          phone: body.phone ?? '+919999999999',
-          day_plans: body.day_plans ?? [],
-          functions: body.functions ?? [],
-          is_flagged: false,
-          status: 'pending',
-          notes: hotelNotes,
-        })
-        .select('booking_id')
-        .single()
+    // Ensure user profile exists for phone and get user_id
+    if (phone) {
+      const db = getLocalDb()
+      if (!db.profiles) db.profiles = []
+      let profile = db.profiles.find((p: any) => p.phone === phone)
+      const isAdminPhone = phone === '+919876543210'
 
-      if (!insertError && booking?.booking_id) {
-        return NextResponse.json({ booking_id: booking.booking_id }, { status: 201 })
-      } else {
-        console.warn('[POST /api/bookings] Supabase insert warning/error:', insertError)
+      if (!profile) {
+        profile = {
+          id: isAdminPhone ? 'admin-user-id' : crypto.randomUUID(),
+          email: isAdminPhone ? 'admin@mannatevents.com' : `${phone.replace(/\D/g, '')}@mannatevents.com`,
+          full_name: isAdminPhone ? 'Mannat Admin' : 'Guest User',
+          role: isAdminPhone ? 'admin' : 'user',
+          phone,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        }
+        db.profiles.push(profile)
+        saveLocalDb(db)
       }
-    } catch (dbErr) {
-      console.warn('[POST /api/bookings] Supabase service client error:', dbErr)
+
+      if (!userId) {
+        userId = profile.id
+      }
+      if (!customerEmail) {
+        customerEmail = profile.email
+      }
     }
 
-    // Fallback: Return successful confirmation with generated booking_id so user flow is never blocked
-    console.log(`[POST /api/bookings] Booking enquiry logged successfully [${booking_id}]`)
-    return NextResponse.json({ booking_id }, { status: 201 })
+    // 2. Insert Booking Row with status='pending'
+    const serviceClient = createServiceClient()
+    const newBookingRecord = {
+      booking_id,
+      user_id: userId,
+      customer_email: customerEmail || `${phone.replace(/\D/g, '')}@mannatevents.com`,
+      check_in: body.check_in,
+      check_out: body.check_out,
+      duration,
+      phone,
+      day_plans: body.day_plans ?? [],
+      functions: body.functions ?? [],
+      selected_hotel: body.selected_hotel ?? null,
+      decoration_package: body.decoration_package ?? 'Gold',
+      decoration_theme_title: body.decoration_theme_title ?? 'Taj View Terraces',
+      is_flagged: false,
+      status: 'pending',
+      notes: hotelNotes,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    }
 
-  } catch (err) {
+    const { data: booking, error: insertError } = await serviceClient
+      .from('bookings')
+      .insert(newBookingRecord)
+      .select('booking_id')
+      .single()
+
+    if (insertError) {
+      console.error('[POST /api/bookings] Insert error:', insertError)
+      return NextResponse.json({ error: 'Failed to save booking. Please try again.' }, { status: 500 })
+    }
+
+    const response = NextResponse.json({ booking_id }, { status: 201 })
+
+    // Set session cookie so user is authenticated
+    if (phone) {
+      response.cookies.set('mannat-session', phone, {
+        path: '/',
+        maxAge: 86400,
+        httpOnly: false,
+        sameSite: 'lax',
+      })
+    }
+
+    return response
+
+  } catch (err: any) {
     console.error('[POST /api/bookings] Unexpected error:', err)
     return NextResponse.json({ error: 'An unexpected error occurred. Please try again.' }, { status: 500 })
   }

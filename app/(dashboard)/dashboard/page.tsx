@@ -56,27 +56,31 @@ export default async function DashboardPage() {
     redirect('/login')
   }
 
-  const { data: bookings } = await supabase
-    .from('bookings')
-    .select('*')
-    .eq('user_id', user.id)
-    .order('created_at', { ascending: false })
-    .limit(5)
-
   const { data: profile } = await supabase
     .from('profiles')
-    .select('full_name, role')
+    .select('full_name, role, phone')
     .eq('id', user.id)
     .single()
 
-  const isAdmin = profile?.role === 'admin'
-  const firstName = profile?.full_name?.trim().split(' ')[0] || user?.email?.split('@')[0] || 'Guest'
-  const hour = new Date().getHours()
-  const greeting = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : 'Good Evening'
+  const { data: allBookings } = await supabase
+    .from('bookings')
+    .select('*')
+    .order('created_at', { ascending: false })
 
-  const total     = bookings?.length ?? 0
-  const pending   = bookings?.filter((b: any) => b.status === 'pending').length   ?? 0
-  const confirmed = bookings?.filter((b: any) => b.status === 'confirmed').length ?? 0
+  const userPhone = profile?.phone || user?.phone || ''
+  const userBookings = (allBookings ?? []).filter((b: any) =>
+    b.user_id === user.id || (userPhone && b.phone === userPhone)
+  )
+
+  const bookings  = userBookings.slice(0, 10)
+  const isAdmin   = profile?.role === 'admin'
+  const firstName = profile?.full_name?.trim().split(' ')[0] || user?.email?.split('@')[0] || 'Guest'
+  const hour      = new Date().getHours()
+  const greeting  = hour < 12 ? 'Good Morning' : hour < 17 ? 'Good Afternoon' : 'Good Evening'
+
+  const total     = userBookings.length
+  const pending   = userBookings.filter((b: any) => b.status === 'pending').length
+  const confirmed = userBookings.filter((b: any) => b.status === 'confirmed').length
 
   return (
     <div className="space-y-10 pb-20 lg:pb-10">

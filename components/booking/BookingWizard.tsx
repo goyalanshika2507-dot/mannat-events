@@ -243,7 +243,11 @@ function StepMobileVerification({ onVerified, onPrev }: { onVerified: (phone: st
     }
     // Demo mode — only accept 0000
     if (cleanOtp === '0000') {
-      onVerified(formatPhone(phone))
+      const formatted = formatPhone(phone)
+      if (typeof window !== 'undefined') {
+        document.cookie = `mannat-session=${encodeURIComponent(formatted)}; path=/; max-age=86400; SameSite=Lax`
+      }
+      onVerified(formatted)
       return
     }
     setError('Invalid OTP code. For testing, please enter 0000.')

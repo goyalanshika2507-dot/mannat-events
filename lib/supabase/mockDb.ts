@@ -47,13 +47,20 @@ class MockQuery {
   private action: 'select' | 'insert' | 'update' | 'delete' | 'upsert' = 'select'
   private updates: any = null
   private inserts: any = null
+  // selectColumns is tracked separately so calling .select() after .insert() does NOT
+  // reset the action — it only records which columns to return from the write result.
+  private selectColumns: string | null = null
 
   constructor(table: string) {
     this.table = table
   }
 
   select(columns?: string) {
-    this.action = 'select'
+    // Only switch to 'select' action when no write action has been set yet
+    if (this.action === 'select') {
+      this.action = 'select'
+    }
+    this.selectColumns = columns ?? null
     return this
   }
 
@@ -143,8 +150,8 @@ class MockQuery {
       for (const r of rows) {
         const newRow = { 
           id: r.id || crypto.randomUUID(), 
-          created_at: new Date().toISOString(), 
-          updated_at: new Date().toISOString(), 
+          created_at: r.created_at || new Date().toISOString(), 
+          updated_at: r.updated_at || new Date().toISOString(), 
           ...r 
         }
         
@@ -164,7 +171,13 @@ class MockQuery {
 
       db[this.table] = data
       saveLocalDb(db)
-      return { data: Array.isArray(this.inserts) ? inserted : inserted[0], error: null }
+
+      // Return inserted data (mimics Supabase .insert().select() behaviour)
+      const result = Array.isArray(this.inserts) ? inserted : inserted[0]
+      if (this.isSingle) {
+        return { data: Array.isArray(result) ? result[0] : result, error: null }
+      }
+      return { data: result, error: null }
     }
 
     if (this.action === 'update') {
