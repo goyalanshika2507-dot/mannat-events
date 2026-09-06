@@ -87,7 +87,9 @@ export function LoginForm() {
       if (result.ok) {
         document.cookie = `mannat-session=${encodeURIComponent(formattedPhone)}; path=/; max-age=86400; SameSite=Lax`
         toast.success('Signed in successfully!')
-        router.push('/dashboard')
+        const params = new URLSearchParams(window.location.search)
+        const redirectTo = params.get('redirectTo') || '/dashboard'
+        router.push(redirectTo)
         router.refresh()
       } else {
         toast.error(result.error || 'Failed to authenticate')

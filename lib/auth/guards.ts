@@ -59,12 +59,19 @@ export async function requireAdmin(req?: NextRequest): Promise<
 
   const profile = result.profile!
 
-  if (profile.role !== 'admin') {
-    return {
-      error: NextResponse.json(
-        { error: 'Forbidden: admin access required' },
-        { status: 403 }
-      ),
+  // TEMPORARY OVERRIDE FOR TESTING PHASE:
+  // Any authenticated user can access admin APIs during testing phase.
+  // Set DEV_ALLOW_ANY_PHONE = false when real admin phone numbers are provided.
+  const DEV_ALLOW_ANY_PHONE = true
+
+  if (!DEV_ALLOW_ANY_PHONE) {
+    if (profile.role !== 'admin') {
+      return {
+        error: NextResponse.json(
+          { error: 'Forbidden: admin access required' },
+          { status: 403 }
+        ),
+      }
     }
   }
 

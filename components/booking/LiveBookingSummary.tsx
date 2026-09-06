@@ -5,9 +5,9 @@ import { Info } from 'lucide-react'
 interface LiveBookingSummaryProps {
   data: Partial<BookingFormData>
 }
-
 function SummaryRow({
   label,
+  
   value,
 }: {
   label: string

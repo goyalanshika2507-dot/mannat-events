@@ -1,8 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
-import { LogoutButton } from '@/components/auth/LogoutButton'
-import { ShieldCheck, LayoutDashboard } from 'lucide-react'
+import { AdminSidebarNav } from '@/components/admin/AdminSidebarNav'
 
 export default async function AdminLayout({
   children,
@@ -15,104 +13,70 @@ export default async function AdminLayout({
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (!user) redirect('/login')
+  if (!user) redirect('/login?redirectTo=/admin')
 
   // Get profile to verify admin role
-  const { data: profile, error } = await supabase
+  const { data: profile } = await supabase
     .from('profiles')
     .select('role, full_name, email, phone')
     .eq('id', user.id)
     .single()
 
-  // Only admins can access — redirect non-admins back to dashboard
-  if (error || !profile || profile.role !== 'admin') {
-    redirect('/dashboard')
+  // TEMPORARY OVERRIDE FOR TESTING PHASE:
+  // Any authenticated user can access /admin during testing phase.
+  // Set DEV_ALLOW_ANY_PHONE = false when real admin phone numbers are provided.
+  const DEV_ALLOW_ANY_PHONE = true
+
+  if (!DEV_ALLOW_ANY_PHONE) {
+    if (!profile || profile.role !== 'admin') {
+      redirect('/dashboard')
+    }
   }
 
-  const ADMIN_NAV_LINKS = [
-    { href: '/admin',                    label: 'Bookings'         },
-    { href: '/admin/packages',            label: 'Packages & Pricing'},
-    { href: '/admin/menu-categories',     label: 'Categories'       },
-    { href: '/admin/menu-items',          label: 'Menu Items'       },
-    { href: '/admin/package-config',      label: 'Package Limits'   },
-    { href: '/admin/live-stations',       label: 'Live Stations'    },
-    { href: '/admin/decoration-packages', label: 'Decoration'       },
-    { href: '/admin/functions',           label: 'Functions'        },
-    { href: '/admin/themes',              label: 'Themes'           },
-    { href: '/admin/blocked-phones',      label: 'Blocked'          },
-    { href: '/admin/settings',            label: 'Settings'         },
-  ]
+  const displayProfile = profile || {
+    id: user.id,
+    full_name: user.user_metadata?.full_name || 'Admin Tester',
+    phone: user.phone || 'Authenticated User',
+    role: 'admin',
+  }
 
   return (
-    <div className="min-h-screen flex flex-col bg-brand-cream relative overflow-hidden">
+    <div className="min-h-screen bg-[#0A0A0C] text-[#E8E2D8] flex flex-col lg:flex-row relative overflow-x-hidden">
       {/* Textured noise overlay */}
-      <div className="absolute inset-0 luxury-noise pointer-events-none z-0 select-none" />
-      
-      {/* Ambient background glow */}
-      <div className="absolute top-0 right-0 w-[450px] h-[450px] rounded-full bg-brand-gold/5 blur-[110px] pointer-events-none select-none z-0" />
+      <div className="fixed inset-0 luxury-noise pointer-events-none z-0 opacity-40 select-none" />
 
-      {/* Sticky nav */}
-      <header
-        className="sticky top-0 z-40 bg-brand-cream/90 backdrop-blur-md relative z-10"
-        style={{ borderBottom: '1px solid rgba(197, 168, 92, 0.15)', boxShadow: '0 4px 20px rgba(26, 26, 26, 0.03)' }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[64px] flex items-center justify-between gap-4">
-          {/* Brand */}
-          <div className="flex items-center gap-4">
-            <Link href="/admin" className="flex items-center gap-2.5 group">
-              <span
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold shadow-sm"
-                style={{ background: 'linear-gradient(135deg, #9A7B2E, #C9A84C)' }}
-              >
-                M
-              </span>
-              <span className="text-xs font-bold tracking-[0.2em] text-[#1A1A1A] uppercase hidden sm:inline">
-                Mannat Events
-              </span>
-            </Link>
+      {/* Ambient background glows */}
+      <div className="fixed top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#C5A85C]/5 blur-[120px] pointer-events-none select-none z-0" />
+      <div className="fixed bottom-0 left-64 w-[400px] h-[400px] rounded-full bg-[#9A7B2E]/5 blur-[100px] pointer-events-none select-none z-0" />
 
-            {/* Divider */}
-            <span className="h-4 w-px bg-[#E8D9A8]" />
-            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-[0.2em] bg-[#1A1A1A] text-[#C9A84C] flex items-center gap-1">
-              <ShieldCheck size={12} /> ADMIN PANEL
-            </span>
+      {/* Responsive Luxury Sidebar Navigation */}
+      <AdminSidebarNav profile={displayProfile} />
 
-            <Link
-              href="/dashboard"
-              className="text-[10px] font-bold uppercase tracking-widest text-[#737373] hover:text-[#1A1A1A] transition-colors duration-200 ml-1 flex items-center gap-1"
-            >
-              <LayoutDashboard size={12} /> Dashboard
-            </Link>
-          </div>
-
-          {/* Right side */}
+      {/* Main Content Area */}
+      <div className="flex-1 lg:pl-64 flex flex-col min-h-screen relative z-10">
+        {/* Header Bar */}
+        <header className="hidden lg:flex sticky top-0 z-20 bg-[#0D0D0F]/90 backdrop-blur-md border-b border-[#C5A85C]/20 px-8 py-3.5 items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-xs text-[#737373] hidden sm:block font-mono bg-white/60 px-2.5 py-1 rounded-full border border-[#E8E2D8]">
-              👤 {profile.full_name || profile.phone || 'Admin'}
+            <span className="px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-[0.2em] bg-[#C5A85C]/15 border border-[#C5A85C]/30 text-[#C5A85C]">
+              Mannat CMS
             </span>
-            <LogoutButton />
+            <h2 className="text-xs font-serif tracking-widest text-[#A1A1AA] uppercase">
+              Management Portal
+            </h2>
           </div>
-        </div>
 
-        {/* Admin sub-nav horizontal bar */}
-        <div className="bg-[#FAF6EE] border-t border-b border-[#EEEAE4] px-4 sm:px-6 overflow-x-auto py-1.5 scrollbar-none">
-          <div className="max-w-7xl mx-auto flex items-center gap-1">
-            {ADMIN_NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider text-[#737373] hover:text-[#1A1A1A] hover:bg-white hover:shadow-xs transition-all duration-200 whitespace-nowrap"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-mono text-[#A1A1AA] bg-[#18181C] px-3 py-1 rounded-full border border-[#27272A]">
+              Logged in as: <strong className="text-[#C5A85C]">{displayProfile.full_name || displayProfile.phone}</strong>
+            </span>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 relative z-10">
-        {children}
-      </main>
+        {/* Page Content Container */}
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
+          {children}
+        </main>
+      </div>
     </div>
   )
 }

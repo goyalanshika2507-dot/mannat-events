@@ -36,12 +36,11 @@ export function LandingFooter() {
             <p className="text-caption mb-6" style={{ color: '#C9A84C' }}>Quick Links</p>
             <ul className="space-y-3">
               {[
-                { label: 'Plan Your Wedding', href: '/signup' },
-                { label: 'Sign In', href: '/login' },
+                { label: 'Plan Your Wedding', href: '/booking' },
                 { label: 'My Dashboard', href: '/dashboard' },
                 { label: 'Book Now', href: '/booking' },
               ].map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
                     className="text-sm transition-colors duration-200"

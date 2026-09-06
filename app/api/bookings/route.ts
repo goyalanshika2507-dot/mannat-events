@@ -43,14 +43,13 @@ export async function POST(request: NextRequest) {
       const db = getLocalDb()
       if (!db.profiles) db.profiles = []
       let profile = db.profiles.find((p: any) => p.phone === phone)
-      const isAdminPhone = phone === '+919876543210'
 
       if (!profile) {
         profile = {
-          id: isAdminPhone ? 'admin-user-id' : crypto.randomUUID(),
-          email: isAdminPhone ? 'admin@mannatevents.com' : `${phone.replace(/\D/g, '')}@mannatevents.com`,
-          full_name: isAdminPhone ? 'Mannat Admin' : 'Guest User',
-          role: isAdminPhone ? 'admin' : 'user',
+          id: crypto.randomUUID(),
+          email: `${phone.replace(/\D/g, '')}@mannatevents.com`,
+          full_name: 'Guest User',
+          role: 'user',
           phone,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString()

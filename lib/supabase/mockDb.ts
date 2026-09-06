@@ -25,7 +25,7 @@ export function getLocalDb() {
           email: 'admin@mannatevents.com',
           full_name: 'Mannat Admin',
           role: 'admin',
-          phone: '+919876543210'
+          phone: '+918888888888'
         }
       ]
     }, null, 2))

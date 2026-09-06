@@ -9,29 +9,20 @@ export async function POST(req: NextRequest) {
     const db = getLocalDb()
     if (!db.profiles) db.profiles = []
 
-    // Check if profile exists
+    // Check if profile exists by phone number
     let profile = db.profiles.find((p: any) => p.phone === phone)
-
-    // Treat +919876543210 as admin specifically
-    const isAdminPhone = phone === '+919876543210'
 
     if (!profile) {
       profile = {
-        id: isAdminPhone ? 'admin-user-id' : crypto.randomUUID(),
-        email: isAdminPhone ? 'admin@mannatevents.com' : '',
-        full_name: isAdminPhone ? 'Mannat Admin' : 'Guest User',
-        role: isAdminPhone ? 'admin' : 'user',
+        id: crypto.randomUUID(),
+        email: '',
+        full_name: 'Guest User',
+        role: 'user',
         phone: phone,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
       }
       db.profiles.push(profile)
-      saveLocalDb(db)
-    } else if (isAdminPhone && profile.role !== 'admin') {
-      // Ensure admin phone is always admin role
-      profile.role = 'admin'
-      profile.email = 'admin@mannatevents.com'
-      profile.full_name = 'Mannat Admin'
       saveLocalDb(db)
     }
 

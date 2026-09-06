@@ -66,7 +66,7 @@ export default function AdminSettingsPage() {
             </div>
           </div>
           <div className="space-y-2 text-xs text-[#737373]">
-            <p><strong>Admin Phone:</strong> <span className="font-mono text-[#1A1A1A]">+919876543210</span></p>
+            <p><strong>Role Requirement:</strong> <span className="font-mono text-[#1A1A1A]">profiles.role = &apos;admin&apos;</span></p>
             <p><strong>Authentication:</strong> Phone + OTP (<code className="bg-[#F5EDD6] px-1 py-0.5 rounded text-[#A08040]">0000</code> test mode)</p>
             <p><strong>Role Enforcement:</strong> Middleware &amp; API level guards active</p>
           </div>

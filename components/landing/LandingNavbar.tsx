@@ -63,6 +63,20 @@ export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
                 {item.label}
               </a>
             ))}
+
+            {/* Clearly Visible ADMIN PANEL Option */}
+            <Link
+              href="/admin"
+              className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 hover:scale-105"
+              style={{
+                color: '#C5A85C',
+                border: '1px solid rgba(197,168,92,0.4)',
+                background: 'rgba(197,168,92,0.1)',
+              }}
+            >
+              <ShieldCheck size={14} />
+              <span>ADMIN PANEL</span>
+            </Link>
           </nav>
 
           {/* CTA Header Actions */}
@@ -82,50 +96,33 @@ export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
               </Link>
             )}
 
-            {isAdmin ? (
-              /* ADMIN USER: Replace VIEW RESERVATION with ADMIN PANEL */
-              <Link href="/admin">
-                <button
-                  className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 cursor-pointer"
-                  style={{
-                    background: 'linear-gradient(135deg, #C5A85C 0%, #E8D9A8 50%, #A08040 100%)',
-                    color: '#0A0807',
-                    border: '1px solid #E8D9A8',
-                    boxShadow: '0 4px 20px rgba(201,168,76,0.35)',
-                  }}
-                >
-                  <ShieldCheck size={15} />
-                  <span>ADMIN PANEL</span>
-                </button>
-              </Link>
-            ) : (
-              /* NORMAL USER / GUEST: Keep VIEW RESERVATION button unchanged */
-              <>
-                {!isLoggedIn && (
-                  <Link
-                    href="/login"
-                    className="text-sm font-medium transition-colors mr-2"
-                    style={{ color: 'rgba(250,243,232,0.6)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FAF3E8')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(250,243,232,0.6)')}
-                  >
-                    Sign In
-                  </Link>
-                )}
-                <Link href={isLoggedIn ? '/dashboard' : '/login'}>
-                  <button
-                    className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:opacity-90 cursor-pointer"
-                    style={{
-                      background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)',
-                      color: '#0A0807',
-                      boxShadow: '0 4px 20px rgba(201,168,76,0.3)',
-                    }}
-                  >
-                    VIEW RESERVATION
-                  </button>
-                </Link>
-              </>
-            )}
+            <Link href={isLoggedIn ? '/dashboard' : '/booking'}>
+              <button
+                className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:opacity-90 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)',
+                  color: '#0A0807',
+                  boxShadow: '0 4px 20px rgba(201,168,76,0.3)',
+                }}
+              >
+                VIEW RESERVATION
+              </button>
+            </Link>
+
+            <Link href="/admin">
+              <button
+                className="rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(135deg, #C5A85C 0%, #E8D9A8 50%, #A08040 100%)',
+                  color: '#0A0807',
+                  border: '1px solid #E8D9A8',
+                  boxShadow: '0 4px 20px rgba(201,168,76,0.35)',
+                }}
+              >
+                <ShieldCheck size={15} />
+                <span>ADMIN PANEL</span>
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -168,21 +165,19 @@ export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4 w-full px-8">
-                {isAdmin ? (
-                  <Link href="/admin" onClick={() => setMobileOpen(false)}>
-                    <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2"
-                      style={{ background: 'linear-gradient(135deg, #C5A85C, #E8D9A8)', color: '#0A0807' }}>
-                      <ShieldCheck size={16} /> ADMIN PANEL
-                    </button>
-                  </Link>
-                ) : (
-                  <Link href={isLoggedIn ? '/dashboard' : '/login'} onClick={() => setMobileOpen(false)}>
-                    <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase"
-                      style={{ background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)', color: '#0A0807' }}>
-                      VIEW RESERVATION
-                    </button>
-                  </Link>
-                )}
+                <Link href="/admin" onClick={() => setMobileOpen(false)}>
+                  <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2"
+                    style={{ background: 'linear-gradient(135deg, #C5A85C, #E8D9A8)', color: '#0A0807' }}>
+                    <ShieldCheck size={16} /> ADMIN PANEL
+                  </button>
+                </Link>
+
+                <Link href={isLoggedIn ? '/dashboard' : '/booking'} onClick={() => setMobileOpen(false)}>
+                  <button className="w-full rounded-full py-4 font-bold text-xs tracking-widest uppercase"
+                    style={{ background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)', color: '#0A0807' }}>
+                    VIEW RESERVATION
+                  </button>
+                </Link>
 
                 {isLoggedIn && (
                   <Link href="/dashboard" onClick={() => setMobileOpen(false)}>

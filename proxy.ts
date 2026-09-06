@@ -23,6 +23,7 @@ export async function proxy(request: NextRequest) {
   if (!user && isProtected) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
+    url.searchParams.set('redirectTo', pathname)
     return NextResponse.redirect(url)
   }
 
@@ -32,17 +33,26 @@ export async function proxy(request: NextRequest) {
     const { getLocalDb } = await import('@/lib/supabase/mockDb')
     const db = getLocalDb()
     const profile = db.profiles?.find((p: any) => p.id === user?.id)
-    if (!profile || profile.role !== 'admin') {
-      const url = request.nextUrl.clone()
-      url.pathname = '/dashboard'
-      return NextResponse.redirect(url)
+
+    // TEMPORARY OVERRIDE FOR TESTING PHASE:
+    // Any authenticated phone + OTP 0000 can access /admin during testing.
+    const DEV_ALLOW_ANY_PHONE = true
+
+    if (!DEV_ALLOW_ANY_PHONE) {
+      if (!profile || profile.role !== 'admin') {
+        const url = request.nextUrl.clone()
+        url.pathname = '/dashboard'
+        return NextResponse.redirect(url)
+      }
     }
   }
 
   // ---- Redirect authenticated users away from auth pages ----
   if (user && (pathname === '/login' || pathname === '/signup')) {
     const url = request.nextUrl.clone()
-    url.pathname = '/dashboard'
+    const redirectTo = request.nextUrl.searchParams.get('redirectTo') || '/dashboard'
+    url.pathname = redirectTo
+    url.searchParams.delete('redirectTo')
     return NextResponse.redirect(url)
   }
 
