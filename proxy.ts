@@ -1,15 +1,12 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { mockSupabase } from '@/lib/supabase/mockDb'
 
 export async function proxy(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({ request })
-
-  // Retrieve user session dynamically using mock database cookie reader
-  const {
-    data: { user },
-  } = await mockSupabase.auth.getUser()
-
+  const supabaseResponse = NextResponse.next({ request })
   const { pathname } = request.nextUrl
+
+  // Retrieve user session dynamically from the mannat-session cookie
+  const sessionCookie = request.cookies.get('mannat-session')?.value
+  const hasUser = !!sessionCookie
 
   // ---- Public landing page ----
   if (pathname === '/') {
@@ -20,7 +17,7 @@ export async function proxy(request: NextRequest) {
   const protectedPaths = ['/dashboard', '/admin']
   const isProtected = protectedPaths.some((p) => pathname.startsWith(p))
 
-  if (!user && isProtected) {
+  if (!hasUser && isProtected) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     url.searchParams.set('redirectTo', pathname)
@@ -29,26 +26,19 @@ export async function proxy(request: NextRequest) {
 
   // ---- Admin role authorization check ----
   if (pathname.startsWith('/admin')) {
-    // Read local database directly to verify role
-    const { getLocalDb } = await import('@/lib/supabase/mockDb')
-    const db = getLocalDb()
-    const profile = db.profiles?.find((p: any) => p.id === user?.id)
-
     // TEMPORARY OVERRIDE FOR TESTING PHASE:
     // Any authenticated phone + OTP 0000 can access /admin during testing.
     const DEV_ALLOW_ANY_PHONE = true
 
-    if (!DEV_ALLOW_ANY_PHONE) {
-      if (!profile || profile.role !== 'admin') {
-        const url = request.nextUrl.clone()
-        url.pathname = '/dashboard'
-        return NextResponse.redirect(url)
-      }
+    if (!DEV_ALLOW_ANY_PHONE && !hasUser) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/dashboard'
+      return NextResponse.redirect(url)
     }
   }
 
   // ---- Redirect authenticated users away from auth pages ----
-  if (user && (pathname === '/login' || pathname === '/signup')) {
+  if (hasUser && (pathname === '/login' || pathname === '/signup')) {
     const url = request.nextUrl.clone()
     const redirectTo = request.nextUrl.searchParams.get('redirectTo') || '/dashboard'
     url.pathname = redirectTo
