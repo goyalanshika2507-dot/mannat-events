@@ -80,8 +80,8 @@ export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
           </nav>
 
           {/* CTA Header Actions */}
-          <div className="hidden md:flex items-center gap-4">
-            {isLoggedIn && (
+          {isLoggedIn && (
+            <div className="hidden md:flex items-center gap-4">
               <Link href="/dashboard">
                 <button
                   className="rounded-full px-5 py-2.5 text-xs font-semibold tracking-wider transition-all duration-300 hover:text-white"
@@ -94,36 +94,8 @@ export function LandingNavbar({ isLoggedIn, isAdmin }: Props) {
                   My Dashboard
                 </button>
               </Link>
-            )}
-
-            <Link href={isLoggedIn ? '/dashboard' : '/booking'}>
-              <button
-                className="rounded-full px-6 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:opacity-90 cursor-pointer"
-                style={{
-                  background: 'linear-gradient(135deg, #9A7B2E, #C5A85C)',
-                  color: '#0A0807',
-                  boxShadow: '0 4px 20px rgba(201,168,76,0.3)',
-                }}
-              >
-                VIEW RESERVATION
-              </button>
-            </Link>
-
-            <Link href="/admin">
-              <button
-                className="rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg flex items-center gap-2 cursor-pointer"
-                style={{
-                  background: 'linear-gradient(135deg, #C5A85C 0%, #E8D9A8 50%, #A08040 100%)',
-                  color: '#0A0807',
-                  border: '1px solid #E8D9A8',
-                  boxShadow: '0 4px 20px rgba(201,168,76,0.35)',
-                }}
-              >
-                <ShieldCheck size={15} />
-                <span>ADMIN PANEL</span>
-              </button>
-            </Link>
-          </div>
+            </div>
+          )}
 
           {/* Mobile menu button */}
           <button
