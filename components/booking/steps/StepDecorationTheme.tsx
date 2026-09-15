@@ -25,18 +25,19 @@ interface DecorPkg {
 }
 
 export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
-  const [selectedTier, setSelectedTier] = useState<DecorationPackageTier>(
-    data.decoration_package ?? 'gold'
+  const [selectedTier, setSelectedTier] = useState<DecorationPackageTier | null>(
+    data.decoration_package ?? null
   )
   const [packages, setPackages] = useState<DecorPkg[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/api/config/decoration-packages')
+    const hotelId = data.selected_hotel?.id || 'mannat-events'
+    fetch(`/api/config/decoration-packages?hotel_id=${encodeURIComponent(hotelId)}`)
       .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data)) {
-          setPackages(data)
+      .then(decorData => {
+        if (Array.isArray(decorData)) {
+          setPackages(decorData)
         }
         setLoading(false)
       })
@@ -44,11 +45,12 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
         console.error('Failed to load decoration packages:', err)
         setLoading(false)
       })
-  }, [])
+  }, [data.selected_hotel?.id])
 
   function handleContinue() {
+    if (!selectedTier) return
     const pkg = packages.find(p => p.id === selectedTier)
-    onNext(selectedTier, pkg?.title ?? 'Gold Package')
+    onNext(selectedTier, pkg?.title ?? 'Decoration Package')
   }
 
   const getIcon = (id: string) => {
@@ -119,6 +121,12 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
                   src={pkg.image_url}
                   alt={pkg.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    if (!target.src.endsWith('/floral.jpg')) {
+                      target.src = '/floral.jpg'
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 
@@ -160,16 +168,16 @@ export function StepDecorationTheme({ data, onNext, onPrev }: Props) {
       {/* Nav */}
       <div className="hidden md:flex justify-between mt-10 pt-6 border-t border-[#E8E2D8]">
         <Button variant="secondary" size="lg" onClick={onPrev}>Previous</Button>
-        <Button size="lg" variant="gold" onClick={handleContinue}>
-          Click to See Prices
+        <Button size="lg" variant="gold" onClick={handleContinue} disabled={!selectedTier}>
+          {selectedTier ? 'Click to See Prices' : 'Select a Decor Package'}
         </Button>
       </div>
 
       <div className="fixed md:hidden bottom-0 left-0 right-0 z-50 border-t border-[#E8E2D8] bg-white/95 backdrop-blur-md px-4 py-3">
         <div className="max-w-lg mx-auto flex gap-3">
           <Button variant="secondary" size="lg" onClick={onPrev} className="flex-1">Previous</Button>
-          <Button size="lg" variant="gold" onClick={handleContinue} className="flex-1">
-            See Prices →
+          <Button size="lg" variant="gold" onClick={handleContinue} disabled={!selectedTier} className="flex-1">
+            {selectedTier ? 'See Prices →' : 'Select a Package'}
           </Button>
         </div>
       </div>

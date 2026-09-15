@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { mockSupabase } from '@/lib/supabase/mockDb'
 
 /**
@@ -6,11 +6,15 @@ import { mockSupabase } from '@/lib/supabase/mockDb'
  * Returns all active banquet packages with their categories, items, live stations and add-ons.
  * This is the single source of truth for the customer booking wizard.
  */
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
+    const hotelId = req.nextUrl.searchParams.get('hotel_id') || 'mannat-events'
+
     // Fetch packages
     const { data: packages } = await mockSupabase.from('banquet_packages').select()
-    const activePackages = (packages ?? []).filter((p: any) => p.is_active)
+    const activePackages = (packages ?? []).filter((p: any) =>
+      p.is_active && (hotelId === 'all' ? true : (p.hotel_id ? p.hotel_id === hotelId : hotelId === 'mannat-events'))
+    )
 
     // Fetch categories
     const { data: categories } = await mockSupabase.from('menu_categories').select()
@@ -55,10 +59,18 @@ export async function GET() {
         // Get active items for this package/category
         const myItems = (pkgItems ?? [])
           .filter((pi: any) => pi.package_id === pkg.id && pi.category_id === pc.category_id)
-          .map((pi: any) => activeItems.find((i: any) => i.id === pi.item_id))
+          .map((pi: any) => {
+            const itemDef = activeItems.find((i: any) => i.id === pi.item_id)
+            if (!itemDef) return null
+            return {
+              id: itemDef.id,
+              name: itemDef.name,
+              subLabel: itemDef.sub_label || undefined,
+              price: pi.price ?? itemDef.price ?? 0,
+            }
+          })
           .filter(Boolean)
-          .sort((a: any, b: any) => a.sort_order - b.sort_order)
-          .map((i: any) => ({ name: i.name, subLabel: i.sub_label || undefined }))
+          .sort((a: any, b: any) => (a.sort_order ?? 0) - (b.sort_order ?? 0))
 
         return {
           id: pc.category_id,

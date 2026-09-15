@@ -99,7 +99,9 @@
       "sub_label": null,
       "type": "veg",
       "is_active": true,
-      "sort_order": 1
+      "sort_order": 1,
+      "price": 0,
+      "updated_at": "2026-09-13T17:51:52.438Z"
     },
     {
       "id": "a007e82a-a768-46df-bbe1-ab66555690ec",
@@ -1774,7 +1776,9 @@
       "price_per_head": 2000,
       "tagline": "₹2,000 per head · A rich vegetarian banquet experience",
       "is_active": true,
-      "sort_order": 1
+      "sort_order": 1,
+      "updated_at": "2026-09-13T17:51:16.205Z",
+      "hotel_id": "mannat-events"
     },
     {
       "id": "veg-executive",
@@ -1783,7 +1787,8 @@
       "price_per_head": 2500,
       "tagline": "₹2,500 per head · A premium vegetarian feast with extra variety",
       "is_active": true,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "id": "veg-platinum",
@@ -1792,7 +1797,8 @@
       "price_per_head": 3000,
       "tagline": "₹3,000 per head · The ultimate luxury vegetarian banquet",
       "is_active": true,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "id": "non-veg-premium",
@@ -1801,7 +1807,8 @@
       "price_per_head": 2650,
       "tagline": "₹2,650 per head · A rich non-vegetarian banquet experience",
       "is_active": true,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "id": "non-veg-executive",
@@ -1810,7 +1817,8 @@
       "price_per_head": 3150,
       "tagline": "₹3,150 per head · A premium non-vegetarian feast with extra variety",
       "is_active": true,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "id": "non-veg-platinum",
@@ -1818,6 +1826,187 @@
       "meal_type": "non-veg",
       "price_per_head": 3650,
       "tagline": "₹3,650 per head · The ultimate luxury non-vegetarian banquet",
+      "is_active": true,
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
+    },
+    {
+      "id": "veg-premium",
+      "hotel_id": "taj-hotel",
+      "name": "Premium Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 2000,
+      "tagline": "Vegetarian banquet experience",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "veg-executive",
+      "hotel_id": "taj-hotel",
+      "name": "Executive Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 2500,
+      "tagline": "Premium vegetarian feast",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "veg-platinum",
+      "hotel_id": "taj-hotel",
+      "name": "Platinum Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 3000,
+      "tagline": "Luxury vegetarian banquet",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "non-veg-premium",
+      "hotel_id": "taj-hotel",
+      "name": "Premium Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 2650,
+      "tagline": "Rich non-vegetarian banquet",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "non-veg-executive",
+      "hotel_id": "taj-hotel",
+      "name": "Executive Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3150,
+      "tagline": "Premium non-veg feast",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "non-veg-platinum",
+      "hotel_id": "taj-hotel",
+      "name": "Platinum Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3650,
+      "tagline": "Luxury non-veg banquet",
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "id": "veg-premium",
+      "hotel_id": "itc-mughal",
+      "name": "Premium Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 3000,
+      "tagline": "Vegetarian banquet experience",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "veg-executive",
+      "hotel_id": "itc-mughal",
+      "name": "Executive Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 3500,
+      "tagline": "Premium vegetarian feast",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "veg-platinum",
+      "hotel_id": "itc-mughal",
+      "name": "Platinum Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 4000,
+      "tagline": "Luxury vegetarian banquet",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "non-veg-premium",
+      "hotel_id": "itc-mughal",
+      "name": "Premium Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3150,
+      "tagline": "Rich non-vegetarian banquet",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "non-veg-executive",
+      "hotel_id": "itc-mughal",
+      "name": "Executive Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3650,
+      "tagline": "Premium non-veg feast",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "non-veg-platinum",
+      "hotel_id": "itc-mughal",
+      "name": "Platinum Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 4150,
+      "tagline": "Luxury non-veg banquet",
+      "is_active": true,
+      "sort_order": 6
+    },
+    {
+      "id": "veg-premium",
+      "hotel_id": "courtyard-marriott",
+      "name": "Premium Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 3500,
+      "tagline": "Vegetarian banquet experience",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "veg-executive",
+      "hotel_id": "courtyard-marriott",
+      "name": "Executive Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 4000,
+      "tagline": "Premium vegetarian feast",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "veg-platinum",
+      "hotel_id": "courtyard-marriott",
+      "name": "Platinum Veg Banquet",
+      "meal_type": "veg",
+      "price_per_head": 4500,
+      "tagline": "Luxury vegetarian banquet",
+      "is_active": true,
+      "sort_order": 3
+    },
+    {
+      "id": "non-veg-premium",
+      "hotel_id": "courtyard-marriott",
+      "name": "Premium Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 3650,
+      "tagline": "Rich non-vegetarian banquet",
+      "is_active": true,
+      "sort_order": 4
+    },
+    {
+      "id": "non-veg-executive",
+      "hotel_id": "courtyard-marriott",
+      "name": "Executive Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 4150,
+      "tagline": "Premium non-veg feast",
+      "is_active": true,
+      "sort_order": 5
+    },
+    {
+      "id": "non-veg-platinum",
+      "hotel_id": "courtyard-marriott",
+      "name": "Platinum Non-Veg Banquet",
+      "meal_type": "non-veg",
+      "price_per_head": 4650,
+      "tagline": "Luxury non-veg banquet",
       "is_active": true,
       "sort_order": 6
     }
@@ -1827,3160 +2016,3760 @@
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
       "limit_count": 2,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
       "limit_count": 4,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
       "limit_count": 2,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
       "limit_count": 4,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
       "limit_count": 2,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
       "limit_count": 3,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
       "limit_count": 4,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
       "limit_count": 3,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
       "limit_count": 5,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
       "limit_count": 3,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
       "limit_count": 5,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
       "limit_count": 2,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
       "limit_count": 4,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
       "limit_count": 5,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
       "limit_count": 4,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
       "limit_count": 6,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
       "limit_count": 3,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
       "limit_count": 6,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
       "limit_count": 3,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
       "limit_count": 4,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
       "limit_count": 6,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
       "limit_count": 2,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
       "limit_count": 4,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
       "limit_count": 2,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
       "limit_count": 4,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
       "limit_count": 3,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
       "limit_count": 2,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
       "limit_count": 4,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
       "limit_count": 3,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
       "limit_count": 5,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
       "limit_count": 3,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
       "limit_count": 5,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
       "limit_count": 4,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
       "limit_count": 2,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
       "limit_count": 5,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
       "limit_count": 4,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
       "limit_count": 6,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
       "limit_count": 4,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
       "limit_count": 2,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
       "limit_count": 6,
-      "sort_order": 5
+      "sort_order": 5,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "raita-curd",
       "limit_count": 1,
-      "sort_order": 6
+      "sort_order": 6,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
       "limit_count": 5,
-      "sort_order": 7
+      "sort_order": 7,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
       "limit_count": 2,
-      "sort_order": 8
+      "sort_order": 8,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
       "limit_count": 1,
-      "sort_order": 9
+      "sort_order": 9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
       "limit_count": 2,
-      "sort_order": 10
+      "sort_order": 10,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
       "limit_count": null,
-      "sort_order": 11
+      "sort_order": 11,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
       "limit_count": 6,
-      "sort_order": 12
+      "sort_order": 12,
+      "hotel_id": "mannat-events"
     }
   ],
   "package_items": [
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d",
+      "price": -9,
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-indian",
-      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "starters-veg-oriental",
-      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "soup",
-      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "salads",
-      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
-      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
-      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
-      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
-      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "raita-curd",
-      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "paneer-main",
-      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "veg-main",
-      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
-      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
-      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
-      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
-      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "dal",
-      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
-      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
-      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
-      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
-      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "breads",
-      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-premium",
       "category_id": "desserts",
-      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742"
+      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "547c4c57-4152-4177-8148-99d0b7489253"
+      "item_id": "547c4c57-4152-4177-8148-99d0b7489253",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-indian",
-      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc"
+      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "starters-veg-oriental",
-      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639"
+      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "soup",
-      "item_id": "46814876-a128-4069-bda7-7938d91b88d5"
+      "item_id": "46814876-a128-4069-bda7-7938d91b88d5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6"
+      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "salads",
-      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3"
+      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
-      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
-      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
-      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
-      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "raita-curd",
-      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "paneer-main",
-      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce"
+      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b"
+      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "veg-main",
-      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf"
+      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "dal",
-      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422"
+      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110"
+      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "breads",
-      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2"
+      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-executive",
       "category_id": "desserts",
-      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459"
+      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b"
+      "item_id": "aed7ac8d-45ee-43ed-a636-eca1a36a302b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec"
+      "item_id": "a007e82a-a768-46df-bbe1-ab66555690ec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97"
+      "item_id": "78dcf50c-c325-4e08-baac-1d8d870a2e97",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "2afb5b72-6204-4890-b793-18023d696379"
+      "item_id": "2afb5b72-6204-4890-b793-18023d696379",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3"
+      "item_id": "92f307ff-8c09-44a5-9976-01cb4e9676a3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e"
+      "item_id": "7494d8f0-8b15-4a85-b1d4-580b9a0a918e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885"
+      "item_id": "fe2ebcfd-8fda-44fa-9b5a-f01d82f2e885",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25"
+      "item_id": "2971c78a-c8ad-42c6-b467-a1e0af809a25",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742"
+      "item_id": "3a27fb42-eb0b-4250-aa89-fa9865426742",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "684fcab9-d444-44ee-aab1-247ba53ea21d"
+      "item_id": "684fcab9-d444-44ee-aab1-247ba53ea21d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58"
+      "item_id": "926dfc88-248d-40a5-8c82-681a95167d58",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a"
+      "item_id": "7dddc7b1-f324-4351-9d36-c5dd39c1948a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741"
+      "item_id": "60228dd0-d7db-4c9f-9c10-17c645542741",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31"
+      "item_id": "72bd7230-c56e-4dcd-803d-3c9e05e36f31",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad"
+      "item_id": "b797c72e-ebe5-4e3e-b2c2-dd393d298bad",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d"
+      "item_id": "d608e463-c05b-4dbb-ba24-fafe4d6e5c6d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189"
+      "item_id": "160cd56e-4592-44c1-8f70-a3c593fee189",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4"
+      "item_id": "e4b3816c-d3d9-4429-ae32-082010bd60b4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "547c4c57-4152-4177-8148-99d0b7489253"
+      "item_id": "547c4c57-4152-4177-8148-99d0b7489253",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc"
+      "item_id": "77fd5f22-acc8-4557-9204-3242773fe6bc",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "b06320f3-4c43-4c16-845d-d4545e87e5d3"
+      "item_id": "b06320f3-4c43-4c16-845d-d4545e87e5d3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-indian",
-      "item_id": "a06e64b1-6c00-4a2c-9e15-170642861979"
+      "item_id": "a06e64b1-6c00-4a2c-9e15-170642861979",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df"
+      "item_id": "d5344f88-ce10-4385-ace9-3b71e68838df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "20f0d993-049e-4998-ba86-16462c51129b"
+      "item_id": "20f0d993-049e-4998-ba86-16462c51129b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d"
+      "item_id": "9af7a08c-c68a-46dc-81e7-59350601355d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86"
+      "item_id": "67c6e0e8-abb9-4278-81e6-1898e7932c86",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1"
+      "item_id": "f9a656ca-e86c-4e32-bd53-7127426a47c1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c"
+      "item_id": "b72780e7-7409-4b8f-980b-bdc18afe3c2c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639"
+      "item_id": "3bd84a88-71c5-45af-9ef8-0cc0e3ab6639",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "starters-veg-oriental",
-      "item_id": "71bd741f-f2e8-43b0-8e49-80a8a92675e7"
+      "item_id": "71bd741f-f2e8-43b0-8e49-80a8a92675e7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289"
+      "item_id": "40e39c6c-8570-43f6-9197-f6c027bea289",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098"
+      "item_id": "595a2b23-d9fa-49af-b36f-4d9e066fd098",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab"
+      "item_id": "fca28208-a7c7-4296-b9bc-7f896c9035ab",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539"
+      "item_id": "83ad23bd-bb19-43e1-86b3-8a9cd9590539",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874"
+      "item_id": "a732bd47-f54a-43e2-977b-b1d511a86874",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a"
+      "item_id": "d7339989-8bf3-4e0a-b932-5e3172b3c66a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "46814876-a128-4069-bda7-7938d91b88d5"
+      "item_id": "46814876-a128-4069-bda7-7938d91b88d5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "soup",
-      "item_id": "d7f17c1d-be98-4dfa-8432-03c3f6d014c1"
+      "item_id": "d7f17c1d-be98-4dfa-8432-03c3f6d014c1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7"
+      "item_id": "295ccea0-d449-4138-abab-eaadae5915c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390"
+      "item_id": "3e33f303-c774-436a-8ad9-2dd059660390",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e"
+      "item_id": "fd1f9710-46c6-4f1e-9b31-57a8658e9c4e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3"
+      "item_id": "fbd5e11e-49de-4223-812b-31a7e9399aa3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54"
+      "item_id": "b5e181a8-823e-49ac-aa80-e30381474a54",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329"
+      "item_id": "365d13d0-c869-4370-abdd-05f143c7e329",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44"
+      "item_id": "3f5d3620-9168-4a19-9055-55b02baf3d44",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db"
+      "item_id": "362f8e54-e91f-4534-a2b3-402cf052f5db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6"
+      "item_id": "120fbae3-cd50-4e81-a8f0-65f2b63e03a6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3"
+      "item_id": "b4c58bdd-fd15-4c1c-bc0e-b4aafcb7b4a3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "salads",
-      "item_id": "7ad70074-9a12-4a17-a1ef-3130511b4373"
+      "item_id": "7ad70074-9a12-4a17-a1ef-3130511b4373",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939"
+      "item_id": "a89aca2c-d184-4532-be23-7401ccb08939",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38"
+      "item_id": "506960e4-4327-4456-9c0b-bb515b85cc38",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d"
+      "item_id": "cd02aef7-d8b5-4e00-9477-4efdff8e868d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6"
+      "item_id": "bae625e4-8feb-4372-a5ef-2db7fba0bca6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7"
+      "item_id": "aa62738b-9c85-4900-9309-7396d283ecf7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176"
+      "item_id": "905a8737-ca9e-468a-b8c2-ced9736b6176",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53"
+      "item_id": "c4f781c4-c5fc-405f-bba7-0ed65046dc53",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a"
+      "item_id": "b07ec918-0cb2-42f0-b726-841116b2cf7a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834"
+      "item_id": "e50a9858-8854-4d80-ab92-f6fca437f834",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5"
+      "item_id": "cca14a87-095f-44fd-994c-e1b49f7c7ad5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c"
+      "item_id": "d7b0913e-eaaa-4f89-b5a4-31763dacb05c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce"
+      "item_id": "c7efbfd2-4089-471b-bedf-34725a7ea2ce",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "paneer-main",
-      "item_id": "171d7dc8-226c-4548-b5c8-9e1ba193af28"
+      "item_id": "171d7dc8-226c-4548-b5c8-9e1ba193af28",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc"
+      "item_id": "1cfce577-b094-486d-9c2e-4ba4580e74bc",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e"
+      "item_id": "a2c64e39-afbd-4cca-a191-25aefd84565e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e"
+      "item_id": "b05cfe97-8bc6-4488-b39c-2e2bec472d9e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35"
+      "item_id": "70b8a2c1-0be3-4043-ae1e-279c4df96b35",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "060365f6-9c21-4b68-9706-f4319437e774"
+      "item_id": "060365f6-9c21-4b68-9706-f4319437e774",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281"
+      "item_id": "710a96bd-71f9-4bd7-be4a-92ce3850c281",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f"
+      "item_id": "e354208d-891a-4074-a0fc-b294d9a8040f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395"
+      "item_id": "0014ccee-fb98-42ae-8056-1cac7350f395",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b"
+      "item_id": "58a76fc9-8c3d-4dc1-80bb-4678e3e86e9b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf"
+      "item_id": "00354aaf-4b00-4e42-ba78-2e18d03d26cf",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "c537fe57-5bd3-4ea2-9e3e-9adaaf1f7287"
+      "item_id": "c537fe57-5bd3-4ea2-9e3e-9adaaf1f7287",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "veg-main",
-      "item_id": "42d0910e-bff8-4d1c-bbd9-305ae9fb23ae"
+      "item_id": "42d0910e-bff8-4d1c-bbd9-305ae9fb23ae",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840"
+      "item_id": "288f575f-b6c1-4e7a-ac7f-ec7d81c80840",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849"
+      "item_id": "4a097a89-66da-440a-9e4c-93f8f8954849",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70"
+      "item_id": "f1558ce7-2416-47d7-8289-529ac91aed70",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883"
+      "item_id": "40de5bca-cf6a-444a-821a-e450c790d883",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3"
+      "item_id": "b2d6ff97-b15a-4cdb-9e46-fdd823e269f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422"
+      "item_id": "6ee59f23-f602-4b51-9c7c-f41989642422",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "dal",
-      "item_id": "72beb300-92d6-4a37-aec7-e525fb31d7c0"
+      "item_id": "72beb300-92d6-4a37-aec7-e525fb31d7c0",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426"
+      "item_id": "85609d63-2698-4f55-b375-78e3f7ae8426",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2"
+      "item_id": "f288a74e-9d5d-415f-a565-5ef7331565a2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb"
+      "item_id": "9e29a277-fda5-436e-a1f5-e175831f9cdb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69"
+      "item_id": "3e004071-ff64-4884-99be-5c77631d9b69",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7"
+      "item_id": "64135cc8-8299-415f-9835-13ff0fa156a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950"
+      "item_id": "a94ad770-3bc8-420f-b601-3689d54d5950",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110"
+      "item_id": "c973048e-00d7-4265-907f-26ce3e05b110",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "f4755eda-84b6-4a25-a1c2-fd51dcf40135"
+      "item_id": "f4755eda-84b6-4a25-a1c2-fd51dcf40135",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "7792537e-50d5-4848-938a-678d336d2701"
+      "item_id": "7792537e-50d5-4848-938a-678d336d2701",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014"
+      "item_id": "85681637-ca3f-4a25-9bd0-25c0013aa014",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8"
+      "item_id": "1152b848-ac87-471a-9f9d-b135cbcc5aa8",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604"
+      "item_id": "311d395e-a66a-4b0f-9729-ba9e3aa4f604",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd"
+      "item_id": "007080c7-66e6-4de2-ab5f-ba18972b9cbd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2"
+      "item_id": "cdef5f7a-2966-4877-9e4a-bb3ba5dc4bb2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "breads",
-      "item_id": "f4447d6f-1c5c-4641-bea9-6c4f0dc21ba6"
+      "item_id": "f4447d6f-1c5c-4641-bea9-6c4f0dc21ba6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05"
+      "item_id": "b84a3965-b54c-4940-a482-3e42dfd6df05",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe"
+      "item_id": "8e25cde1-c71b-4037-aac8-6fcd113301fe",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94"
+      "item_id": "cfc54436-0fc9-48f8-8b29-fdffc49adb94",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797"
+      "item_id": "634b6791-94ef-4bef-9b0f-af71bdd5e797",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f"
+      "item_id": "8e9c9dbe-85f8-4352-9304-437972f9444f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193"
+      "item_id": "dc71a652-a4e7-4954-9f42-69b18f87b193",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410"
+      "item_id": "e6cf799d-12a4-4c85-b4a3-db915c0c0410",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444"
+      "item_id": "5fac1573-942c-4ddc-a382-df46f1c72444",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6"
+      "item_id": "92dd81b4-03a4-475b-b564-4a0153b089d6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459"
+      "item_id": "f116ab87-743a-44fd-944b-be4dc1efd459",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "305e30f2-248a-40dc-baa7-d03f33c00d31"
+      "item_id": "305e30f2-248a-40dc-baa7-d03f33c00d31",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "veg-platinum",
       "category_id": "desserts",
-      "item_id": "5818a38f-21c5-4d47-bf09-2b312cb5d53c"
+      "item_id": "5818a38f-21c5-4d47-bf09-2b312cb5d53c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "welcome-drinks",
-      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-indian",
-      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "soup",
-      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "salads",
-      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "raita-curd",
-      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "raita-curd",
-      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "raita-curd",
-      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "raita-curd",
-      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "nonveg-main",
-      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
-      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
-      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
-      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "veg-main",
-      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "dal",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "dal",
-      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "dal",
-      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
-    },
-    {
-      "package_id": "non-veg-premium",
-      "category_id": "dal",
-      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "rice-noodles",
-      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
-      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
-      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
-      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
-      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "breads",
-      "item_id": "6aa06dac-7c3d-4119-a55a-ee6023333f61"
+      "item_id": "6aa06dac-7c3d-4119-a55a-ee6023333f61",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-premium",
       "category_id": "desserts",
-      "item_id": "baa050c0-c462-46d1-b20c-9777aaff822e"
+      "item_id": "baa050c0-c462-46d1-b20c-9777aaff822e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "welcome-drinks",
-      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6"
+      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24"
+      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-indian",
-      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4"
+      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f"
+      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "soup",
-      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921"
+      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47"
+      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "salads",
-      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b"
+      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "raita-curd",
-      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "raita-curd",
-      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "raita-curd",
-      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "raita-curd",
-      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "nonveg-main",
-      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c"
+      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
-      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
-      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
-      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "veg-main",
-      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "dal",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "dal",
-      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "dal",
-      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "dal",
-      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
-    },
-    {
-      "package_id": "non-veg-executive",
-      "category_id": "dal",
-      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72"
+      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "rice-noodles",
-      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d"
+      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
-      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
-      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
-      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
-      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "breads",
-      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9"
+      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89"
+      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-executive",
       "category_id": "desserts",
-      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668"
+      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3"
+      "item_id": "a3341414-9345-4ac3-945d-806d2ce197f3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df"
+      "item_id": "05bafd21-81f5-418c-ad26-d0e5b8bef5df",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161"
+      "item_id": "4f60ec0a-d7e0-4328-8b7d-f1e74fd5a161",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e"
+      "item_id": "a1a64323-b986-4cd8-a9cc-874abd906e7e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d"
+      "item_id": "483c9b59-2cd7-4ace-9d12-9cbb2bbf414d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934"
+      "item_id": "4bba32c1-e67e-4ca4-a462-b1802a335934",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a"
+      "item_id": "0ccf2ea9-e7e5-49c3-87ab-ade1e781355a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6"
+      "item_id": "fa04335a-6e88-4630-8166-2bb8cdd94ca6",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "welcome-drinks",
-      "item_id": "8353353a-624c-4140-a62e-5e3ac4d3f0aa"
+      "item_id": "8353353a-624c-4140-a62e-5e3ac4d3f0aa",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c"
+      "item_id": "154c67a3-b392-4748-8eb2-1f12bd688b7c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574"
+      "item_id": "f76b79fe-6189-4147-bd3c-9de649d81574",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed"
+      "item_id": "c5830b29-4371-4f2d-a912-a4d8f912a3ed",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57"
+      "item_id": "0481026c-4d76-4478-8b37-6e38e97f9e57",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71"
+      "item_id": "234ff222-e049-4d8b-b678-d6025605ca71",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247"
+      "item_id": "9f24e9c1-d87c-44c6-9111-e48ba4f8e247",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1"
+      "item_id": "90d30cf2-0481-4cb8-b51c-d3b8a293aae1",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3"
+      "item_id": "1258676a-9ea8-4d5c-b710-fa07389d4fe3",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24"
+      "item_id": "6c09ccfe-ef8e-496a-aa2c-9a21734c0a24",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4"
+      "item_id": "43f1c24e-a62a-429d-84de-dac692f724a4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "ad09690b-b652-4a88-be0d-5ffb8e1c63a5"
+      "item_id": "ad09690b-b652-4a88-be0d-5ffb8e1c63a5",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-indian",
-      "item_id": "06721a8f-29a0-4023-9e95-6e14ef3eb191"
+      "item_id": "06721a8f-29a0-4023-9e95-6e14ef3eb191",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471"
+      "item_id": "81cb0cb7-93cb-4f5c-bf69-c9bc8d191471",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba"
+      "item_id": "e4f62a6e-479b-44c1-9b31-90ce325649ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7"
+      "item_id": "a6ea051f-b657-4ab1-9114-6d90c4bec1a7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55"
+      "item_id": "b7ed2f7e-a250-4af0-bc8d-34c1bb1acd55",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40"
+      "item_id": "53954c02-e7c4-417d-8965-3ec4c2aa7b40",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa"
+      "item_id": "32c7e8b5-6d18-40b7-9edb-9d5c668078aa",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f"
+      "item_id": "d4d095fd-6d82-43a2-8615-c9519962429f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "starters-nonveg-oriental",
-      "item_id": "46ed04c3-7fd5-444c-86a7-b30dcd58a4fd"
+      "item_id": "46ed04c3-7fd5-444c-86a7-b30dcd58a4fd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061"
+      "item_id": "e63f5d26-87be-40ed-bd47-9006ef839061",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd"
+      "item_id": "eb825a37-dc15-47cf-89d9-148991f3c2bd",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a"
+      "item_id": "d77f4779-e0f8-4407-980c-f1613bf0518a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4"
+      "item_id": "1865ec9b-019e-44d1-87eb-26ca3c3baad4",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9"
+      "item_id": "d1016794-e951-454a-be6c-baa7d2a491a9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac"
+      "item_id": "26a7a263-cb0d-43c1-899e-d21a3439deac",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921"
+      "item_id": "9ed198ad-6fa2-4d8c-8ca5-8bbed854a921",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "soup",
-      "item_id": "00daff8e-9b44-46f8-bb00-f685eb116a76"
+      "item_id": "00daff8e-9b44-46f8-bb00-f685eb116a76",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83"
+      "item_id": "c0ae8fec-21d7-4878-ab08-fee26d7bbc83",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48"
+      "item_id": "f74ca9a4-4ad7-4d2c-92d5-df3708426f48",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "a98ed434-638d-4da3-bf23-de839443c234"
+      "item_id": "a98ed434-638d-4da3-bf23-de839443c234",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a"
+      "item_id": "34a5e385-36ee-438d-b632-939b63535a2a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b"
+      "item_id": "bd170beb-265b-4edd-9067-59fada2b3e5b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192"
+      "item_id": "725537c4-4462-4347-bc8b-d3a8b1848192",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d"
+      "item_id": "20567857-5f06-4e05-aac0-272ece8f098d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47"
+      "item_id": "4a273f93-97c1-4927-ba4f-6490e22f8e47",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b"
+      "item_id": "73d98c40-d04a-4f34-8a90-3b796109521b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "salads",
-      "item_id": "624f6bdc-5a50-45c7-a6bd-63b5e4c5120a"
+      "item_id": "624f6bdc-5a50-45c7-a6bd-63b5e4c5120a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c"
+      "item_id": "561a79ab-5f91-42fe-94f7-29cb9af4601c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788"
+      "item_id": "62bb7511-2dd3-40e0-8146-80d9da69f788",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517"
+      "item_id": "aead8fd8-841c-40de-aa9a-d4a263dd9517",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "raita-curd",
-      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086"
+      "item_id": "8abfad46-8ef0-47fc-aba4-d84a200de086",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196"
+      "item_id": "99f991ba-4f67-4769-a38c-896f7a3d7196",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "048c7193-2031-4813-9283-93351ed0354c"
+      "item_id": "048c7193-2031-4813-9283-93351ed0354c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e"
+      "item_id": "be360d6b-d39b-40f5-9458-d7c615ed5d6e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9"
+      "item_id": "46697089-1f41-4ddb-b47c-b44965c45af9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a"
+      "item_id": "09a24dcc-a763-4ffd-84c6-3278211d7a1a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50"
+      "item_id": "f9373772-8430-4c9e-9ddb-8cea9917ec50",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea"
+      "item_id": "cccfaa7f-e447-43d7-9a89-3377e3024fea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857"
+      "item_id": "d16892e2-2bd0-4b80-8a1e-d5c8bf7f2857",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65"
+      "item_id": "9d13bd08-b1be-4b1d-a3af-f813d84ccc65",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c"
+      "item_id": "65dfd670-bc67-4e6a-bbc8-f5494307fa5c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "dc88a84d-ba56-47c3-bf7f-4b2278025dc2"
+      "item_id": "dc88a84d-ba56-47c3-bf7f-4b2278025dc2",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "nonveg-main",
-      "item_id": "744ad95b-43dc-4d52-9b40-f03ded9f0d69"
+      "item_id": "744ad95b-43dc-4d52-9b40-f03ded9f0d69",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
-      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c"
+      "item_id": "94fe49a5-6f0a-4a3d-a0f9-95e5e07c982c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
-      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0"
+      "item_id": "a80cf5b6-f817-47a3-b4c8-2ba762e1bfc0",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
-      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb"
+      "item_id": "a68f6f71-be61-4850-aa72-645474dbf7fb",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "veg-main",
-      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7"
+      "item_id": "5ca0d625-269d-4285-ab6f-fc951b6765c7",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
-      "item_id": "40a96b29-7517-4790-bcae-fbbe6eb6feec"
+      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
-      "item_id": "fca1fe20-6167-4370-acae-71e120e8dc0b"
+      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
-      "item_id": "5f6886e1-1354-40ff-bfb9-ef949e525dea"
+      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
-      "item_id": "4412c550-0154-4f7c-9a80-f4c122c87c10"
+      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "dal",
-      "item_id": "9abc2584-3980-494b-910c-9e19ed1d8e72"
-    },
-    {
-      "package_id": "non-veg-platinum",
-      "category_id": "dal",
-      "item_id": "0d4085bd-03e4-4262-9521-72de5f8c1415"
+      "item_id": "0d4085bd-03e4-4262-9521-72de5f8c1415",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a"
+      "item_id": "ae562eab-372f-4837-a5a0-93988dc2b06a",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "47feb726-7003-43b7-be93-f257cab552ba"
+      "item_id": "47feb726-7003-43b7-be93-f257cab552ba",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f"
+      "item_id": "5404c16c-4935-4046-b322-ab6f182e362f",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b"
+      "item_id": "67c5dd6b-0053-4725-a172-596737efd30b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b"
+      "item_id": "7997a87b-2b40-48fa-99c0-1c173ab01c8b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62"
+      "item_id": "f14a5ef7-6336-42da-8d86-8a43bf475b62",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d"
+      "item_id": "66f8b5be-88b6-4f07-aecb-a7e65289e41d",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "rice-noodles",
-      "item_id": "c508cdb6-763d-4dae-9f9c-3b163751fa3c"
+      "item_id": "c508cdb6-763d-4dae-9f9c-3b163751fa3c",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756"
+      "item_id": "69b1d707-2a28-49ae-acfb-06650781d756",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db"
+      "item_id": "1eed3fcc-54c0-4e57-84ee-f043b8e9b7db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db"
+      "item_id": "90b0f3a9-42c8-44d4-9dfe-c9e650bf68db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b"
+      "item_id": "2b1832f7-114c-4d9c-80b7-47e325985e7b",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9"
+      "item_id": "972b7750-45b3-4bc5-808c-eb7e83f319a9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "breads",
-      "item_id": "0ab75b44-2704-48f3-a0a9-1edb0d17b2aa"
+      "item_id": "0ab75b44-2704-48f3-a0a9-1edb0d17b2aa",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca"
+      "item_id": "435fc648-9448-4cb7-9172-c1ecdb6a17ca",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e"
+      "item_id": "bb730c9a-5233-4380-890b-d3d356c2c55e",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388"
+      "item_id": "88c48916-bab8-4eda-8c09-75af1bd4f388",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569"
+      "item_id": "d7d0ade9-ad51-4af2-a622-307e44387569",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9"
+      "item_id": "a7c37a1c-4699-4fc2-b99b-7b080a48cec9",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db"
+      "item_id": "2d9302ad-9df8-41c7-a436-19f48c35f2db",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "4043936c-ea4d-4046-a716-948691ae9809"
+      "item_id": "4043936c-ea4d-4046-a716-948691ae9809",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef"
+      "item_id": "97f45948-d9fa-48f1-b0b3-03fa15db01ef",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89"
+      "item_id": "d91ab881-7c12-45fe-a756-a21bffa95d89",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668"
+      "item_id": "51bedc2e-cd48-4ede-acd3-6f5d9ad40668",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "a82e97d3-3989-4a32-82a2-9ff3bbf29a37"
+      "item_id": "a82e97d3-3989-4a32-82a2-9ff3bbf29a37",
+      "hotel_id": "mannat-events"
     },
     {
       "package_id": "non-veg-platinum",
       "category_id": "desserts",
-      "item_id": "62848f82-b27f-4de4-8aff-75ebb0363e48"
+      "item_id": "62848f82-b27f-4de4-8aff-75ebb0363e48",
+      "hotel_id": "mannat-events"
     }
   ],
   "live_stations": [
@@ -5440,7 +6229,8 @@
       "image_url": "/wedding_mandap.png",
       "price": 280000,
       "is_active": true,
-      "sort_order": 1
+      "sort_order": 1,
+      "hotel_id": "taj-hotel"
     },
     {
       "id": "gold",
@@ -5456,7 +6246,8 @@
       "image_url": "/royal.jpg",
       "price": 480000,
       "is_active": true,
-      "sort_order": 2
+      "sort_order": 2,
+      "hotel_id": "taj-hotel"
     },
     {
       "id": "platinum",
@@ -5472,7 +6263,8 @@
       "image_url": "/floral.jpg",
       "price": 750000,
       "is_active": true,
-      "sort_order": 3
+      "sort_order": 3,
+      "hotel_id": "taj-hotel"
     },
     {
       "id": "luxury",
@@ -5488,7 +6280,212 @@
       "image_url": "/venue_palace.png",
       "price": 1100000,
       "is_active": true,
-      "sort_order": 4
+      "sort_order": 4,
+      "hotel_id": "taj-hotel"
+    },
+    {
+      "id": "silver",
+      "title": "Silver Package",
+      "subtitle": "Elegant Standard Decor",
+      "badge": "Essential",
+      "features": [
+        "Standard floral mandap setup",
+        "Ambient LED warm lighting",
+        "Welcome arch & walkway drapes",
+        "Standard seating covers & runners"
+      ],
+      "image_url": "/wedding_mandap.png",
+      "price": 330000,
+      "is_active": true,
+      "sort_order": 1,
+      "hotel_id": "itc-mughal"
+    },
+    {
+      "id": "gold",
+      "title": "Gold Package",
+      "subtitle": "Royal Mughal Aesthetics",
+      "badge": "Popular",
+      "features": [
+        "Ornate dome mandap with fresh blooms",
+        "Fairytale fairytale fairy lights & chandelier",
+        "Photobooth with floral backdrop",
+        "Royal red sandstone stage backdrop"
+      ],
+      "image_url": "/royal.jpg",
+      "price": 530000,
+      "is_active": true,
+      "sort_order": 2,
+      "hotel_id": "itc-mughal"
+    },
+    {
+      "id": "platinum",
+      "title": "Platinum Package",
+      "subtitle": "Opulent Palace Styling",
+      "badge": "Premium",
+      "features": [
+        "Custom grand stage with import flowers",
+        "Taj-view entrance gate with mirrors",
+        "Intricate floral aisles & varmala stage",
+        "Architectural projection lighting"
+      ],
+      "image_url": "/floral.jpg",
+      "price": 800000,
+      "is_active": true,
+      "sort_order": 3,
+      "hotel_id": "itc-mughal"
+    },
+    {
+      "id": "luxury",
+      "title": "Luxury Package",
+      "subtitle": "Bespoke Imperial Extravaganza",
+      "badge": "Signature",
+      "features": [
+        "Fully customized imperial theme",
+        "Exotic orchid & rose floral canopy",
+        "Designer lounge furniture & bar setup",
+        "Complete venue transformation & FX"
+      ],
+      "image_url": "/venue_palace.png",
+      "price": 1150000,
+      "is_active": true,
+      "sort_order": 4,
+      "hotel_id": "itc-mughal"
+    },
+    {
+      "id": "silver",
+      "title": "Silver Package",
+      "subtitle": "Elegant Standard Decor",
+      "badge": "Essential",
+      "features": [
+        "Standard floral mandap setup",
+        "Ambient LED warm lighting",
+        "Welcome arch & walkway drapes",
+        "Standard seating covers & runners"
+      ],
+      "image_url": "/wedding_mandap.png",
+      "price": 380000,
+      "is_active": true,
+      "sort_order": 1,
+      "hotel_id": "courtyard-marriott"
+    },
+    {
+      "id": "gold",
+      "title": "Gold Package",
+      "subtitle": "Royal Mughal Aesthetics",
+      "badge": "Popular",
+      "features": [
+        "Ornate dome mandap with fresh blooms",
+        "Fairytale fairytale fairy lights & chandelier",
+        "Photobooth with floral backdrop",
+        "Royal red sandstone stage backdrop"
+      ],
+      "image_url": "/royal.jpg",
+      "price": 580000,
+      "is_active": true,
+      "sort_order": 2,
+      "hotel_id": "courtyard-marriott"
+    },
+    {
+      "id": "platinum",
+      "title": "Platinum Package",
+      "subtitle": "Opulent Palace Styling",
+      "badge": "Premium",
+      "features": [
+        "Custom grand stage with import flowers",
+        "Taj-view entrance gate with mirrors",
+        "Intricate floral aisles & varmala stage",
+        "Architectural projection lighting"
+      ],
+      "image_url": "/floral.jpg",
+      "price": 850000,
+      "is_active": true,
+      "sort_order": 3,
+      "hotel_id": "courtyard-marriott"
+    },
+    {
+      "id": "luxury",
+      "title": "Luxury Package",
+      "subtitle": "Bespoke Imperial Extravaganza",
+      "badge": "Signature",
+      "features": [
+        "Fully customized imperial theme",
+        "Exotic orchid & rose floral canopy",
+        "Designer lounge furniture & bar setup",
+        "Complete venue transformation & FX"
+      ],
+      "image_url": "/venue_palace.png",
+      "price": 1200000,
+      "is_active": true,
+      "sort_order": 4,
+      "hotel_id": "courtyard-marriott"
+    },
+    {
+      "id": "silver",
+      "title": "Silver Package",
+      "subtitle": "Elegant Standard Decor",
+      "badge": "Essential",
+      "features": [
+        "Standard floral mandap setup",
+        "Ambient LED warm lighting",
+        "Welcome arch & walkway drapes",
+        "Standard seating covers & runners"
+      ],
+      "image_url": "/wedding_mandap.png",
+      "price": 250000,
+      "is_active": true,
+      "sort_order": 1,
+      "hotel_id": "mannat-events"
+    },
+    {
+      "id": "gold",
+      "title": "Gold Package",
+      "subtitle": "Royal Mughal Aesthetics",
+      "badge": "Popular",
+      "features": [
+        "Ornate dome mandap with fresh blooms",
+        "Fairytale fairy lights & chandelier",
+        "Photobooth with floral backdrop",
+        "Royal red sandstone stage backdrop"
+      ],
+      "image_url": "/royal.jpg",
+      "price": 450000,
+      "is_active": true,
+      "sort_order": 2,
+      "hotel_id": "mannat-events"
+    },
+    {
+      "id": "platinum",
+      "title": "Platinum Package",
+      "subtitle": "Opulent Palace Styling",
+      "badge": "Premium",
+      "features": [
+        "Custom grand stage with import flowers",
+        "Taj-view entrance gate with mirrors",
+        "Intricate floral aisles & varmala stage",
+        "Architectural projection lighting"
+      ],
+      "image_url": "/floral.jpg",
+      "price": 700000,
+      "is_active": true,
+      "sort_order": 3,
+      "hotel_id": "mannat-events"
+    },
+    {
+      "id": "luxury",
+      "title": "Luxury Package",
+      "subtitle": "Bespoke Imperial Extravaganza",
+      "badge": "Signature",
+      "features": [
+        "Fully customized imperial theme",
+        "Exotic orchid & rose floral canopy",
+        "Designer lounge furniture & bar setup",
+        "Complete venue transformation & FX"
+      ],
+      "image_url": "/venue_palace.png",
+      "price": 1000000,
+      "is_active": true,
+      "sort_order": 4,
+      "hotel_id": "mannat-events"
     }
   ],
   "wedding_functions": [
@@ -6809,6 +7806,446 @@
       "is_flagged": false,
       "status": "pending",
       "notes": "Selected Hotel: Courtyard by Marriott (₹14,85,000), Decor Tier: silver"
+    },
+    {
+      "id": "f5c30d85-9c25-4f61-907f-118b958eeb72",
+      "created_at": "2026-09-15T13:19:50.270Z",
+      "updated_at": "2026-09-15T13:20:36.510Z",
+      "booking_id": "ME-S9C5VX",
+      "user_id": "37a8ed7f-6b84-48b9-a856-380d6da79241",
+      "customer_email": "917060360600@mannatevents.com",
+      "check_in": "2026-09-16",
+      "check_out": "2026-09-17",
+      "duration": 1,
+      "phone": "+917060360600",
+      "day_plans": [
+        {
+          "day": 1,
+          "rooms": 23,
+          "guest_count": 45,
+          "food_preference": "veg",
+          "lunch_function": "Haldi",
+          "dinner_function": "Phere",
+          "lunch": {
+            "type": "veg",
+            "menu_item_ids": [],
+            "menu_item_names": [
+              "Platinum Veg Banquet"
+            ],
+            "guest_count": 12,
+            "menu_config": {
+              "packageId": "veg-platinum",
+              "packageName": "Platinum Veg Banquet",
+              "pricePerHead": 3000,
+              "mealType": "veg",
+              "selections": [
+                {
+                  "categoryId": "welcome-drinks",
+                  "items": [
+                    "Mango Lassi",
+                    "Rose Sherbat",
+                    "Lemon Mint Cooler",
+                    "Jaljeera",
+                    "Aam Panna",
+                    "Thandai",
+                    "Masala Chach (Buttermilk)",
+                    "Coconut Water",
+                    "Fresh Lime Soda",
+                    "Gondhoraj Nimbu Sherbat"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-indian",
+                  "items": [
+                    "Paneer Tikka",
+                    "Hara Bhara Kebab",
+                    "Corn Palak Tikki",
+                    "Dahi Puri Chaat",
+                    "Aloo Tikki Chaat",
+                    "Veg Seekh Kebab",
+                    "Mushroom Tikka",
+                    "Peshwari Paneer Tikka",
+                    "Dahi Ke Sholay",
+                    "Paneer Malai Tikka",
+                    "Achari Paneer Tikka",
+                    "Rajasthani Mirchi Vada"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-oriental",
+                  "items": [
+                    "Veg Spring Rolls",
+                    "Crispy Corn",
+                    "Veg Manchurian (Dry)",
+                    "Chilli Paneer (Dry)",
+                    "Stuffed Mushroom",
+                    "Bruschetta",
+                    "Thai Veg Satay",
+                    "Veg Dim Sum"
+                  ]
+                },
+                {
+                  "categoryId": "soup",
+                  "items": [
+                    "Tomato Shorba",
+                    "Sweet Corn Vegetable Soup",
+                    "Dal Shorba",
+                    "Mulligatawny Soup (Veg)",
+                    "Mushroom Cream Soup",
+                    "Hot & Sour Vegetable Soup",
+                    "Lemon Coriander Soup",
+                    "Gazpacho (Chilled)"
+                  ]
+                },
+                {
+                  "categoryId": "salads",
+                  "items": [
+                    "Green Salad",
+                    "Russian Salad",
+                    "Sprouts Salad",
+                    "Corn Salad",
+                    "Pasta Salad",
+                    "Coleslaw",
+                    "Fruit Salad",
+                    "Papdi Chaat",
+                    "Greek Salad",
+                    "Thai Salad",
+                    "Quinoa Salad"
+                  ]
+                },
+                {
+                  "categoryId": "raita-curd",
+                  "items": [
+                    "Boondi Raita",
+                    "Mixed Raita",
+                    "Cucumber Raita",
+                    "Plain Curd",
+                    "Pineapple Raita"
+                  ]
+                },
+                {
+                  "categoryId": "paneer-main",
+                  "items": [
+                    "Paneer Butter Masala",
+                    "Shahi Paneer",
+                    "Kadai Paneer",
+                    "Palak Paneer",
+                    "Paneer Lababdar",
+                    "Paneer Makhani",
+                    "Paneer Pasanda",
+                    "Paneer Khurchan"
+                  ]
+                },
+                {
+                  "categoryId": "veg-main",
+                  "items": [
+                    "Aloo Gobi",
+                    "Veg Kolhapuri",
+                    "Matar Mushroom",
+                    "Bhindi Masala",
+                    "Lauki Kofta",
+                    "Mix Vegetable",
+                    "Dum Aloo",
+                    "Navratan Korma",
+                    "Tindora Masala",
+                    "Veg Jaipuri",
+                    "Kathal Masala (Jackfruit)",
+                    "Stuffed Capsicum"
+                  ]
+                },
+                {
+                  "categoryId": "dal",
+                  "items": [
+                    "Dal Makhani",
+                    "Dal Tadka",
+                    "Dal Fry",
+                    "Panchmel Dal",
+                    "Chana Masala",
+                    "Rajma Masala",
+                    "Amti Dal"
+                  ]
+                },
+                {
+                  "categoryId": "rice-noodles",
+                  "items": [
+                    "Steamed Rice",
+                    "Jeera Rice",
+                    "Veg Pulao",
+                    "Veg Biryani",
+                    "Schezwan Fried Rice",
+                    "Veg Hakka Noodles",
+                    "Kashmiri Pulao",
+                    "Zaffrani Rice"
+                  ]
+                },
+                {
+                  "categoryId": "breads",
+                  "items": [
+                    "Butter Naan",
+                    "Tandoori Roti",
+                    "Laccha Paratha",
+                    "Missi Roti",
+                    "Kulcha",
+                    "Garlic Naan",
+                    "Stuffed Naan"
+                  ]
+                },
+                {
+                  "categoryId": "desserts",
+                  "items": [
+                    "Gulab Jamun",
+                    "Rasgulla",
+                    "Kheer",
+                    "Gajar Halwa",
+                    "Moong Dal Halwa",
+                    "Phirni",
+                    "Jalebi with Rabri",
+                    "Ras Malai",
+                    "Kulfi Falooda",
+                    "Shahi Tukda",
+                    "Malpua with Rabri",
+                    "Badam Halwa"
+                  ]
+                }
+              ],
+              "liveStations": [
+                "Tawa Tak-A-Tak Station",
+                "Chaat Corner",
+                "Ice Cream Counter",
+                "Pasta & Pizza Station",
+                "Live Indian Sweets Counter"
+              ],
+              "addOns": []
+            }
+          },
+          "dinner": {
+            "type": "veg",
+            "menu_item_ids": [],
+            "menu_item_names": [
+              "Platinum Veg Banquet"
+            ],
+            "guest_count": 45,
+            "menu_config": {
+              "packageId": "veg-platinum",
+              "packageName": "Platinum Veg Banquet",
+              "pricePerHead": 3000,
+              "mealType": "veg",
+              "selections": [
+                {
+                  "categoryId": "welcome-drinks",
+                  "items": [
+                    "Mango Lassi",
+                    "Rose Sherbat",
+                    "Lemon Mint Cooler",
+                    "Jaljeera",
+                    "Aam Panna",
+                    "Thandai",
+                    "Masala Chach (Buttermilk)",
+                    "Coconut Water",
+                    "Fresh Lime Soda",
+                    "Gondhoraj Nimbu Sherbat"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-indian",
+                  "items": [
+                    "Paneer Tikka",
+                    "Hara Bhara Kebab",
+                    "Corn Palak Tikki",
+                    "Dahi Puri Chaat",
+                    "Aloo Tikki Chaat",
+                    "Veg Seekh Kebab",
+                    "Mushroom Tikka",
+                    "Peshwari Paneer Tikka",
+                    "Dahi Ke Sholay",
+                    "Paneer Malai Tikka",
+                    "Achari Paneer Tikka",
+                    "Rajasthani Mirchi Vada"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-oriental",
+                  "items": [
+                    "Veg Spring Rolls",
+                    "Crispy Corn",
+                    "Veg Manchurian (Dry)",
+                    "Chilli Paneer (Dry)",
+                    "Stuffed Mushroom",
+                    "Bruschetta",
+                    "Thai Veg Satay",
+                    "Veg Dim Sum"
+                  ]
+                },
+                {
+                  "categoryId": "soup",
+                  "items": [
+                    "Tomato Shorba",
+                    "Sweet Corn Vegetable Soup",
+                    "Dal Shorba",
+                    "Mulligatawny Soup (Veg)",
+                    "Mushroom Cream Soup",
+                    "Hot & Sour Vegetable Soup",
+                    "Lemon Coriander Soup",
+                    "Gazpacho (Chilled)"
+                  ]
+                },
+                {
+                  "categoryId": "salads",
+                  "items": [
+                    "Green Salad",
+                    "Russian Salad",
+                    "Sprouts Salad",
+                    "Corn Salad",
+                    "Pasta Salad",
+                    "Coleslaw",
+                    "Fruit Salad",
+                    "Papdi Chaat",
+                    "Greek Salad",
+                    "Thai Salad",
+                    "Quinoa Salad"
+                  ]
+                },
+                {
+                  "categoryId": "raita-curd",
+                  "items": [
+                    "Boondi Raita",
+                    "Mixed Raita",
+                    "Cucumber Raita",
+                    "Plain Curd",
+                    "Pineapple Raita"
+                  ]
+                },
+                {
+                  "categoryId": "paneer-main",
+                  "items": [
+                    "Paneer Butter Masala",
+                    "Shahi Paneer",
+                    "Kadai Paneer",
+                    "Palak Paneer",
+                    "Paneer Lababdar",
+                    "Paneer Makhani",
+                    "Paneer Pasanda",
+                    "Paneer Khurchan"
+                  ]
+                },
+                {
+                  "categoryId": "veg-main",
+                  "items": [
+                    "Aloo Gobi",
+                    "Veg Kolhapuri",
+                    "Matar Mushroom",
+                    "Bhindi Masala",
+                    "Lauki Kofta",
+                    "Mix Vegetable",
+                    "Dum Aloo",
+                    "Navratan Korma",
+                    "Tindora Masala",
+                    "Veg Jaipuri",
+                    "Kathal Masala (Jackfruit)",
+                    "Stuffed Capsicum"
+                  ]
+                },
+                {
+                  "categoryId": "dal",
+                  "items": [
+                    "Dal Makhani",
+                    "Dal Tadka",
+                    "Dal Fry",
+                    "Panchmel Dal",
+                    "Chana Masala",
+                    "Rajma Masala",
+                    "Amti Dal"
+                  ]
+                },
+                {
+                  "categoryId": "rice-noodles",
+                  "items": [
+                    "Steamed Rice",
+                    "Jeera Rice",
+                    "Veg Pulao",
+                    "Veg Biryani",
+                    "Schezwan Fried Rice",
+                    "Veg Hakka Noodles",
+                    "Kashmiri Pulao",
+                    "Zaffrani Rice"
+                  ]
+                },
+                {
+                  "categoryId": "breads",
+                  "items": [
+                    "Butter Naan",
+                    "Tandoori Roti",
+                    "Laccha Paratha",
+                    "Missi Roti",
+                    "Kulcha",
+                    "Garlic Naan",
+                    "Stuffed Naan"
+                  ]
+                },
+                {
+                  "categoryId": "desserts",
+                  "items": [
+                    "Gulab Jamun",
+                    "Rasgulla",
+                    "Kheer",
+                    "Gajar Halwa",
+                    "Moong Dal Halwa",
+                    "Phirni",
+                    "Jalebi with Rabri",
+                    "Ras Malai",
+                    "Kulfi Falooda",
+                    "Shahi Tukda",
+                    "Malpua with Rabri",
+                    "Badam Halwa"
+                  ]
+                }
+              ],
+              "liveStations": [
+                "Tawa Tak-A-Tak Station",
+                "Chaat Corner",
+                "Ice Cream Counter",
+                "Pasta & Pizza Station",
+                "Live Indian Sweets Counter"
+              ],
+              "addOns": []
+            }
+          }
+        }
+      ],
+      "functions": [],
+      "selected_hotel": {
+        "id": "itc-mughal",
+        "name": "ITC Mughal, Luxury Collection",
+        "star_rating": 5,
+        "image_url": "/royal.jpg",
+        "location": "Fatehabad Road, Agra",
+        "package_price": 1015000,
+        "price_display": "₹10,15,000",
+        "room_category": "Mughal Superior Rooms",
+        "venue_capacity": "Up to 600 Guests",
+        "catering_details": "1-Day Customized Catering (Lunch & Dinner)",
+        "amenities": [
+          "Kaya Kalp Spa",
+          "35 Acres Mughal Gardens",
+          "Multiple Lawns",
+          "Helipad Access"
+        ],
+        "inclusions": [
+          "Breakfast included",
+          "Garden Lighting",
+          "Bridal Suite Upgrade"
+        ],
+        "exclusions": [
+          "Liquor License Fee"
+        ],
+        "tax_info": "Includes 18% GST"
+      },
+      "decoration_package": "silver",
+      "decoration_theme_title": "Silver Package",
+      "total_price": 1015000,
+      "is_flagged": false,
+      "status": "pending",
+      "notes": "Selected Hotel: ITC Mughal, Luxury Collection (₹10,15,000), Decor Tier: silver"
     }
   ],
   "profiles": [
@@ -6836,6 +8273,108 @@
       "phone": "+911284073524",
       "created_at": "2026-09-06T08:33:46.511Z",
       "updated_at": "2026-09-06T08:33:46.511Z"
+    }
+  ],
+  "hotels": [
+    {
+      "id": "taj-hotel",
+      "name": "Taj Hotel & Convention Centre",
+      "star_rating": 5,
+      "image_url": "/venue_palace.png",
+      "location": "Taj East Gate Road, Agra",
+      "room_category": "Deluxe Taj Facing Rooms",
+      "venue_capacity": "Up to 500 Guests",
+      "room_rate": 12000,
+      "multiplier": 1.3,
+      "ballroom_sq_ft": "12,500 sq. ft.",
+      "lawn_capacity": "750 Guests",
+      "live_stations": "8 Live Stations included",
+      "bridal_suite_nights": "2 Nights Complimentary",
+      "dj_cutoff": "11:30 PM (Indoor Ballroom)",
+      "amenities": [
+        "Infiniti Rooftop Pool",
+        "Taj Mahal View Terrace",
+        "Spa & Wellness",
+        "Valet Parking"
+      ],
+      "inclusions": [
+        "Breakfast included",
+        "Stage & Sound Setup",
+        "Event Manager Support"
+      ],
+      "exclusions": [
+        "Alcohol (chargeable on actuals)",
+        "External Decorator Fee"
+      ],
+      "tax_info": "Includes 18% GST",
+      "is_active": true,
+      "sort_order": 1
+    },
+    {
+      "id": "itc-mughal",
+      "name": "ITC Mughal, Luxury Collection",
+      "star_rating": 5,
+      "image_url": "/royal.jpg",
+      "location": "Fatehabad Road, Agra",
+      "room_category": "Mughal Superior Rooms",
+      "venue_capacity": "Up to 600 Guests",
+      "room_rate": 9500,
+      "multiplier": 1.12,
+      "ballroom_sq_ft": "15,000 sq. ft.",
+      "lawn_capacity": "1,000 Guests",
+      "live_stations": "6 Live Stations included",
+      "bridal_suite_nights": "2 Nights Complimentary",
+      "dj_cutoff": "11:00 PM (Outdoor Gardens)",
+      "amenities": [
+        "Kaya Kalp Spa",
+        "35 Acres Mughal Gardens",
+        "Multiple Lawns",
+        "Helipad Access"
+      ],
+      "inclusions": [
+        "Breakfast included",
+        "Garden Lighting",
+        "Bridal Suite Upgrade"
+      ],
+      "exclusions": [
+        "Liquor License Fee"
+      ],
+      "tax_info": "Includes 18% GST",
+      "is_active": true,
+      "sort_order": 2
+    },
+    {
+      "id": "courtyard-marriott",
+      "name": "Courtyard by Marriott",
+      "star_rating": 5,
+      "image_url": "/wedding_mandap.png",
+      "location": "Fatehabad Road, Agra",
+      "room_category": "Executive Deluxe Rooms",
+      "venue_capacity": "Up to 350 Guests",
+      "room_rate": 7200,
+      "multiplier": 0.92,
+      "ballroom_sq_ft": "8,200 sq. ft.",
+      "lawn_capacity": "400 Guests",
+      "live_stations": "5 Live Stations included",
+      "bridal_suite_nights": "1 Night Complimentary",
+      "dj_cutoff": "10:30 PM (Ballroom)",
+      "amenities": [
+        "Outdoor Pool",
+        "Grand Ballroom",
+        "Fitness Centre",
+        "24h Concierge"
+      ],
+      "inclusions": [
+        "Breakfast included",
+        "Basic AV Setup",
+        "Complimentary Room Upgrade"
+      ],
+      "exclusions": [
+        "Late Night DJ Clearance"
+      ],
+      "tax_info": "Includes 18% GST",
+      "is_active": true,
+      "sort_order": 3
     }
   ]
 }

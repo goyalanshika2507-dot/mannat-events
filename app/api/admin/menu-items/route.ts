@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
       name: body.name,
       sub_label: body.sub_label || null,
       type: body.type,
+      price: Number(body.price ?? 0),
       is_active: true,
       sort_order: body.sort_order ?? 99,
     })

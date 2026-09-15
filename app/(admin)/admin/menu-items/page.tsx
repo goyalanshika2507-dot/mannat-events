@@ -11,6 +11,7 @@ interface MenuItem {
   name: string
   sub_label: string | null
   type: 'veg' | 'non-veg'
+  price?: number
   is_active: boolean
   sort_order: number
 }
@@ -18,6 +19,7 @@ interface MenuItem {
 function AddItemForm({ onAdd, onCancel }: { onAdd: () => void; onCancel: () => void }) {
   const [name, setName] = useState('')
   const [type, setType] = useState<'veg' | 'non-veg'>('veg')
+  const [price, setPrice] = useState('')
   const [subLabel, setSubLabel] = useState('')
   const [saving, setSaving] = useState(false)
 
@@ -28,7 +30,7 @@ function AddItemForm({ onAdd, onCancel }: { onAdd: () => void; onCancel: () => v
     await fetch('/api/admin/menu-items', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name.trim(), type, sub_label: subLabel || null }),
+      body: JSON.stringify({ name: name.trim(), type, price: Number(price) || 0, sub_label: subLabel || null }),
     })
     onAdd()
     setSaving(false)
@@ -37,7 +39,7 @@ function AddItemForm({ onAdd, onCancel }: { onAdd: () => void; onCancel: () => v
   return (
     <form onSubmit={handleSubmit} className="bg-[#FDFCFA] border border-[#E8E2D8] rounded-2xl p-5 space-y-4">
       <h3 className="font-semibold text-[#1A1A1A] text-sm">Add New Menu Item</h3>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="md:col-span-2 space-y-1.5">
           <Label htmlFor="item-name" required>Item Name</Label>
           <Input id="item-name" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. Paneer Butter Masala" />
@@ -53,6 +55,10 @@ function AddItemForm({ onAdd, onCancel }: { onAdd: () => void; onCancel: () => v
             <option value="veg">Vegetarian</option>
             <option value="non-veg">Non-Vegetarian</option>
           </select>
+        </div>
+        <div className="space-y-1.5">
+          <Label htmlFor="item-price">Price (₹)</Label>
+          <Input id="item-price" type="number" value={price} onChange={e => setPrice(e.target.value)} placeholder="0" />
         </div>
       </div>
       <div className="space-y-1.5">
@@ -76,6 +82,7 @@ export default function AdminMenuItemsPage() {
   const [filterActive, setFilterActive] = useState<'all' | 'active' | 'inactive'>('all')
   const [editId, setEditId] = useState<string | null>(null)
   const [editName, setEditName] = useState('')
+  const [editPrice, setEditPrice] = useState('')
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -97,12 +104,13 @@ export default function AdminMenuItemsPage() {
   }
 
   async function saveEdit(item: MenuItem) {
+    const priceNum = Number(editPrice) || 0
     await fetch('/api/admin/menu-items', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: item.id, name: editName }),
+      body: JSON.stringify({ id: item.id, name: editName, price: priceNum }),
     })
-    setItems(prev => prev.map(i => i.id === item.id ? { ...i, name: editName } : i))
+    setItems(prev => prev.map(i => i.id === item.id ? { ...i, name: editName, price: priceNum } : i))
     setEditId(null)
   }
 
@@ -174,13 +182,14 @@ export default function AdminMenuItemsPage() {
               <tr>
                 <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#737373]">Item Name</th>
                 <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#737373]">Type</th>
+                <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#737373]">Price</th>
                 <th className="text-left px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#737373]">Status</th>
                 <th className="text-right px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-[#737373]">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#F0EDE8]">
               {filtered.length === 0 && (
-                <tr><td colSpan={4} className="text-center py-10 text-[#A8A8A8] text-sm">No items match your filters.</td></tr>
+                <tr><td colSpan={5} className="text-center py-10 text-[#A8A8A8] text-sm">No items match your filters.</td></tr>
               )}
               {filtered.map(item => (
                 <tr key={item.id} className={`${!item.is_active ? 'opacity-50' : ''} hover:bg-[#FDFCFA] transition-colors`}>
@@ -191,8 +200,6 @@ export default function AdminMenuItemsPage() {
                           className="border border-[#E8E2D8] rounded-lg px-2 py-1 text-sm flex-1"
                           onKeyDown={e => { if (e.key === 'Enter') saveEdit(item); if (e.key === 'Escape') setEditId(null) }}
                           autoFocus />
-                        <button onClick={() => saveEdit(item)} className="text-green-600 hover:text-green-800"><Check size={14} /></button>
-                        <button onClick={() => setEditId(null)} className="text-[#737373] hover:text-red-500"><X size={14} /></button>
                       </div>
                     ) : (
                       <div>
@@ -207,17 +214,41 @@ export default function AdminMenuItemsPage() {
                     </span>
                   </td>
                   <td className="px-4 py-3">
+                    {editId === item.id ? (
+                      <input
+                        type="number"
+                        value={editPrice}
+                        onChange={e => setEditPrice(e.target.value)}
+                        className="w-24 border border-[#E8E2D8] rounded-lg px-2 py-1 text-sm font-semibold"
+                        placeholder="0"
+                      />
+                    ) : (
+                      <span className="font-bold text-[#1A1A1A]">
+                        {item.price ? `₹${item.price.toLocaleString('en-IN')}` : '₹0'}
+                      </span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3">
                     <span className={`text-[11px] font-semibold ${item.is_active ? 'text-green-700' : 'text-[#A8A8A8]'}`}>
                       {item.is_active ? 'Active' : 'Inactive'}
                     </span>
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex items-center justify-end gap-1">
-                      <button onClick={() => { setEditId(item.id); setEditName(item.name) }} className="p-1.5 rounded-lg hover:bg-[#F5EDD6] text-[#737373] hover:text-[#C5A85C] transition-all"><Pencil size={13} /></button>
-                      <button onClick={() => toggleActive(item)} className="p-1.5 rounded-lg hover:bg-[#F5EDD6] text-[#737373] hover:text-[#C5A85C] transition-all">
-                        {item.is_active ? <ToggleRight size={16} className="text-[#C5A85C]" /> : <ToggleLeft size={16} />}
-                      </button>
-                      <button onClick={() => handleDelete(item)} className="p-1.5 rounded-lg hover:bg-red-50 text-[#737373] hover:text-red-500 transition-all"><Trash2 size={13} /></button>
+                      {editId === item.id ? (
+                        <>
+                          <button onClick={() => saveEdit(item)} className="p-1 text-green-600 hover:text-green-800"><Check size={16} /></button>
+                          <button onClick={() => setEditId(null)} className="p-1 text-[#737373] hover:text-red-500"><X size={16} /></button>
+                        </>
+                      ) : (
+                        <>
+                          <button onClick={() => { setEditId(item.id); setEditName(item.name); setEditPrice(String(item.price ?? 0)) }} className="p-1.5 rounded-lg hover:bg-[#F5EDD6] text-[#737373] hover:text-[#C5A85C] transition-all"><Pencil size={13} /></button>
+                          <button onClick={() => toggleActive(item)} className="p-1.5 rounded-lg hover:bg-[#F5EDD6] text-[#737373] hover:text-[#C5A85C] transition-all">
+                            {item.is_active ? <ToggleRight size={16} className="text-[#C5A85C]" /> : <ToggleLeft size={16} />}
+                          </button>
+                          <button onClick={() => handleDelete(item)} className="p-1.5 rounded-lg hover:bg-red-50 text-[#737373] hover:text-red-500 transition-all"><Trash2 size={13} /></button>
+                        </>
+                      )}
                     </div>
                   </td>
                 </tr>

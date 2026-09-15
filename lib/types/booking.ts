@@ -6,11 +6,13 @@ export interface MenuItem {
   id: string
   type: 'veg' | 'non-veg'
   name: string
-  description: string | null
+  sub_label?: string | null
+  description?: string | null
+  price?: number
   is_active: boolean
   sort_order: number
-  created_at: string
-  updated_at: string
+  created_at?: string
+  updated_at?: string
 }
 
 export interface DecorationTheme {
@@ -121,6 +123,7 @@ export interface Booking {
   decoration_theme_id: string | null
   decoration_package?: DecorationPackageTier
   selected_hotel?: HotelComparisonItem
+  total_price?: number
   day_plans: DayPlan[]
   functions: FunctionAssignment[]
   is_flagged: boolean

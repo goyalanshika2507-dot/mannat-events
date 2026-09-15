@@ -22,7 +22,8 @@ import {
   ExternalLink,
   ChevronRight,
   Palette,
-  ShieldX
+  ShieldX,
+  Building2
 } from 'lucide-react'
 
 interface NavGroup {
@@ -44,12 +45,11 @@ const NAV_GROUPS: NavGroup[] = [
     ],
   },
   {
-    title: 'MENU CONFIGURATION',
+    title: 'VENUE & MENU',
     items: [
-      { href: '/admin/menu/categories', label: 'Categories', icon: FolderTree },
-      { href: '/admin/menu/items', label: 'Menu Items', icon: UtensilsCrossed },
+      { href: '/admin/hotels', label: 'Hotel Management', icon: Building2 },
+      { href: '/admin/menu/limits', label: 'Package & Menu Management', icon: UtensilsCrossed },
       { href: '/admin/menu/packages', label: 'Packages & Pricing', icon: Sparkles },
-      { href: '/admin/menu/limits', label: 'Package Category Limits', icon: Sliders },
       { href: '/admin/menu/live-stations', label: 'Live Stations', icon: Flame },
       { href: '/admin/menu/add-ons', label: 'Add-ons', icon: PlusCircle },
     ],

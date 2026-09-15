@@ -3,6 +3,8 @@ import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { generateBookingId, calculateDuration } from '@/lib/utils/booking'
 import { getLocalDb, saveLocalDb } from '@/lib/supabase/mockDb'
 
+import { calculateBookingEstimate } from '@/lib/utils/pricingCalculator'
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -16,10 +18,29 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Check-out must be after check-in.' }, { status: 400 })
     }
 
+    // Backend-authoritative price calculation — always use Mannat Events pricing.
+    // Comparison hotels are reference-only; they must never affect the booking total.
+    const mannatPricingInput = {
+      ...body,
+      selected_hotel: { id: 'mannat-events', name: 'Mannat Events' },
+    }
+    const calcResult = calculateBookingEstimate(mannatPricingInput)
+    if (!calcResult.valid) {
+      return NextResponse.json({ error: calcResult.error || 'Invalid booking selection' }, { status: 400 })
+    }
+
     const booking_id = generateBookingId()
-    const hotelNotes = body.selected_hotel
-      ? `Selected Hotel: ${body.selected_hotel.name} (${body.selected_hotel.price_display}), Decor Tier: ${body.decoration_package ?? 'Gold'}`
-      : `Decor Tier: ${body.decoration_package ?? 'Gold'}`
+
+    // Per-head rate resolved from Mannat Events packages
+    const perHeadRate = calcResult.breakdown.details[0]?.lunchRate ?? calcResult.breakdown.details[0]?.dinnerRate ?? 2000
+    const verifiedSelectedHotel = {
+      id: 'mannat-events',
+      name: 'Mannat Events',
+      package_price: perHeadRate,
+      price_display: `₹${perHeadRate.toLocaleString('en-IN')}/head`,
+    }
+
+    const hotelNotes = `Decor Tier: ${body.decoration_package ?? 'Not Selected'}, Mannat Events Total: ${calcResult.priceDisplay}`
 
     // 1. Resolve User & Profile
     let userId: string | null = null
@@ -78,9 +99,10 @@ export async function POST(request: NextRequest) {
       phone,
       day_plans: body.day_plans ?? [],
       functions: body.functions ?? [],
-      selected_hotel: body.selected_hotel ?? null,
+      selected_hotel: verifiedSelectedHotel,
       decoration_package: body.decoration_package ?? 'Gold',
       decoration_theme_title: body.decoration_theme_title ?? 'Taj View Terraces',
+      total_price: calcResult.grandTotal,
       is_flagged: false,
       status: 'pending',
       notes: hotelNotes,

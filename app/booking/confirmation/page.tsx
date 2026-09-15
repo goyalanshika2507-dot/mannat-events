@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { createServiceClient } from '@/lib/supabase/server'
 import { Booking } from '@/lib/types'
 import { formatDate } from '@/lib/utils/booking'
+import { calculateBookingEstimate } from '@/lib/utils/pricingCalculator'
 import { Card } from '@/components/ui/Card'
 import { StatusBadge } from '@/components/admin/StatusBadge'
 import { Button } from '@/components/ui/Button'
@@ -60,6 +61,18 @@ export default async function ConfirmationPage({ searchParams }: ConfirmationPag
     ? Math.max(...dayPlans.map(p => Math.max(p.lunch?.guest_count ?? 0, p.dinner?.guest_count ?? 0)))
     : null
 
+  // Authoritative estimate resolution for Confirmation screen
+  let displayTotalPrice: number | null = booking?.total_price ?? null
+  if (booking && (!displayTotalPrice || displayTotalPrice === 0)) {
+    const calcResult = calculateBookingEstimate({
+      ...booking,
+      selected_hotel: { id: 'mannat-events', name: 'Mannat Events' },
+    })
+    if (calcResult.valid && calcResult.grandTotal > 0) {
+      displayTotalPrice = calcResult.grandTotal
+    }
+  }
+
   return (
     <div
       className="min-h-screen flex items-start justify-center pt-16 pb-24 px-4"
@@ -106,8 +119,18 @@ export default async function ConfirmationPage({ searchParams }: ConfirmationPag
                 {booking.selected_hotel && (
                   <>
                     <DetailRow label="Selected Venue" value={booking.selected_hotel.name} />
-                    <DetailRow label="Estimated Total" value={`₹${booking.selected_hotel.package_price.toLocaleString('en-IN')}`} />
+                    {booking.selected_hotel.package_price && (
+                      <DetailRow label="Package Rate" value={booking.selected_hotel.price_display || `₹${booking.selected_hotel.package_price.toLocaleString('en-IN')}/head`} />
+                    )}
                   </>
+                )}
+                {displayTotalPrice !== null && displayTotalPrice > 0 && (
+                  <div className="flex justify-between items-center py-3.5 border-b border-[#F0EDE9] bg-[#FDFAF3] -mx-6 px-6 font-bold mt-1">
+                    <span className="text-xs uppercase tracking-wider text-[#A08040]">Estimated Total</span>
+                    <span className="text-base text-[#C5A85C] font-serif font-extrabold">
+                      ₹{displayTotalPrice.toLocaleString('en-IN')}
+                    </span>
+                  </div>
                 )}
               </>
             )}

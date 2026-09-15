@@ -118,7 +118,7 @@ export function StepMenuPackage({ meal, mealType, initialConfig, onSave, onClose
                       Available Packages
                     </h4>
                     <p className="text-xs text-[#737373]">
-                      Select a package to view its inclusions.
+                      Select a package for your event.
                     </p>
                   </div>
 
@@ -241,25 +241,14 @@ export function StepMenuPackage({ meal, mealType, initialConfig, onSave, onClose
           {view === 'packages' ? (
             <>
               <Button variant="secondary" size="md" onClick={onClose}>Close</Button>
-              <div className="flex gap-2">
-                {selectedPkgId && (
-                  <Button
-                    variant="secondary"
-                    size="md"
-                    onClick={() => setView('details')}
-                  >
-                    View Inclusions <ChevronRight size={14} className="ml-1" />
-                  </Button>
-                )}
-                <Button
-                  size="md"
-                  variant="gold"
-                  disabled={!selectedPkgId}
-                  onClick={handleConfirmPackage}
-                >
-                  <Check size={14} className="mr-1" /> Confirm Package
-                </Button>
-              </div>
+              <Button
+                size="md"
+                variant="gold"
+                disabled={!selectedPkgId}
+                onClick={handleConfirmPackage}
+              >
+                <Check size={14} className="mr-1" /> Confirm Package
+              </Button>
             </>
           ) : (
             <>

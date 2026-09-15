@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BookingFormData } from '@/lib/types'
 import { calculateDuration } from '@/lib/utils/booking'
 import { Info } from 'lucide-react'
@@ -31,6 +32,46 @@ export function LiveBookingSummary({ data }: LiveBookingSummaryProps) {
     data.check_in && data.check_out
       ? calculateDuration(data.check_in, data.check_out)
       : 0
+
+  const [estimate, setEstimate] = useState<number | null>(null)
+  const [isLoadingEstimate, setIsLoadingEstimate] = useState(false)
+
+  useEffect(() => {
+    if (!data.check_in || !data.check_out) {
+      setEstimate(null)
+      return
+    }
+
+    let isMounted = true
+    setIsLoadingEstimate(true)
+
+    fetch('/api/bookings/calculate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        ...data,
+        selected_hotel: { id: 'mannat-events', name: 'Mannat Events' },
+      }),
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((res) => {
+        if (isMounted && res?.valid && typeof res.grandTotal === 'number') {
+          setEstimate(res.grandTotal)
+        } else if (isMounted) {
+          setEstimate(null)
+        }
+      })
+      .catch(() => {
+        if (isMounted) setEstimate(null)
+      })
+      .finally(() => {
+        if (isMounted) setIsLoadingEstimate(false)
+      })
+
+    return () => {
+      isMounted = false
+    }
+  }, [data])
 
   const hasData = Object.keys(data).some((k) => {
     const v = (data as Record<string, unknown>)[k]
@@ -105,9 +146,20 @@ export function LiveBookingSummary({ data }: LiveBookingSummaryProps) {
             <SummaryRow label="Decor Tier" value={`${data.decoration_package.toUpperCase()} Package`} />
           )}
 
-          {data.selected_hotel && (
-            <SummaryRow label="Selected Venue" value={`${data.selected_hotel.name} (${data.selected_hotel.price_display})`} />
-          )}
+          <SummaryRow label="Selected Venue" value="Mannat Events" />
+
+          {isLoadingEstimate ? (
+            <SummaryRow label="Estimated Total" value="Calculating..." />
+          ) : estimate !== null ? (
+            <div className="py-3.5 border-b border-[#EEEAE4] bg-[#FDFAF3] -mx-6 px-6 font-bold">
+              <p className="text-[11px] font-semibold text-[#A08D62] uppercase tracking-[0.14em] mb-1">
+                Estimated Total
+              </p>
+              <p className="text-[16px] font-extrabold text-[#C5A85C]">
+                ₹{estimate.toLocaleString('en-IN')}
+              </p>
+            </div>
+          ) : null}
         </div>
       </div>
 

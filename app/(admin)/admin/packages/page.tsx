@@ -14,6 +14,7 @@ interface BanquetPackage {
   tagline: string
   is_active: boolean
   sort_order: number
+  hotel_id?: string
 }
 
 function PackageRow({ pkg, onSave }: { pkg: BanquetPackage; onSave: (p: BanquetPackage) => void }) {
@@ -125,7 +126,10 @@ export default function AdminPackagesPage() {
   useEffect(() => { load() }, [load])
 
   function handleSave(updated: BanquetPackage) {
-    setPackages(prev => prev.map(p => p.id === updated.id ? updated : p))
+    // Match on both id and hotel_id to be safe against any future mixed-hotel state
+    setPackages(prev => prev.map(p =>
+      p.id === updated.id && (p.hotel_id ?? '') === (updated.hotel_id ?? '') ? updated : p
+    ))
   }
 
   const vegPkgs = packages.filter(p => p.meal_type === 'veg')
@@ -153,7 +157,7 @@ export default function AdminPackagesPage() {
             </div>
             <div className="space-y-4">
               {vegPkgs.map(pkg => (
-                <PackageRow key={pkg.id} pkg={pkg} onSave={handleSave} />
+                <PackageRow key={`${pkg.id}-${pkg.hotel_id ?? 'mannat'}`} pkg={pkg} onSave={handleSave} />
               ))}
             </div>
           </div>
@@ -166,7 +170,7 @@ export default function AdminPackagesPage() {
             </div>
             <div className="space-y-4">
               {nonVegPkgs.map(pkg => (
-                <PackageRow key={pkg.id} pkg={pkg} onSave={handleSave} />
+                <PackageRow key={`${pkg.id}-${pkg.hotel_id ?? 'mannat'}`} pkg={pkg} onSave={handleSave} />
               ))}
             </div>
           </div>

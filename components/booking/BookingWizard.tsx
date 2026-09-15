@@ -8,8 +8,6 @@ import {
   BookingFormData,
   DayPlan,
   DecorationPackageTier,
-  HotelComparisonItem,
-  MenuItem,
 } from '@/lib/types'
 import {
   calculateDuration,
@@ -66,7 +64,6 @@ type WizardAction =
   | { type: 'SET_DAY_PLAN'; day: number; plan: Partial<DayPlan> }
   | { type: 'SET_DECORATION'; tier: DecorationPackageTier; title: string }
   | { type: 'SET_PHONE'; phone: string }
-  | { type: 'SET_HOTEL'; hotel: HotelComparisonItem }
   | { type: 'NEXT' }
   | { type: 'PREV' }
   | { type: 'RESTORE'; state: WizardState }
@@ -144,14 +141,6 @@ function wizardReducer(state: WizardState, action: WizardAction): WizardState {
         },
       }
 
-    case 'SET_HOTEL':
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          selected_hotel: action.hotel,
-        },
-      }
 
     case 'NEXT':
       return {
@@ -423,13 +412,14 @@ export function BookingWizard() {
     } catch { /* ignore */ }
   }, [state])
 
-  const handleSubmitEnquiry = useCallback(async (selectedHotel: HotelComparisonItem) => {
+  const handleSubmitEnquiry = useCallback(async () => {
     setSubmitting(true)
     setSubmitError('')
     try {
+      // Always book with Mannat Events — comparison hotels are reference-only
       const payload = {
         ...state.data,
-        selected_hotel: selectedHotel,
+        selected_hotel: { id: 'mannat-events', name: 'Mannat Events' },
       }
       const res = await fetch('/api/bookings', {
         method: 'POST',
@@ -527,7 +517,7 @@ export function BookingWizard() {
             )}
             <StepHotelComparison
               data={data}
-              onSelectHotel={handleSubmitEnquiry}
+              onSubmit={handleSubmitEnquiry}
               onPrev={prev}
               isSubmitting={isSubmitting}
             />

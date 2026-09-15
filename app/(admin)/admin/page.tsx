@@ -21,7 +21,8 @@ import {
   TrendingUp,
   Users,
   Palette,
-  ShieldX
+  ShieldX,
+  Building2
 } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -31,10 +32,9 @@ export const metadata: Metadata = {
 
 const MANAGEMENT_SECTIONS = [
   { href: '/admin/bookings', title: 'Bookings Management', desc: 'View, filter & manage customer event bookings', icon: CalendarCheck, badge: 'Live Enquiries' },
+  { href: '/admin/hotels', title: 'Hotel Management', desc: 'Manage venues, star ratings, room rates & venue multipliers', icon: Building2, badge: 'Venues' },
+  { href: '/admin/menu/limits', title: 'Package & Menu Management', desc: 'Category limits, dishes & dish prices per package', icon: UtensilsCrossed, badge: 'Menu Hub' },
   { href: '/admin/menu/packages', title: 'Banquet Packages & Pricing', desc: 'Per-head rates, veg/non-veg package options', icon: Package, badge: 'Pricing CMS' },
-  { href: '/admin/menu/categories', title: 'Menu Categories', desc: 'Starters, main course, desserts & drinks', icon: FolderTree, badge: '15 Categories' },
-  { href: '/admin/menu/items', title: 'Menu Dish Catalog', desc: 'Master dish library & active item state', icon: UtensilsCrossed, badge: 'Food Master' },
-  { href: '/admin/menu/limits', title: 'Package Selection Limits', desc: 'Category selection counts for packages', icon: Sliders, badge: 'Config' },
   { href: '/admin/menu/live-stations', title: 'Live Stations', desc: 'Live counters, chaat, tandoor & dosa', icon: Flame, badge: 'Live Counters' },
   { href: '/admin/menu/add-ons', title: 'Food & Counter Add-ons', desc: 'Optional counters, paan stalls & sweets', icon: PlusCircle, badge: 'Add-ons' },
   { href: '/admin/decoration-packages', title: 'Decoration Packages', desc: 'Silver, Gold, Platinum & Luxury tiers', icon: Flower2, badge: 'Decor Tiers' },
