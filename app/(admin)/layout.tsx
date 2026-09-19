@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { resolveUser } from '@/lib/auth/guards'
 import { redirect } from 'next/navigation'
 import { AdminSidebarNav } from '@/components/admin/AdminSidebarNav'
 
@@ -7,20 +7,13 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const supabase = await createClient()
+  const result = await resolveUser()
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  if ('error' in result || !result.user) {
+    redirect('/login?redirectTo=/admin')
+  }
 
-  if (!user) redirect('/login?redirectTo=/admin')
-
-  // Get profile to verify admin role
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role, full_name, email, phone')
-    .eq('id', user.id)
-    .single()
+  const { profile } = result
 
   // TEMPORARY OVERRIDE FOR TESTING PHASE:
   // Any authenticated user can access /admin during testing phase.
@@ -34,9 +27,9 @@ export default async function AdminLayout({
   }
 
   const displayProfile = profile || {
-    id: user.id,
-    full_name: user.user_metadata?.full_name || 'Admin Tester',
-    phone: user.phone || 'Authenticated User',
+    id: result.user.id,
+    full_name: 'Admin Tester',
+    phone: result.user.phone || 'Authenticated User',
     role: 'admin',
   }
 

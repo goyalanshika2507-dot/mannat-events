@@ -125,7 +125,7 @@ export async function POST(request: NextRequest) {
       updated_at: new Date().toISOString()
     }
 
-    const { data: booking, error: insertError } = await serviceClient
+    let { data: booking, error: insertError } = await serviceClient
       .from('bookings')
       .insert(newBookingRecord)
       .select('booking_id')
@@ -133,6 +133,42 @@ export async function POST(request: NextRequest) {
 
     if (insertError) {
       console.error('[POST /api/bookings] Supabase insert error:', insertError)
+
+      // Fallback mechanism: if missing column / PGRST204 error occurs prior to SQL migration execution, retry using base schema columns
+      if (insertError.code === 'PGRST204' || insertError.message?.includes('schema cache') || insertError.message?.includes('column')) {
+        console.warn('[POST /api/bookings] Retrying insert using base schema fields...')
+        const fallbackRecord = {
+          booking_id: newBookingRecord.booking_id,
+          user_id: newBookingRecord.user_id,
+          customer_email: newBookingRecord.customer_email,
+          check_in: newBookingRecord.check_in,
+          check_out: newBookingRecord.check_out,
+          duration: newBookingRecord.duration,
+          phone: newBookingRecord.phone,
+          day_plans: newBookingRecord.day_plans,
+          functions: newBookingRecord.functions,
+          is_flagged: newBookingRecord.is_flagged,
+          status: newBookingRecord.status,
+          notes: `[Decor: ${newBookingRecord.decoration_package}, Theme: ${newBookingRecord.decoration_theme_title}, Total: ₹${calcResult.grandTotal.toLocaleString('en-IN')}] ${hotelNotes}`,
+          created_at: newBookingRecord.created_at,
+          updated_at: newBookingRecord.updated_at
+        }
+        const fallbackRes = await serviceClient
+          .from('bookings')
+          .insert(fallbackRecord)
+          .select('booking_id')
+          .single()
+
+        if (!fallbackRes.error && fallbackRes.data) {
+          booking = fallbackRes.data
+          insertError = null
+        } else if (fallbackRes.error) {
+          console.error('[POST /api/bookings] Fallback insert error:', fallbackRes.error)
+        }
+      }
+    }
+
+    if (insertError) {
       return NextResponse.json({ error: insertError.message || 'Failed to save booking to database.' }, { status: 500 })
     }
 

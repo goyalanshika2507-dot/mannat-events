@@ -41,9 +41,11 @@ export async function proxy(request: NextRequest) {
   if (hasUser && (pathname === '/login' || pathname === '/signup')) {
     const url = request.nextUrl.clone()
     const redirectTo = request.nextUrl.searchParams.get('redirectTo') || '/dashboard'
-    url.pathname = redirectTo
-    url.searchParams.delete('redirectTo')
-    return NextResponse.redirect(url)
+    if (redirectTo !== '/login' && redirectTo !== '/signup') {
+      url.pathname = redirectTo
+      url.searchParams.delete('redirectTo')
+      return NextResponse.redirect(url)
+    }
   }
 
   return supabaseResponse
