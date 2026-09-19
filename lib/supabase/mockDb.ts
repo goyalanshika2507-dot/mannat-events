@@ -4,38 +4,65 @@ import path from 'node:path'
 
 const DB_PATH = path.join(process.cwd(), 'supabase', 'local_db.json')
 
-export function getLocalDb() {
-  if (!fs.existsSync(DB_PATH)) {
-    fs.writeFileSync(DB_PATH, JSON.stringify({
-      menu_categories: [],
-      menu_items: [],
-      banquet_packages: [],
-      package_categories: [],
-      package_items: [],
-      live_stations: [],
-      live_station_items: [],
-      package_live_stations: [],
-      menu_addons: [],
-      package_addons: [],
-      decoration_packages: [],
-      wedding_functions: [],
-      bookings: [],
-      profiles: [
-        {
-          id: 'admin-user-id',
-          email: 'admin@mannatevents.com',
-          full_name: 'Mannat Admin',
-          role: 'admin',
-          phone: '+918888888888'
-        }
-      ]
-    }, null, 2))
+function getInitialDbData() {
+  return {
+    menu_categories: [],
+    menu_items: [],
+    banquet_packages: [],
+    package_categories: [],
+    package_items: [],
+    live_stations: [],
+    live_station_items: [],
+    package_live_stations: [],
+    menu_addons: [],
+    package_addons: [],
+    decoration_packages: [],
+    wedding_functions: [],
+    bookings: [],
+    profiles: [
+      {
+        id: 'admin-user-id',
+        email: 'admin@mannatevents.com',
+        full_name: 'Mannat Admin',
+        role: 'admin',
+        phone: '+918888888888'
+      }
+    ]
   }
-  return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'))
+}
+
+export function getLocalDb() {
+  try {
+    if (!fs.existsSync(DB_PATH)) {
+      if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+        return getInitialDbData()
+      }
+      try {
+        fs.writeFileSync(DB_PATH, JSON.stringify(getInitialDbData(), null, 2))
+      } catch (err: any) {
+        if (err?.code === 'EROFS') return getInitialDbData()
+        throw err
+      }
+    }
+    return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'))
+  } catch (err: any) {
+    return getInitialDbData()
+  }
 }
 
 export function saveLocalDb(data: any) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2))
+  try {
+    if (process.env.VERCEL || process.env.NODE_ENV === 'production') {
+      return
+    }
+    fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2))
+  } catch (err: any) {
+    if (err?.code === 'EROFS') {
+      console.warn('[mockDb] Skipping disk write due to read-only filesystem (EROFS)')
+      return
+    }
+    throw err
+  }
 }
 
 class MockQuery {

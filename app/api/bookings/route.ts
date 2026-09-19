@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient, createServiceClient } from '@/lib/supabase/server'
 import { generateBookingId, calculateDuration } from '@/lib/utils/booking'
-import { getLocalDb, saveLocalDb } from '@/lib/supabase/mockDb'
 
 import { calculateBookingEstimate } from '@/lib/utils/pricingCalculator'
 
@@ -42,53 +41,69 @@ export async function POST(request: NextRequest) {
 
     const hotelNotes = `Decor Tier: ${body.decoration_package ?? 'Not Selected'}, Mannat Events Total: ${calcResult.priceDisplay}`
 
-    // 1. Resolve User & Profile
+    // 1. Resolve User & Profile via service client
+    const serviceClient = createServiceClient()
     let userId: string | null = null
     let customerEmail: string | null = body.email ?? null
     let phone: string = body.phone || '+919999999999'
 
     try {
       const supabase = await createClient()
-      const { data: { user } } = await supabase.auth.getUser()
-      if (user) {
-        userId = user.id
-        customerEmail = user.email ?? customerEmail
-        if (user.phone) phone = user.phone
+      const { data: authData } = await supabase.auth.getUser()
+      if (authData?.user) {
+        userId = authData.user.id
+        customerEmail = authData.user.email ?? customerEmail
+        if (authData.user.phone) phone = authData.user.phone
       }
     } catch {
       /* ignore auth check failure for guest bookings */
     }
 
-    // Ensure user profile exists for phone and get user_id
+    // Ensure user profile exists for phone
     if (phone) {
-      const db = getLocalDb()
-      if (!db.profiles) db.profiles = []
-      let profile = db.profiles.find((p: any) => p.phone === phone)
+      try {
+        const { data: existingProfile } = await serviceClient
+          .from('profiles')
+          .select('*')
+          .eq('phone', phone)
+          .single()
 
-      if (!profile) {
-        profile = {
-          id: crypto.randomUUID(),
-          email: `${phone.replace(/\D/g, '')}@mannatevents.com`,
-          full_name: 'Guest User',
-          role: 'user',
-          phone,
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString()
+        if (existingProfile) {
+          if (!userId) userId = existingProfile.id
+          if (!customerEmail) customerEmail = existingProfile.email
+        } else {
+          const newUserId = userId || crypto.randomUUID()
+          const newEmail = customerEmail || `${phone.replace(/\D/g, '')}@mannatevents.com`
+          const newProfile = {
+            id: newUserId,
+            email: newEmail,
+            full_name: 'Guest User',
+            role: 'user',
+            phone,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+          }
+          const { data: createdProf, error: profErr } = await serviceClient
+            .from('profiles')
+            .insert(newProfile)
+            .select('id, email')
+            .single()
+
+          if (!profErr && createdProf) {
+            userId = createdProf.id
+            customerEmail = createdProf.email
+          } else {
+            userId = newUserId
+            customerEmail = newEmail
+          }
         }
-        db.profiles.push(profile)
-        saveLocalDb(db)
-      }
-
-      if (!userId) {
-        userId = profile.id
-      }
-      if (!customerEmail) {
-        customerEmail = profile.email
+      } catch (e) {
+        if (!userId) userId = crypto.randomUUID()
+        if (!customerEmail) customerEmail = `${phone.replace(/\D/g, '')}@mannatevents.com`
       }
     }
 
-    // 2. Insert Booking Row with status='pending'
-    const serviceClient = createServiceClient()
+    // 2. Insert Booking Row into Persistent Database
     const newBookingRecord = {
       booking_id,
       user_id: userId,
@@ -117,8 +132,8 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (insertError) {
-      console.error('[POST /api/bookings] Insert error:', insertError)
-      return NextResponse.json({ error: 'Failed to save booking. Please try again.' }, { status: 500 })
+      console.error('[POST /api/bookings] Supabase insert error:', insertError)
+      return NextResponse.json({ error: insertError.message || 'Failed to save booking to database.' }, { status: 500 })
     }
 
     const response = NextResponse.json({ booking_id }, { status: 201 })

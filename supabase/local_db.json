@@ -8246,6 +8246,425 @@
       "is_flagged": false,
       "status": "pending",
       "notes": "Selected Hotel: ITC Mughal, Luxury Collection (₹10,15,000), Decor Tier: silver"
+    },
+    {
+      "id": "cb6cf4f2-9850-403f-a0bd-3a3bd790f10c",
+      "created_at": "2026-09-19T16:53:01.265Z",
+      "updated_at": "2026-09-19T16:53:01.265Z",
+      "booking_id": "ME-7H48SE",
+      "user_id": "37a8ed7f-6b84-48b9-a856-380d6da79241",
+      "customer_email": "917060360600@mannatevents.com",
+      "check_in": "2026-09-20",
+      "check_out": "2026-09-21",
+      "duration": 1,
+      "phone": "+917060360600",
+      "day_plans": [
+        {
+          "day": 1,
+          "rooms": 25,
+          "guest_count": 16,
+          "food_preference": "veg",
+          "lunch_function": "Sangeet",
+          "dinner_function": "Mandap Decoration",
+          "lunch": {
+            "type": "veg",
+            "menu_item_ids": [],
+            "menu_item_names": [
+              "Platinum Veg Banquet"
+            ],
+            "guest_count": 15,
+            "menu_config": {
+              "packageId": "veg-platinum",
+              "packageName": "Platinum Veg Banquet",
+              "pricePerHead": 3000,
+              "mealType": "veg",
+              "selections": [
+                {
+                  "categoryId": "welcome-drinks",
+                  "items": [
+                    "Mango Lassi",
+                    "Rose Sherbat",
+                    "Lemon Mint Cooler",
+                    "Jaljeera",
+                    "Aam Panna",
+                    "Thandai",
+                    "Masala Chach (Buttermilk)",
+                    "Coconut Water",
+                    "Fresh Lime Soda",
+                    "Gondhoraj Nimbu Sherbat"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-indian",
+                  "items": [
+                    "Paneer Tikka",
+                    "Hara Bhara Kebab",
+                    "Corn Palak Tikki",
+                    "Dahi Puri Chaat",
+                    "Aloo Tikki Chaat",
+                    "Veg Seekh Kebab",
+                    "Mushroom Tikka",
+                    "Peshwari Paneer Tikka",
+                    "Dahi Ke Sholay",
+                    "Paneer Malai Tikka",
+                    "Achari Paneer Tikka",
+                    "Rajasthani Mirchi Vada"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-oriental",
+                  "items": [
+                    "Veg Spring Rolls",
+                    "Crispy Corn",
+                    "Veg Manchurian (Dry)",
+                    "Chilli Paneer (Dry)",
+                    "Stuffed Mushroom",
+                    "Bruschetta",
+                    "Thai Veg Satay",
+                    "Veg Dim Sum"
+                  ]
+                },
+                {
+                  "categoryId": "soup",
+                  "items": [
+                    "Tomato Shorba",
+                    "Sweet Corn Vegetable Soup",
+                    "Dal Shorba",
+                    "Mulligatawny Soup (Veg)",
+                    "Mushroom Cream Soup",
+                    "Hot & Sour Vegetable Soup",
+                    "Lemon Coriander Soup",
+                    "Gazpacho (Chilled)"
+                  ]
+                },
+                {
+                  "categoryId": "salads",
+                  "items": [
+                    "Green Salad",
+                    "Russian Salad",
+                    "Sprouts Salad",
+                    "Corn Salad",
+                    "Pasta Salad",
+                    "Coleslaw",
+                    "Fruit Salad",
+                    "Papdi Chaat",
+                    "Greek Salad",
+                    "Thai Salad",
+                    "Quinoa Salad"
+                  ]
+                },
+                {
+                  "categoryId": "raita-curd",
+                  "items": [
+                    "Boondi Raita",
+                    "Mixed Raita",
+                    "Cucumber Raita",
+                    "Plain Curd",
+                    "Pineapple Raita"
+                  ]
+                },
+                {
+                  "categoryId": "paneer-main",
+                  "items": [
+                    "Paneer Butter Masala",
+                    "Shahi Paneer",
+                    "Kadai Paneer",
+                    "Palak Paneer",
+                    "Paneer Lababdar",
+                    "Paneer Makhani",
+                    "Paneer Pasanda",
+                    "Paneer Khurchan"
+                  ]
+                },
+                {
+                  "categoryId": "veg-main",
+                  "items": [
+                    "Aloo Gobi",
+                    "Veg Kolhapuri",
+                    "Matar Mushroom",
+                    "Bhindi Masala",
+                    "Lauki Kofta",
+                    "Mix Vegetable",
+                    "Dum Aloo",
+                    "Navratan Korma",
+                    "Tindora Masala",
+                    "Veg Jaipuri",
+                    "Kathal Masala (Jackfruit)",
+                    "Stuffed Capsicum"
+                  ]
+                },
+                {
+                  "categoryId": "dal",
+                  "items": [
+                    "Dal Makhani",
+                    "Dal Tadka",
+                    "Dal Fry",
+                    "Panchmel Dal",
+                    "Chana Masala",
+                    "Rajma Masala",
+                    "Amti Dal"
+                  ]
+                },
+                {
+                  "categoryId": "rice-noodles",
+                  "items": [
+                    "Steamed Rice",
+                    "Jeera Rice",
+                    "Veg Pulao",
+                    "Veg Biryani",
+                    "Schezwan Fried Rice",
+                    "Veg Hakka Noodles",
+                    "Kashmiri Pulao",
+                    "Zaffrani Rice"
+                  ]
+                },
+                {
+                  "categoryId": "breads",
+                  "items": [
+                    "Butter Naan",
+                    "Tandoori Roti",
+                    "Laccha Paratha",
+                    "Missi Roti",
+                    "Kulcha",
+                    "Garlic Naan",
+                    "Stuffed Naan"
+                  ]
+                },
+                {
+                  "categoryId": "desserts",
+                  "items": [
+                    "Gulab Jamun",
+                    "Rasgulla",
+                    "Kheer",
+                    "Gajar Halwa",
+                    "Moong Dal Halwa",
+                    "Phirni",
+                    "Jalebi with Rabri",
+                    "Ras Malai",
+                    "Kulfi Falooda",
+                    "Shahi Tukda",
+                    "Malpua with Rabri",
+                    "Badam Halwa"
+                  ]
+                }
+              ],
+              "liveStations": [
+                "Tawa Tak-A-Tak Station",
+                "Chaat Corner",
+                "Ice Cream Counter",
+                "Pasta & Pizza Station",
+                "Live Indian Sweets Counter"
+              ],
+              "addOns": []
+            }
+          },
+          "dinner": {
+            "type": "veg",
+            "menu_item_ids": [],
+            "menu_item_names": [
+              "Platinum Veg Banquet"
+            ],
+            "guest_count": 16,
+            "menu_config": {
+              "packageId": "veg-platinum",
+              "packageName": "Platinum Veg Banquet",
+              "pricePerHead": 3000,
+              "mealType": "veg",
+              "selections": [
+                {
+                  "categoryId": "welcome-drinks",
+                  "items": [
+                    "Mango Lassi",
+                    "Rose Sherbat",
+                    "Lemon Mint Cooler",
+                    "Jaljeera",
+                    "Aam Panna",
+                    "Thandai",
+                    "Masala Chach (Buttermilk)",
+                    "Coconut Water",
+                    "Fresh Lime Soda",
+                    "Gondhoraj Nimbu Sherbat"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-indian",
+                  "items": [
+                    "Paneer Tikka",
+                    "Hara Bhara Kebab",
+                    "Corn Palak Tikki",
+                    "Dahi Puri Chaat",
+                    "Aloo Tikki Chaat",
+                    "Veg Seekh Kebab",
+                    "Mushroom Tikka",
+                    "Peshwari Paneer Tikka",
+                    "Dahi Ke Sholay",
+                    "Paneer Malai Tikka",
+                    "Achari Paneer Tikka",
+                    "Rajasthani Mirchi Vada"
+                  ]
+                },
+                {
+                  "categoryId": "starters-veg-oriental",
+                  "items": [
+                    "Veg Spring Rolls",
+                    "Crispy Corn",
+                    "Veg Manchurian (Dry)",
+                    "Chilli Paneer (Dry)",
+                    "Stuffed Mushroom",
+                    "Bruschetta",
+                    "Thai Veg Satay",
+                    "Veg Dim Sum"
+                  ]
+                },
+                {
+                  "categoryId": "soup",
+                  "items": [
+                    "Tomato Shorba",
+                    "Sweet Corn Vegetable Soup",
+                    "Dal Shorba",
+                    "Mulligatawny Soup (Veg)",
+                    "Mushroom Cream Soup",
+                    "Hot & Sour Vegetable Soup",
+                    "Lemon Coriander Soup",
+                    "Gazpacho (Chilled)"
+                  ]
+                },
+                {
+                  "categoryId": "salads",
+                  "items": [
+                    "Green Salad",
+                    "Russian Salad",
+                    "Sprouts Salad",
+                    "Corn Salad",
+                    "Pasta Salad",
+                    "Coleslaw",
+                    "Fruit Salad",
+                    "Papdi Chaat",
+                    "Greek Salad",
+                    "Thai Salad",
+                    "Quinoa Salad"
+                  ]
+                },
+                {
+                  "categoryId": "raita-curd",
+                  "items": [
+                    "Boondi Raita",
+                    "Mixed Raita",
+                    "Cucumber Raita",
+                    "Plain Curd",
+                    "Pineapple Raita"
+                  ]
+                },
+                {
+                  "categoryId": "paneer-main",
+                  "items": [
+                    "Paneer Butter Masala",
+                    "Shahi Paneer",
+                    "Kadai Paneer",
+                    "Palak Paneer",
+                    "Paneer Lababdar",
+                    "Paneer Makhani",
+                    "Paneer Pasanda",
+                    "Paneer Khurchan"
+                  ]
+                },
+                {
+                  "categoryId": "veg-main",
+                  "items": [
+                    "Aloo Gobi",
+                    "Veg Kolhapuri",
+                    "Matar Mushroom",
+                    "Bhindi Masala",
+                    "Lauki Kofta",
+                    "Mix Vegetable",
+                    "Dum Aloo",
+                    "Navratan Korma",
+                    "Tindora Masala",
+                    "Veg Jaipuri",
+                    "Kathal Masala (Jackfruit)",
+                    "Stuffed Capsicum"
+                  ]
+                },
+                {
+                  "categoryId": "dal",
+                  "items": [
+                    "Dal Makhani",
+                    "Dal Tadka",
+                    "Dal Fry",
+                    "Panchmel Dal",
+                    "Chana Masala",
+                    "Rajma Masala",
+                    "Amti Dal"
+                  ]
+                },
+                {
+                  "categoryId": "rice-noodles",
+                  "items": [
+                    "Steamed Rice",
+                    "Jeera Rice",
+                    "Veg Pulao",
+                    "Veg Biryani",
+                    "Schezwan Fried Rice",
+                    "Veg Hakka Noodles",
+                    "Kashmiri Pulao",
+                    "Zaffrani Rice"
+                  ]
+                },
+                {
+                  "categoryId": "breads",
+                  "items": [
+                    "Butter Naan",
+                    "Tandoori Roti",
+                    "Laccha Paratha",
+                    "Missi Roti",
+                    "Kulcha",
+                    "Garlic Naan",
+                    "Stuffed Naan"
+                  ]
+                },
+                {
+                  "categoryId": "desserts",
+                  "items": [
+                    "Gulab Jamun",
+                    "Rasgulla",
+                    "Kheer",
+                    "Gajar Halwa",
+                    "Moong Dal Halwa",
+                    "Phirni",
+                    "Jalebi with Rabri",
+                    "Ras Malai",
+                    "Kulfi Falooda",
+                    "Shahi Tukda",
+                    "Malpua with Rabri",
+                    "Badam Halwa"
+                  ]
+                }
+              ],
+              "liveStations": [
+                "Tawa Tak-A-Tak Station",
+                "Chaat Corner",
+                "Ice Cream Counter",
+                "Pasta & Pizza Station",
+                "Live Indian Sweets Counter"
+              ],
+              "addOns": []
+            }
+          }
+        }
+      ],
+      "functions": [],
+      "selected_hotel": {
+        "id": "mannat-events",
+        "name": "Mannat Events",
+        "package_price": 3000,
+        "price_display": "₹3,000/head"
+      },
+      "decoration_package": "silver",
+      "decoration_theme_title": "Silver Package",
+      "total_price": 543000,
+      "is_flagged": false,
+      "status": "pending",
+      "notes": "Decor Tier: silver, Mannat Events Total: ₹5,43,000"
     }
   ],
   "profiles": [

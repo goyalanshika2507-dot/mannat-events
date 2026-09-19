@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { mockSupabase } from '@/lib/supabase/mockDb'
+import { createServiceClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/auth/guards'
 
 export async function GET(req: NextRequest) {
@@ -7,7 +7,8 @@ export async function GET(req: NextRequest) {
   if (guard.error) return guard.error
 
   try {
-    const { data: bookings, error } = await mockSupabase
+    const serviceClient = createServiceClient()
+    const { data: bookings, error } = await serviceClient
       .from('bookings')
       .select('*')
       .order('created_at', { ascending: false })
@@ -36,7 +37,8 @@ export async function PATCH(req: NextRequest) {
     if (status) updatePayload.status = status
     if (notes !== undefined) updatePayload.notes = notes
 
-    const { data, error } = await mockSupabase
+    const serviceClient = createServiceClient()
+    const { data, error } = await serviceClient
       .from('bookings')
       .update(updatePayload)
       .eq('booking_id', targetId)
