@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
+import { requireAdmin } from '@/lib/auth/guards'
 import { z } from 'zod'
 
 const BlockSchema = z.object({
@@ -7,20 +8,12 @@ const BlockSchema = z.object({
   reason: z.string().optional(),
 })
 
-async function requireAdmin() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return null
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  return profile?.role === 'admin' ? user : null
-}
-
 export async function GET() {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
-  const supabase = await createClient()
-  const { data, error } = await supabase
+  const service = createServiceClient()
+  const { data, error } = await service
     .from('blocked_phones')
     .select('*')
     .order('blocked_at', { ascending: false })
@@ -30,8 +23,8 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
   const body   = await req.json()
   const parsed = BlockSchema.safeParse(body)
@@ -40,7 +33,7 @@ export async function POST(req: NextRequest) {
   const service = createServiceClient()
   const { data, error } = await service
     .from('blocked_phones')
-    .insert({ ...parsed.data, blocked_by: admin.id })
+    .insert({ ...parsed.data, blocked_by: guard.profile.id })
     .select()
     .single()
 
@@ -55,8 +48,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
   const { id } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })

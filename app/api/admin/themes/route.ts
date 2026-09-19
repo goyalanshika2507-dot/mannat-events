@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient, createServiceClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
+import { requireAdmin } from '@/lib/auth/guards'
 import { z } from 'zod'
 
 const ThemeSchema = z.object({
@@ -10,17 +11,9 @@ const ThemeSchema = z.object({
   sort_order:  z.number().int().optional().default(0),
 })
 
-async function requireAdmin() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) return null
-  const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
-  return profile?.role === 'admin' ? user : null
-}
-
 export async function GET() {
-  const supabase = await createClient()
-  const { data, error } = await supabase
+  const service = createServiceClient()
+  const { data, error } = await service
     .from('decoration_themes')
     .select('*')
     .order('sort_order')
@@ -30,8 +23,8 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
   const body   = await req.json()
   const parsed = ThemeSchema.safeParse(body)
@@ -45,8 +38,8 @@ export async function POST(req: NextRequest) {
 }
 
 export async function PATCH(req: NextRequest) {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
   const { id, ...rest } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
@@ -59,8 +52,8 @@ export async function PATCH(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  const admin = await requireAdmin()
-  if (!admin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+  const guard = await requireAdmin()
+  if (guard.error) return guard.error
 
   const { id } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
