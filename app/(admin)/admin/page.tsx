@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
 import { Booking } from '@/lib/types'
 import {
   ShieldCheck,
@@ -45,7 +45,7 @@ const MANAGEMENT_SECTIONS = [
 ]
 
 export default async function AdminOverviewPage() {
-  const supabase = await createClient()
+  const supabase = createServiceClient()
 
   const { data: allBookings } = await supabase
     .from('bookings')

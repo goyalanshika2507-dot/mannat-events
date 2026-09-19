@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
 import { Booking } from '@/lib/types'
 import { BookingDetailCard } from '@/components/admin/BookingDetailCard'
 import { Button } from '@/components/ui/Button'
@@ -19,7 +19,7 @@ export default async function AdminBookingDetailPage({
   params,
 }: AdminBookingDetailPageProps) {
   const { id } = await params
-  const supabase = await createClient()
+  const supabase = createServiceClient()
 
   const { data: booking, error } = await supabase
     .from('bookings')
