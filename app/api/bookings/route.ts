@@ -51,56 +51,20 @@ export async function POST(request: NextRequest) {
       const supabase = await createClient()
       const { data: authData } = await supabase.auth.getUser()
       if (authData?.user) {
-        userId = authData.user.id
-        customerEmail = authData.user.email ?? customerEmail
-        if (authData.user.phone) phone = authData.user.phone
+        // Verify user exists in profiles table before assigning user_id
+        const { data: userProfile } = await serviceClient
+          .from('profiles')
+          .select('id, email')
+          .eq('id', authData.user.id)
+          .single()
+
+        if (userProfile) {
+          userId = userProfile.id
+          customerEmail = userProfile.email ?? customerEmail
+        }
       }
     } catch {
       /* ignore auth check failure for guest bookings */
-    }
-
-    // Ensure user profile exists for phone
-    if (phone) {
-      try {
-        const { data: existingProfile } = await serviceClient
-          .from('profiles')
-          .select('*')
-          .eq('phone', phone)
-          .single()
-
-        if (existingProfile) {
-          if (!userId) userId = existingProfile.id
-          if (!customerEmail) customerEmail = existingProfile.email
-        } else {
-          const newUserId = userId || crypto.randomUUID()
-          const newEmail = customerEmail || `${phone.replace(/\D/g, '')}@mannatevents.com`
-          const newProfile = {
-            id: newUserId,
-            email: newEmail,
-            full_name: 'Guest User',
-            role: 'user',
-            phone,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString()
-          }
-          const { data: createdProf, error: profErr } = await serviceClient
-            .from('profiles')
-            .insert(newProfile)
-            .select('id, email')
-            .single()
-
-          if (!profErr && createdProf) {
-            userId = createdProf.id
-            customerEmail = createdProf.email
-          } else {
-            userId = newUserId
-            customerEmail = newEmail
-          }
-        }
-      } catch (e) {
-        if (!userId) userId = crypto.randomUUID()
-        if (!customerEmail) customerEmail = `${phone.replace(/\D/g, '')}@mannatevents.com`
-      }
     }
 
     // 2. Insert Booking Row into Persistent Database
