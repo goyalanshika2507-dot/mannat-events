@@ -113,7 +113,7 @@ export const BOOKING_STATUS_LABELS: Record<BookingStatus, string> = {
 export interface Booking {
   id: string
   booking_id: string
-  user_id: string
+  user_id?: string | null
   customer_email: string | null
   check_in: string
   check_out: string

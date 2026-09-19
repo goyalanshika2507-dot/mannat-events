@@ -52,9 +52,9 @@ export function BookingTable({ bookings }: BookingTableProps) {
                 <td>
                   <span
                     className="font-mono text-[11px] text-[#A8A8A8] whitespace-nowrap"
-                    title={booking.user_id}
+                    title={booking.user_id || 'Guest'}
                   >
-                    {booking.user_id.slice(0, 8)}…
+                    {booking.user_id ? `${booking.user_id.slice(0, 8)}…` : 'Guest'}
                   </span>
                 </td>
 
