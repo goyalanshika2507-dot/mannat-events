@@ -17,6 +17,7 @@ import {
 import { StepDates } from './steps/StepDates'
 import { StepDayPlan } from './steps/StepDayPlan'
 import { StepDecorationTheme } from './steps/StepDecorationTheme'
+import { StepReview } from './steps/StepReview'
 import { StepHotelComparison } from './steps/StepHotelComparison'
 import { DynamicProgressBar } from './DynamicProgressBar'
 import { LiveBookingSummary } from './LiveBookingSummary'
@@ -28,7 +29,7 @@ import { Label } from '@/components/ui/Label'
 type StepKind =
   | { kind: 'dates' }
   | { kind: 'day-plan'; day: number }
-  | { kind: 'decoration' }
+  | { kind: 'review' }
   | { kind: 'verify' }
   | { kind: 'hotel-comparison' }
 
@@ -37,7 +38,7 @@ function buildStepList(duration: number): StepKind[] {
   for (let day = 1; day <= duration; day++) {
     steps.push({ kind: 'day-plan', day })
   }
-  steps.push({ kind: 'decoration' })
+  steps.push({ kind: 'review' })
   steps.push({ kind: 'verify' })
   steps.push({ kind: 'hotel-comparison' })
   return steps
@@ -46,8 +47,8 @@ function buildStepList(duration: number): StepKind[] {
 function stepLabel(step: StepKind): string {
   switch (step.kind) {
     case 'dates':            return 'Stay Dates'
-    case 'day-plan':         return `Day ${step.day} Planning`
-    case 'decoration':       return 'Decoration Package'
+    case 'day-plan':         return `Day ${step.day} Menu & Decor`
+    case 'review':           return 'Review Selections'
     case 'verify':           return 'Mobile Verification'
     case 'hotel-comparison': return 'Hotel Comparison'
   }
@@ -473,10 +474,12 @@ export function BookingWizard() {
             day={step.day}
             totalDays={duration}
             plan={plan}
-            vegMenuItems={[]}
-            nonVegMenuItems={[]}
-            onNext={(newPlan) => {
+            data={data}
+            onNext={(newPlan, decorTier, decorTitle) => {
               dispatch({ type: 'SET_DAY_PLAN', day: step.day, plan: newPlan })
+              if (decorTier && decorTitle) {
+                dispatch({ type: 'SET_DECORATION', tier: decorTier, title: decorTitle })
+              }
               next()
             }}
             onPrev={prev}
@@ -484,14 +487,11 @@ export function BookingWizard() {
         )
       }
 
-      case 'decoration':
+      case 'review':
         return (
-          <StepDecorationTheme
-            data={data}
-            onNext={(tier, title) => {
-              dispatch({ type: 'SET_DECORATION', tier, title })
-              next()
-            }}
+          <StepReview
+            data={data as BookingFormData}
+            onNext={next}
             onPrev={prev}
           />
         )

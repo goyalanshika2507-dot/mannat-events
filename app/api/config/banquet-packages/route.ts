@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { mockSupabase } from '@/lib/supabase/mockDb'
+import { ALL_BANQUET_PACKAGES } from '@/lib/menu/menuLibrary'
 
 /**
  * GET /api/config/banquet-packages
@@ -15,6 +16,10 @@ export async function GET(req: NextRequest) {
     const activePackages = (packages ?? []).filter((p: any) =>
       p.is_active && (hotelId === 'all' ? true : (p.hotel_id ? p.hotel_id === hotelId : hotelId === 'mannat-events'))
     )
+
+    if (!activePackages || activePackages.length === 0) {
+      return NextResponse.json(ALL_BANQUET_PACKAGES)
+    }
 
     // Fetch categories
     const { data: categories } = await mockSupabase.from('menu_categories').select()
