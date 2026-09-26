@@ -11,8 +11,6 @@ import {
   UtensilsCrossed,
   Sparkles,
   Sliders,
-  Flame,
-  PlusCircle,
   Flower2,
   CalendarDays,
   Settings,
@@ -50,8 +48,6 @@ const NAV_GROUPS: NavGroup[] = [
       { href: '/admin/hotels', label: 'Hotel Management', icon: Building2 },
       { href: '/admin/menu/limits', label: 'Package & Menu Management', icon: UtensilsCrossed },
       { href: '/admin/menu/packages', label: 'Packages & Pricing', icon: Sparkles },
-      { href: '/admin/menu/live-stations', label: 'Live Stations', icon: Flame },
-      { href: '/admin/menu/add-ons', label: 'Add-ons', icon: PlusCircle },
     ],
   },
   {
